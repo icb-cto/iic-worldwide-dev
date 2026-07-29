@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mining &mdash; IIC Worldwide</title>
+  <meta name="description" content="IIC Worldwide supports the responsible development of the mining sector by bringing together industry expertise, technology, infrastructure capability, operational coordination, and strategic partnerships.">
+  <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero--bg {
+      background: url('Media/Sectors/Mining.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    .page-hero--bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 36, 32, 0.55);
+    }
+    .page-hero--bg .page-hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero--bg .eyebrow,
+    .page-hero--bg .eyebrow a {
+      color: var(--gold) !important;
+    }
+    .page-hero--bg .page-hero__title {
+      color: #fff;
+    }
+    .page-hero--bg .page-hero__subtitle {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .mining-section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+    .mining-section-header .eyebrow {
+      margin-bottom: 12px;
+    }
+    .mining-section-header h2 {
+      margin-bottom: 16px;
+    }
+    .mining-section-header p {
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .mining-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .mining-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 32px 28px;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+    }
+    .mining-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    .mining-card__icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+    .mining-card__icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .mining-card__title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .mining-card__desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .mining-card__areas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .mining-card__areas li {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--bg-card-hover, rgba(0,0,0,0.04));
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 5px 14px;
+      white-space: nowrap;
+    }
+    @media (max-width: 1024px) {
+      .mining-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .mining-cards { grid-template-columns: 1fr; }
+      .mining-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+        <a href="contact.html" class="nav__link">Contact Us</a>
+      </div>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+      <a href="contact.html" class="nav__link">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--bg">
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="eyebrow reveal"><a href="index.html">Sectors</a> &mdash; Mining</span>
+        <h1 class="page-hero__title reveal reveal-delay-1">Mining</h1>
+        <p class="page-hero__subtitle reveal reveal-delay-2">Supporting the responsible development of the mining sector by bringing together industry expertise, technology, infrastructure capability, operational coordination, and strategic partnerships.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="content-split">
+        <div class="reveal">
+          <span class="eyebrow">Sector Overview</span>
+          <h2>A Vital Global Industry</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Mining is a vital global industry that supplies the raw materials needed for infrastructure, manufacturing, energy, transportation, technology, and everyday life. Minerals and metals support a wide range of sectors, from construction and electronics to renewable energy, communications, and advanced industrial production.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">As demand for mineral resources continues to grow, the industry is evolving through technological advancement, automation, improved safety practices, environmental management, and more responsible use of natural resources.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">The global transition toward cleaner energy and more digital economies has also increased the strategic importance of minerals such as lithium, copper, nickel, cobalt, graphite, manganese, and rare earth elements.</p>
+          <p style="color: var(--text-muted);">IIC supports the responsible development of the mining sector by bringing together industry expertise, technology, infrastructure capability, operational coordination, and strategic partnerships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAJOR MINING SECTORS -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="mining-section-header reveal">
+        <span class="eyebrow">Major Mining Sectors</span>
+        <h2>Across the Full Value Chain</h2>
+        <p>We work across the broader mining ecosystem, supporting activities related to exploration, extraction, processing, logistics, infrastructure, technology, rehabilitation, and workforce development.</p>
+      </div>
+      <div class="mining-cards">
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4l4 12h12l-10 7 4 13-10-8-10 8 4-13L8 16h12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Precious Metals</h3>
+          <p class="mining-card__desc">The extraction, processing, and refinement of high-value metals used in jewelry, investment products, technology, and industrial applications.</p>
+
+          <ul class="mining-card__areas">
+            <li>Gold mining</li>
+            <li>Silver mining</li>
+            <li>Platinum mining</li>
+            <li>Palladium mining</li>
+            <li>Precious-metal processing</li>
+            <li>Precious-metal refining</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="20" width="32" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M14 20V12a10 10 0 0120 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="30" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="mining-card__title">Base Metals</h3>
+          <p class="mining-card__desc">The production of metals that are fundamental to construction, manufacturing, transportation, infrastructure, and industrial activity.</p>
+
+          <ul class="mining-card__areas">
+            <li>Copper mining</li>
+            <li>Zinc mining</li>
+            <li>Lead mining</li>
+            <li>Bauxite and aluminium resources</li>
+            <li>Tin mining</li>
+            <li>Nickel mining</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4v8M4 24h8M36 24h8M10 10l6 6M32 10l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2"/><path d="M20 28l4-8 4 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Critical and Strategic Minerals</h3>
+          <p class="mining-card__desc">The development of mineral resources essential to clean-energy systems, advanced manufacturing, digital technologies, and global supply-chain resilience.</p>
+
+          <ul class="mining-card__areas">
+            <li>Lithium mining</li>
+            <li>Cobalt mining</li>
+            <li>Graphite mining</li>
+            <li>Rare earth elements</li>
+            <li>Manganese mining</li>
+            <li>Strategic mineral development</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 40h36M10 40V24l14-16 14 16v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 40V32h12v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Industrial Minerals</h3>
+          <p class="mining-card__desc">The extraction and processing of minerals used in construction materials, agriculture, manufacturing, chemicals, and industrial production.</p>
+
+          <ul class="mining-card__areas">
+            <li>Limestone mining</li>
+            <li>Gypsum mining</li>
+            <li>Silica-sand mining</li>
+            <li>Phosphate mining</li>
+            <li>Potash mining</li>
+            <li>Kaolin mining</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 36l8-16 8 8 8-12 8 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 42h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 8h4v4h-4zM20 6h4v4h-4z" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="mining-card__title">Coal and Energy Minerals</h3>
+          <p class="mining-card__desc">The responsible development and processing of mineral resources used in power generation, industrial energy, steel production, and other energy-related applications.</p>
+
+          <ul class="mining-card__areas">
+            <li>Thermal coal</li>
+            <li>Metallurgical coal</li>
+            <li>Uranium resources</li>
+            <li>Energy-mineral development</li>
+            <li>Coal-processing facilities</li>
+            <li>Resource-recovery operations</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="20" r="14" stroke="currentColor" stroke-width="2"/><path d="M24 6v28M10 20h28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 40h12M20 44h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Exploration and Resource Evaluation</h3>
+          <p class="mining-card__desc">Technical activities focused on identifying, assessing, and defining mineral deposits before development begins.</p>
+
+          <ul class="mining-card__areas">
+            <li>Geological surveys</li>
+            <li>Mineral exploration</li>
+            <li>Resource estimation</li>
+            <li>Drilling programmes</li>
+            <li>Feasibility studies</li>
+            <li>Geological and resource modelling</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 40h40M12 40V20h8v20M20 40V12h8v28M28 40V24h8v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Mining Infrastructure</h3>
+          <p class="mining-card__desc">The development of essential systems and facilities required to support safe, efficient, and reliable mining operations.</p>
+
+          <ul class="mining-card__areas">
+            <li>Mine-access roads</li>
+            <li>Rail and transport infrastructure</li>
+            <li>Processing facilities</li>
+            <li>Logistics networks</li>
+            <li>Power-generation and distribution systems</li>
+            <li>Water-supply and management systems</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 32l8-8 8 4 8-12 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="8" width="36" height="28" rx="2" stroke="currentColor" stroke-width="2"/><path d="M14 42h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 36v6M28 36v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Mineral Processing and Beneficiation</h3>
+          <p class="mining-card__desc">The transformation of raw ore into higher-value materials through concentration, separation, refining, smelting, and other processing methods.</p>
+
+          <ul class="mining-card__areas">
+            <li>Ore-processing plants</li>
+            <li>Mineral-concentration facilities</li>
+            <li>Smelting operations</li>
+            <li>Refining facilities</li>
+            <li>Beneficiation plants</li>
+            <li>Resource-upgrading technologies</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" stroke="currentColor" stroke-width="2"/><path d="M16 24l6 6 10-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Sustainable and Responsible Mining</h3>
+          <p class="mining-card__desc">Operational practices and technologies designed to reduce environmental impact, improve resource efficiency, and strengthen long-term sustainability.</p>
+
+          <ul class="mining-card__areas">
+            <li>Renewable-energy integration</li>
+            <li>Water conservation and recycling</li>
+            <li>Waste-minimisation technologies</li>
+            <li>Tailings management</li>
+            <li>Carbon-reduction initiatives</li>
+            <li>Environmental monitoring systems</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 40c0-8 6-12 12-20 6 8 12 12 12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 38c0-4 3-6 6-10 3 4 6 6 6 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 12c-4-2-6-6-6-10 6 2 10 6 10 10M28 12c4-2 6-6 6-10-6 2-10 6-10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Mine Rehabilitation and Closure</h3>
+          <p class="mining-card__desc">The planning and implementation of responsible closure programmes that restore land, protect ecosystems, and support affected communities.</p>
+
+          <ul class="mining-card__areas">
+            <li>Land rehabilitation</li>
+            <li>Ecosystem restoration</li>
+            <li>Reforestation programmes</li>
+            <li>Mine-closure planning</li>
+            <li>Environmental recovery</li>
+            <li>Community redevelopment</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><rect x="26" y="8" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><rect x="8" y="26" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M30 30h6M33 27v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Mining Technology and Automation</h3>
+          <p class="mining-card__desc">The use of advanced technology to improve productivity, operational visibility, worker safety, and resource management.</p>
+
+          <ul class="mining-card__areas">
+            <li>Automated mining systems</li>
+            <li>Artificial-intelligence applications</li>
+            <li>Autonomous vehicles and equipment</li>
+            <li>Remote-monitoring solutions</li>
+            <li>Digital mining platforms</li>
+            <li>Data analytics and predictive systems</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4v4M36 8l-3 3M40 20h-4M36 32l-3-3M24 36v-4M12 32l3-3M8 20h4M12 8l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="20" r="8" stroke="currentColor" stroke-width="2"/><path d="M16 40h16M20 44h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Research, Innovation, and Workforce Development</h3>
+          <p class="mining-card__desc">Initiatives that strengthen technical capability, encourage innovation, and build a skilled and resilient mining workforce.</p>
+
+          <ul class="mining-card__areas">
+            <li>Mining research centres</li>
+            <li>Technical-training institutes</li>
+            <li>Innovation hubs</li>
+            <li>Workforce-development programmes</li>
+            <li>Safety-training centres</li>
+            <li>Mining-technology research and development</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="content-split reveal" style="align-items: center;">
+        <div>
+          <span class="eyebrow">Our Approach</span>
+          <h2>Integrated Resource Development</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">IIC takes a broad, operational view of the mining industry. We recognise that successful resource development depends on more than extraction alone. It requires strong governance, reliable infrastructure, technical capability, environmental planning, efficient logistics, skilled personnel, and responsible engagement with local communities.</p>
+          <div class="opportunities">
+            <span class="opportunity-tag">Responsible Resource Management</span>
+            <span class="opportunity-tag">Operational Safety &amp; Efficiency</span>
+            <span class="opportunity-tag">Environmental Protection</span>
+            <span class="opportunity-tag">Technology &amp; Innovation</span>
+            <span class="opportunity-tag">Local Employment &amp; Skills</span>
+            <span class="opportunity-tag">Transparent Governance</span>
+            <span class="opportunity-tag">Infrastructure Reliability</span>
+            <span class="opportunity-tag">Long-Term Community Value</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.7;">IIC is committed to contributing to a modern, responsible, and future-ready mining sector. Our activities span the full mining ecosystem, from exploration and resource assessment to extraction, processing, infrastructure, technology, environmental management, and rehabilitation.</p>
+        <p style="color: var(--text-muted); line-height: 1.7;">By combining industry knowledge, operational capability, strategic coordination, and international partnerships, we aim to support mining operations that strengthen supply chains, contribute to industrial growth, improve resource security, and create lasting value for businesses, communities, and economies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2 class="cta-band__title">Explore Mining Partnerships</h2>
+      <p class="cta-band__text">Connect with IIC Worldwide to discuss mining investment, joint ventures, and strategic collaboration.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+        <a href="index.html#sectors" class="btn btn--outline">All Sectors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide" class="footer__brand-logo">
+          <p class="footer__brand-text">A global investment and development group based in Dubai, connecting capital, expertise, and strategic partnerships to drive growth across key markets.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Verticals</h4>
+          <a href="oil-gas.html" class="footer__link">Oil &amp; Gas Trading</a>
+          <a href="mining.html" class="footer__link">Mining</a>
+          <a href="digital-assets.html" class="footer__link">Digital Assets</a>
+          <a href="investment.html" class="footer__link">Investment</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Subsidiaries</h4>
+          <span class="footer__link">IIC Bank</span>
+          <span class="footer__link">IIC Metaverse</span>
+          <span class="footer__link">IIC Oil &amp; Gas</span>
+          <span class="footer__link">IIC General Trading</span>
+          <span class="footer__link">IIC Aviation</span>
+          <span class="footer__link">IIC Holding</span>
+          <span class="footer__link">IIC Express Gold &amp; Diamond</span>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 International Investment Consortium Worldwide. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

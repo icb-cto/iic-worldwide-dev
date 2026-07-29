@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategy &amp; Investment — IIC Worldwide</title>
+  <meta name="description" content="IIC Worldwide's investment strategy focuses on smart capital deployment, working across sectors and building long-term value in growing global markets.">
+  <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <style>
+    /* Strategic Agenda — centered layout */
+    .strategic-agenda {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .strategic-agenda .eyebrow { margin-bottom: 12px; }
+    .strategic-agenda h2 { margin-bottom: 16px; }
+    .strategic-agenda .gold-line {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 28px;
+    }
+    .strategic-agenda p {
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .strategic-agenda p + p { margin-top: 20px; }
+
+    /* Digital & Innovation — centered + cards */
+    .digital-section {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .digital-section .eyebrow { margin-bottom: 12px; }
+    .digital-section h2 { margin-bottom: 16px; }
+    .digital-section .gold-line {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 28px;
+    }
+    .digital-section p {
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .digital-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+      max-width: 1080px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .digital-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0;
+      overflow: hidden;
+      text-align: center;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+    }
+    .digital-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    .digital-card__image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: var(--bg-card-hover, rgba(0,0,0,0.04));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .digital-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .digital-card__image span {
+      color: var(--text-muted);
+      font-size: 12px;
+      font-family: var(--font-data);
+    }
+    .digital-card__body { padding: 24px 20px 28px; }
+    .digital-card__name {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .digital-card__desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .digital-cards { grid-template-columns: 1fr; }
+    }
+
+    /* Pillar — image + text layout */
+    .pillar-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .pillar-layout--img-right .pillar-layout__image { order: 2; }
+    .pillar-layout--img-right .pillar-layout__text  { order: 1; }
+
+    .pillar-layout__image {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+    }
+    .pillar-layout__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .pillar-layout__image--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-family: var(--font-data);
+    }
+    .pillar-layout__text .eyebrow { margin-bottom: 8px; }
+    .pillar-layout__text h2 { margin-bottom: 20px; }
+    .pillar-layout__text p {
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .pillar-layout__text p + p { margin-top: 16px; }
+
+    @media (max-width: 768px) {
+      .pillar-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .pillar-layout--img-right .pillar-layout__image { order: -1; }
+      .pillar-layout--img-right .pillar-layout__text  { order: 0; }
+    }
+  </style>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+        <a href="contact.html" class="nav__link">Contact Us</a>
+      </div>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+      <a href="contact.html" class="nav__link">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="eyebrow reveal">Strategy &amp; Investment</span>
+        <h1 class="page-hero__title reveal reveal-delay-1">Smart Investment, Lasting Results</h1>
+        <p class="page-hero__subtitle reveal reveal-delay-2">We invest with purpose &mdash; putting capital to work across key sectors and growing markets to create real, long-term value.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGIC INTRODUCTION -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="strategic-agenda reveal">
+        <span class="eyebrow">Strategic Agenda</span>
+        <h2>Connected Businesses, Sustainable Growth</h2>
+        <div class="gold-line"></div>
+        <p class="text-lg">IIC Worldwide takes a clear and focused approach to investment &mdash; working across multiple sectors, partnering with the right people and building businesses that deliver strong returns over time.</p>
+        <p>The Group builds connected investment platforms that bring together financial strength and hands-on delivery &mdash; making sure every project is set up to succeed commercially while also making a real difference in the communities where we operate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 1 -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="pillar-layout reveal">
+        <div class="pillar-layout__image pillar-layout__image--placeholder">
+          <img src="Media/Strategy & Investment/pillar-01-capital-deployment.jpg" alt="Capital Deployment" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>pillar-01-capital-deployment.jpg</span>';">
+        </div>
+        <div class="pillar-layout__text">
+          <h2>Capital Deployment</h2>
+          <p>A top priority for the Group is growing our presence across Africa, the Middle East and Asia by investing in infrastructure, energy and digital technology where the opportunities are strongest.</p>
+          <p>IIC typically puts in 70% of the capital needed for each project, helping reduce risk and get things moving. As the project grows and local partners prove their capability, ownership gradually shifts in their favour. The goal is simple &mdash; build businesses that can stand on their own long after our initial investment is complete.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 2 -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="pillar-layout pillar-layout--img-right reveal">
+        <div class="pillar-layout__text">
+          <h2>Cross-Sector Integration</h2>
+          <p>IIC Worldwide connects its businesses &mdash; finance, trade, energy, aviation and technology &mdash; so they work together as one coordinated system, creating more value than any single unit could alone.</p>
+          <p>In practice, this means building large-scale projects that bring together production, processing, energy, logistics and community services into one self-sustaining model. IIC provides the investment plan, strategic direction and global know-how, while local partners and workers handle the day-to-day delivery &mdash; keeping economic value rooted in the communities where we invest.</p>
+        </div>
+        <div class="pillar-layout__image pillar-layout__image--placeholder">
+          <img src="Media/Strategy & Investment/pillar-02-cross-sector-integration.jpg" alt="Cross-Sector Integration" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>pillar-02-cross-sector-integration.jpg</span>';">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 3 -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="pillar-layout reveal">
+        <div class="pillar-layout__image pillar-layout__image--placeholder">
+          <img src="Media/Strategy & Investment/pillar-03-geographic-expansion.jpg" alt="Geographic Expansion" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>pillar-03-geographic-expansion.jpg</span>';">
+        </div>
+        <div class="pillar-layout__text">
+          <h2>Geographic Expansion</h2>
+          <p>IIC Worldwide is active across Africa, the Middle East and Asia &mdash; focusing on fast-growing markets where our investment can deliver strong commercial results and make a real difference to local communities.</p>
+          <p>Every time we enter a new market, we do it with a plan &mdash; creating jobs, supporting local businesses and building long-term economic strength. We bring the capital and the strategy; local partners, entrepreneurs and workers deliver the results on the ground.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLAR 4 -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="pillar-layout pillar-layout--img-right reveal">
+        <div class="pillar-layout__text">
+          <h2>Strategic Partnerships</h2>
+          <p>IIC works closely with governments, institutions and private companies to deliver important projects across infrastructure, agriculture, energy, healthcare and education.</p>
+          <p>These partnerships go beyond money &mdash; IIC brings in the best technology from around the world, connecting projects with top expertise in areas like agricultural technology, renewable energy, digital systems and smart logistics. The result is a model that works commercially while genuinely serving the communities it is built for &mdash; creating lasting value for people, not just investors.</p>
+        </div>
+        <div class="pillar-layout__image pillar-layout__image--placeholder">
+          <img src="Media/Strategy & Investment/pillar-04-strategic-partnerships.jpg" alt="Strategic Partnerships" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>pillar-04-strategic-partnerships.jpg</span>';">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL & INNOVATION -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="digital-section reveal">
+        <span class="eyebrow">Digital &amp; Innovation</span>
+        <h2>Future-Focused, Technology-Led</h2>
+        <div class="gold-line"></div>
+        <p>We continue to invest in digital platforms, new technologies and blockchain-based financial services to keep the Group ahead of the curve in a fast-changing world.</p>
+      </div>
+      <div class="digital-cards">
+        <a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer" class="digital-card reveal" style="text-decoration: none; color: inherit;">
+          <div class="digital-card__image">
+            <img src="Media/Strategy & Investment/digital-assets.jpg" alt="Digital Assets" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>digital-assets.jpg</span>';">
+          </div>
+          <div class="digital-card__body">
+            <h3 class="digital-card__name">Digital Assets</h3>
+            <p class="digital-card__desc">Building blockchain and digital finance solutions that connect traditional investment with the future of the digital economy.</p>
+          </div>
+        </a>
+        <a href="https://iicplanet.com/" target="_blank" rel="noopener noreferrer" class="digital-card reveal reveal-delay-1" style="text-decoration: none; color: inherit;">
+          <div class="digital-card__image">
+            <img src="Media/Strategy & Investment/project-platform.jpg" alt="Project Platform" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>project-platform.jpg</span>';">
+          </div>
+          <div class="digital-card__body">
+            <h3 class="digital-card__name">Project Platform</h3>
+            <p class="digital-card__desc">Driving sustainable development through responsible investment, supporting projects that protect the environment, strengthen communities, and create long-term economic value.</p>
+          </div>
+        </a>
+        <a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" class="digital-card reveal reveal-delay-2" style="text-decoration: none; color: inherit;">
+          <div class="digital-card__image">
+            <img src="Media/Strategy & Investment/financial-platform.jpg" alt="Financial Platform" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>financial-platform.jpg</span>';">
+          </div>
+          <div class="digital-card__body">
+            <h3 class="digital-card__name">Financial Platform</h3>
+            <p class="digital-card__desc">Providing secure banking and financial solutions that support businesses, enable cross-border transactions, and promote financial growth across emerging markets.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROUP POSITIONING STATEMENT -->
+  <section class="pull-quote">
+    <div class="container--narrow reveal">
+      <span class="eyebrow" style="text-align: center; display: block; margin-bottom: 32px;">Group Positioning</span>
+      <p class="pull-quote__text" style="font-style: normal; font-size: clamp(18px, 2vw, 22px); line-height: 1.7;">At IIC Worldwide, we believe investment should do more than generate returns &mdash; it should drive growth, open doors and support long-term development. By combining deep industry knowledge, shared investment and global technology partnerships with a genuine commitment to local communities, we continue to grow across key markets, building a diverse portfolio that is both strong and forward-looking.</p>
+      <p style="color: var(--text-muted); text-align: center; margin-top: 24px; max-width: 700px; margin-left: auto; margin-right: auto;">As markets change, IIC Worldwide stays focused on finding the next wave of opportunities &mdash; investing where it matters, delivering where it counts, and leaving lasting value in every market we enter.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2 class="cta-band__title">Invest With IIC Worldwide</h2>
+      <p class="cta-band__text">Explore investment opportunities and partnerships across our global portfolio.</p>
+      <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide" class="footer__brand-logo">
+          <p class="footer__brand-text">A global investment and development group based in Dubai, connecting capital, expertise, and strategic partnerships to drive growth across key markets.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Verticals</h4>
+          <a href="oil-gas.html" class="footer__link">Oil &amp; Gas Trading</a>
+          <a href="mining.html" class="footer__link">Mining</a>
+          <a href="digital-assets.html" class="footer__link">Digital Assets</a>
+          <a href="investment.html" class="footer__link">Investment</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Subsidiaries</h4>
+          <span class="footer__link">IIC Bank</span>
+          <span class="footer__link">IIC Metaverse</span>
+          <span class="footer__link">IIC Oil &amp; Gas</span>
+          <span class="footer__link">IIC General Trading</span>
+          <span class="footer__link">IIC Aviation</span>
+          <span class="footer__link">IIC Holding</span>
+          <span class="footer__link">IIC Express Gold &amp; Diamond</span>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 International Investment Consortium Worldwide. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

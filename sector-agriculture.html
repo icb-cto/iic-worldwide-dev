@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agriculture — IIC Worldwide</title>
+  <meta name="description" content="IIC Worldwide supports productive, sustainable, and technology-enabled agricultural ecosystems through infrastructure, innovation, supply-chain coordination, and responsible resource management.">
+  <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero--bg {
+      background: url('Media/Sectors/Agriculture.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    .page-hero--bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 36, 32, 0.55);
+    }
+    .page-hero--bg .page-hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero--bg .eyebrow,
+    .page-hero--bg .eyebrow a {
+      color: var(--gold) !important;
+    }
+    .page-hero--bg .page-hero__title {
+      color: #fff;
+    }
+    .page-hero--bg .page-hero__subtitle {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .mining-section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+    .mining-section-header .eyebrow {
+      margin-bottom: 12px;
+    }
+    .mining-section-header h2 {
+      margin-bottom: 16px;
+    }
+    .mining-section-header p {
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .mining-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .mining-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 32px 28px;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+    }
+    .mining-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    .mining-card__icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+    .mining-card__icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .mining-card__title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .mining-card__desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .mining-card__areas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .mining-card__areas li {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--bg-card-hover, rgba(0,0,0,0.04));
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 5px 14px;
+      white-space: nowrap;
+    }
+    @media (max-width: 1024px) {
+      .mining-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .mining-cards { grid-template-columns: 1fr; }
+      .mining-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+        <a href="contact.html" class="nav__link">Contact Us</a>
+      </div>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+      <a href="contact.html" class="nav__link">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--bg">
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="eyebrow reveal"><a href="index.html">Sectors</a> &mdash; Agriculture</span>
+        <h1 class="page-hero__title reveal reveal-delay-1">Agriculture</h1>
+        <p class="page-hero__subtitle reveal reveal-delay-2">Advancing productive, sustainable, and technology-enabled agricultural ecosystems through infrastructure, innovation, supply-chain coordination, and responsible resource management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="content-split">
+        <div class="reveal">
+          <span class="eyebrow">Sector Overview</span>
+          <h2>Feeding the Future</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Agriculture is fundamental to food security, economic development, employment, and the long-term resilience of communities. Beyond food production, the sector supplies raw materials to industries, supports rural livelihoods, contributes to trade, and strengthens national and regional economies.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">As populations grow and pressures such as climate change, water scarcity, soil degradation, and supply-chain disruption become more significant, agriculture must continue to evolve.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Innovation is transforming how food and agricultural products are grown, processed, stored, and distributed. Precision farming, smart irrigation, artificial intelligence, controlled-environment agriculture, biotechnology, and digital monitoring tools can improve productivity while reducing waste and environmental impact.</p>
+          <p style="color: var(--text-muted);">IIC supports the development of productive, sustainable, and technology-enabled agricultural ecosystems. Our approach brings together operational capability, infrastructure, innovation, supply-chain coordination, market access, and responsible resource management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAJOR SECTORS -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="mining-section-header reveal">
+        <span class="eyebrow">Major Agriculture Sectors</span>
+        <h2>Feeding the Future</h2>
+        <p>We work across the broader agricultural ecosystem, supporting activities related to crop production, horticulture, livestock, fisheries, agricultural technology, processing, infrastructure, trading, renewable energy, and research.</p>
+      </div>
+      <div class="mining-cards">
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 44V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 20c-4-8-14-8-14 0s10 8 14 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 20c4-8 14-8 14 0s-10 8-14 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 38h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 42h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Crop Production</h3>
+          <p class="mining-card__desc">The cultivation of crops for food, animal feed, fibre, fuel, industrial use, and international trade.</p>
+          <ul class="mining-card__areas">
+            <li>Cereals and grains</li>
+            <li>Pulses and legumes</li>
+            <li>Oilseed crops</li>
+            <li>Root and tuber crops</li>
+            <li>Cash crops</li>
+            <li>Plantation crops</li>
+            <li>Industrial crops</li>
+            <li>Medicinal and aromatic plants</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2"/><path d="M24 24v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 32h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 16c0-2 2-4 4-4s4 2 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 42h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Horticulture</h3>
+          <p class="mining-card__desc">The production of fruits, vegetables, flowers, herbs, and other high-value crops.</p>
+          <ul class="mining-card__areas">
+            <li>Fruit farming</li>
+            <li>Vegetable production</li>
+            <li>Floriculture</li>
+            <li>Greenhouse cultivation</li>
+            <li>Nursery operations</li>
+            <li>Medicinal plants</li>
+            <li>Herbs and spices</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="24" cy="28" rx="14" ry="8" stroke="currentColor" stroke-width="2"/><path d="M24 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="11" r="3" stroke="currentColor" stroke-width="2"/><path d="M16 24c-2-4 0-8 4-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M32 24c2-4 0-8-4-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 36l-2 6M30 36l2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Livestock and Animal Production</h3>
+          <p class="mining-card__desc">The breeding and raising of animals for meat, dairy, eggs, fibre, and other agricultural products.</p>
+          <ul class="mining-card__areas">
+            <li>Cattle farming</li>
+            <li>Dairy production</li>
+            <li>Sheep farming</li>
+            <li>Goat farming</li>
+            <li>Poultry farming</li>
+            <li>Pig farming</li>
+            <li>Animal-breeding programmes</li>
+            <li>Feedlot operations</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 32c4-4 8 0 12-4s8 0 12-4 8 0 8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 38c4-4 8 0 12-4s8 0 12-4 8 0 8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 28l-2-6 4 2 4-8 4 8 4-2-2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Aquaculture and Fisheries</h3>
+          <p class="mining-card__desc">The cultivation, harvesting, and processing of fish and other aquatic species for local and international markets.</p>
+          <ul class="mining-card__areas">
+            <li>Fish farming</li>
+            <li>Shrimp farming</li>
+            <li>Shellfish production</li>
+            <li>Marine aquaculture</li>
+            <li>Inland fisheries</li>
+            <li>Hatchery operations</li>
+            <li>Fish-processing facilities</li>
+            <li>Aquatic feed production</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="6" width="28" height="36" rx="3" stroke="currentColor" stroke-width="2"/><path d="M18 16h12M18 22h12M18 28h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="34" r="6" stroke="currentColor" stroke-width="2"/><path d="M32 31v3h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Agricultural Technology and Smart Farming</h3>
+          <p class="mining-card__desc">The use of digital tools, automation, and advanced technologies to improve productivity, efficiency, and decision-making.</p>
+          <ul class="mining-card__areas">
+            <li>Precision agriculture</li>
+            <li>Smart-irrigation systems</li>
+            <li>Agricultural drones</li>
+            <li>Artificial-intelligence solutions</li>
+            <li>Internet of Things monitoring</li>
+            <li>Farm automation</li>
+            <li>Agricultural robotics</li>
+            <li>Agricultural data analytics</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="10" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 18h32" stroke="currentColor" stroke-width="2"/><path d="M20 18v20M28 18v20" stroke="currentColor" stroke-width="2"/><path d="M14 14v-4M34 14v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 26l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Controlled-Environment Agriculture</h3>
+          <p class="mining-card__desc">Production systems that use managed growing conditions to improve yield, consistency, and resource efficiency.</p>
+          <ul class="mining-card__areas">
+            <li>Greenhouse farming</li>
+            <li>Hydroponics</li>
+            <li>Aeroponics</li>
+            <li>Vertical farming</li>
+            <li>Indoor agriculture</li>
+            <li>Climate-controlled production</li>
+            <li>Aquaponics</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 44V24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 24c-6-2-10-10-6-16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 24c6-2 10-10 6-16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 30c-4-1-8-6-5-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 30c4-1 8-6 5-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 44h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Agroforestry and Forestry</h3>
+          <p class="mining-card__desc">The responsible management of trees, forest resources, and integrated land-use systems.</p>
+          <ul class="mining-card__areas">
+            <li>Commercial forestry</li>
+            <li>Timber production</li>
+            <li>Fruit-tree plantations</li>
+            <li>Bamboo cultivation</li>
+            <li>Agroforestry systems</li>
+            <li>Reforestation programmes</li>
+            <li>Forest restoration</li>
+            <li>Carbon-forestry initiatives</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="22" width="36" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M14 22v-8a4 4 0 014-4h12a4 4 0 014 4v8" stroke="currentColor" stroke-width="2"/><path d="M6 30h36" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="36" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="mining-card__title">Agricultural Processing and Value Addition</h3>
+          <p class="mining-card__desc">The transformation of raw agricultural products into packaged, processed, or higher-value goods.</p>
+          <ul class="mining-card__areas">
+            <li>Food processing</li>
+            <li>Dairy processing</li>
+            <li>Grain milling</li>
+            <li>Fruit processing</li>
+            <li>Vegetable processing</li>
+            <li>Meat processing</li>
+            <li>Packaging facilities</li>
+            <li>Cold-storage operations</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 40h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 40V20l16-12 16 12v20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 40V30h12v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 24h4v4h-4z" stroke="currentColor" stroke-width="2"/><path d="M30 24h4v4h-4z" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="mining-card__title">Agricultural Infrastructure</h3>
+          <p class="mining-card__desc">The physical systems required to support production, storage, transport, and access to markets.</p>
+          <ul class="mining-card__areas">
+            <li>Irrigation networks</li>
+            <li>Reservoirs and water systems</li>
+            <li>Warehouses</li>
+            <li>Grain silos</li>
+            <li>Cold-chain facilities</li>
+            <li>Distribution centres</li>
+            <li>Agricultural logistics</li>
+            <li>Rural access infrastructure</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/><path d="M24 8c-4 4-4 12 0 16s4 12 0 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 8c4 4 4 12 0 16s-4 12 0 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 18h28M10 30h28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Sustainable and Climate-Smart Agriculture</h3>
+          <p class="mining-card__desc">Farming practices designed to protect natural resources, improve resilience, and support long-term productivity.</p>
+          <ul class="mining-card__areas">
+            <li>Organic agriculture</li>
+            <li>Regenerative farming</li>
+            <li>Soil conservation</li>
+            <li>Water conservation</li>
+            <li>Carbon farming</li>
+            <li>Integrated pest management</li>
+            <li>Renewable energy for farms</li>
+            <li>Climate-resilience programmes</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 38V18l6-8h12l6 8v20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 26h24" stroke="currentColor" stroke-width="2"/><path d="M8 38h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="32" r="2" stroke="currentColor" stroke-width="2"/><circle cx="28" cy="32" r="2" stroke="currentColor" stroke-width="2"/><path d="M22 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Agricultural Inputs and Equipment</h3>
+          <p class="mining-card__desc">The production and supply of materials, machinery, and technologies required for agricultural activity.</p>
+          <ul class="mining-card__areas">
+            <li>Fertiliser production</li>
+            <li>Seed development</li>
+            <li>Agricultural chemicals</li>
+            <li>Biofertilisers</li>
+            <li>Biopesticides</li>
+            <li>Animal-feed production</li>
+            <li>Farm machinery</li>
+            <li>Irrigation equipment</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 36h36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="10" y="20" width="28" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M10 28h28" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="40" r="3" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="40" r="3" stroke="currentColor" stroke-width="2"/><path d="M18 14l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Agricultural Trading and Distribution</h3>
+          <p class="mining-card__desc">Commercial systems supporting the sourcing, storage, movement, and sale of agricultural commodities.</p>
+          <ul class="mining-card__areas">
+            <li>Commodity trading</li>
+            <li>Export operations</li>
+            <li>Import and distribution</li>
+            <li>Agricultural marketplaces</li>
+            <li>Commodity storage</li>
+            <li>Supply-chain management</li>
+            <li>Wholesale distribution</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2"/><path d="M24 14v-6M24 40v-6M34 24h6M8 24h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M31 17l4-4M13 35l4-4M31 31l4 4M13 13l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 26l4-6 4 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Renewable Energy for Agriculture</h3>
+          <p class="mining-card__desc">Energy systems that support farming operations, processing facilities, and more sustainable rural production.</p>
+          <ul class="mining-card__areas">
+            <li>Solar-powered irrigation</li>
+            <li>Biogas systems</li>
+            <li>Biomass energy</li>
+            <li>Agricultural waste-to-energy</li>
+            <li>Farm-energy systems</li>
+            <li>Solar cold storage</li>
+            <li>Renewable-powered processing</li>
+            <li>Hybrid rural energy systems</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 8h24v32H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M32 16h8v24h-8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 16h12M14 22h12M14 28h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 36l3-4 3 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="36" cy="24" r="2" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="mining-card__title">Agricultural Research, Education, and Innovation</h3>
+          <p class="mining-card__desc">Institutions and programmes that advance agricultural knowledge, technical skills, and production methods.</p>
+          <ul class="mining-card__areas">
+            <li>Agricultural research centres</li>
+            <li>Agricultural universities</li>
+            <li>Seed-research programmes</li>
+            <li>Biotechnology research</li>
+            <li>Farmer-training centres</li>
+            <li>Agricultural innovation hubs</li>
+            <li>Demonstration farms</li>
+            <li>Extension and advisory services</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="content-split reveal" style="align-items: center;">
+        <div>
+          <span class="eyebrow">Our Approach</span>
+          <h2>Integrated Agricultural Development</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">IIC takes an integrated view of agriculture, recognising that successful agricultural systems depend on more than production alone. They require reliable infrastructure, access to technology, skilled operators, efficient logistics, strong markets, responsible resource use, and coordination across the full value chain.</p>
+          <div class="opportunities">
+            <span class="opportunity-tag">Food Security</span>
+            <span class="opportunity-tag">Sustainable Land &amp; Water</span>
+            <span class="opportunity-tag">Climate Resilience</span>
+            <span class="opportunity-tag">Technology Adoption</span>
+            <span class="opportunity-tag">Processing &amp; Value Addition</span>
+            <span class="opportunity-tag">Storage &amp; Logistics</span>
+            <span class="opportunity-tag">Market Access</span>
+            <span class="opportunity-tag">Rural Employment</span>
+            <span class="opportunity-tag">Research &amp; Innovation</span>
+            <span class="opportunity-tag">Long-Term Value</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.7;">IIC is committed to contributing to productive, resilient, and future-ready agricultural systems. Our activities span crop production, horticulture, livestock, fisheries, agricultural technology, processing, infrastructure, trading, renewable energy, and research.</p>
+        <p style="color: var(--text-muted); line-height: 1.7;">By combining operational coordination, technology, infrastructure capability, supply-chain expertise, and strategic collaboration, we aim to support agricultural systems that strengthen food security, improve rural livelihoods, expand market access, and contribute to sustainable economic growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2 class="cta-band__title">Explore Agricultural Partnerships</h2>
+      <p class="cta-band__text">Connect with IIC Worldwide to discuss agricultural investment, development, and strategic collaboration.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+        <a href="index.html#sectors" class="btn btn--outline">All Sectors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide" class="footer__brand-logo">
+          <p class="footer__brand-text">A global investment and development group based in Dubai, connecting capital, expertise, and strategic partnerships to drive growth across key markets.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Verticals</h4>
+          <a href="oil-gas.html" class="footer__link">Oil &amp; Gas Trading</a>
+          <a href="mining.html" class="footer__link">Mining</a>
+          <a href="digital-assets.html" class="footer__link">Digital Assets</a>
+          <a href="investment.html" class="footer__link">Investment</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Subsidiaries</h4>
+          <span class="footer__link">IIC Bank</span>
+          <span class="footer__link">IIC Metaverse</span>
+          <span class="footer__link">IIC Oil &amp; Gas</span>
+          <span class="footer__link">IIC General Trading</span>
+          <span class="footer__link">IIC Aviation</span>
+          <span class="footer__link">IIC Holding</span>
+          <span class="footer__link">IIC Express Gold &amp; Diamond</span>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 International Investment Consortium Worldwide. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

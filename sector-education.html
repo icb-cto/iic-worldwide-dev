@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education — IIC Worldwide</title>
+  <meta name="description" content="IIC Worldwide supports accessible, inclusive, and future-ready education ecosystems through learning infrastructure, technology, skills development, research, and international collaboration.">
+  <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero--bg {
+      background: url('Media/Sectors/Education.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    .page-hero--bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 36, 32, 0.55);
+    }
+    .page-hero--bg .page-hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero--bg .eyebrow,
+    .page-hero--bg .eyebrow a {
+      color: var(--gold) !important;
+    }
+    .page-hero--bg .page-hero__title {
+      color: #fff;
+    }
+    .page-hero--bg .page-hero__subtitle {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .mining-section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+    .mining-section-header .eyebrow {
+      margin-bottom: 12px;
+    }
+    .mining-section-header h2 {
+      margin-bottom: 16px;
+    }
+    .mining-section-header p {
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .mining-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .mining-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 32px 28px;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+    }
+    .mining-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    .mining-card__icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+    .mining-card__icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .mining-card__title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .mining-card__desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .mining-card__areas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .mining-card__areas li {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--bg-card-hover, rgba(0,0,0,0.04));
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 5px 14px;
+      white-space: nowrap;
+    }
+    @media (max-width: 1024px) {
+      .mining-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .mining-cards { grid-template-columns: 1fr; }
+      .mining-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+        <a href="contact.html" class="nav__link">Contact Us</a>
+      </div>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+      <a href="contact.html" class="nav__link">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--bg">
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="eyebrow reveal"><a href="index.html">Sectors</a> &mdash; Education</span>
+        <h1 class="page-hero__title reveal reveal-delay-1">Education</h1>
+        <p class="page-hero__subtitle reveal reveal-delay-2">Supporting accessible, inclusive, and future-ready education ecosystems through learning infrastructure, technology, skills development, research, and international collaboration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="content-split">
+        <div class="reveal">
+          <span class="eyebrow">Sector Overview</span>
+          <h2>Empowering Through Learning</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Education is a powerful foundation for social progress, economic participation, and individual opportunity. It equips people with the knowledge, skills, confidence, and capabilities needed to improve their lives, contribute to their communities, and participate in an increasingly connected global economy.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">As societies become more digital, knowledge-based, and technology-driven, access to relevant and high-quality education has become increasingly important. Yet many learners continue to face barriers caused by limited infrastructure, insufficient resources, and unequal access to technology.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Addressing these challenges requires modern learning environments, digital platforms, vocational pathways, research institutions, inclusive education, teacher development, and lifelong learning opportunities.</p>
+          <p style="color: var(--text-muted);">IIC supports the development of accessible, inclusive, and future-ready education ecosystems. Our approach brings together learning infrastructure, technology, skills development, research, institutional capacity, and international collaboration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAJOR EDUCATION SECTORS -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="mining-section-header reveal">
+        <span class="eyebrow">Major Education Sectors</span>
+        <h2>Empowering Through Learning</h2>
+        <p>We work across the broader education ecosystem, supporting activities related to early learning, schools, universities, technical education, digital platforms, research, educational infrastructure, workforce development, and international collaboration.</p>
+      </div>
+      <div class="mining-cards">
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="16" r="6" stroke="currentColor" stroke-width="2"/><path d="M16 34c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 42h28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 10l4-6 4 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Early Childhood Education</h3>
+          <p class="mining-card__desc">Learning environments that support cognitive, social, emotional, and physical development during the earliest stages of life.</p>
+          <ul class="mining-card__areas">
+            <li>Preschools</li>
+            <li>Kindergartens</li>
+            <li>Child-development centres</li>
+            <li>Early-learning academies</li>
+            <li>Montessori schools</li>
+            <li>School-readiness programmes</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2"/><path d="M24 12V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 12V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M32 12V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 22h20M14 30h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Primary and Secondary Education</h3>
+          <p class="mining-card__desc">Institutions and programmes that provide foundational and advanced learning for school-age students.</p>
+          <ul class="mining-card__areas">
+            <li>Primary schools</li>
+            <li>Secondary schools</li>
+            <li>International schools</li>
+            <li>Private schools</li>
+            <li>Boarding schools</li>
+            <li>Integrated school campuses</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6l18 10v4H6v-4L24 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 20v18M18 20v18M30 20v18M38 20v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 38h36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 42h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Higher Education</h3>
+          <p class="mining-card__desc">Institutions delivering undergraduate, postgraduate, professional, and research-based academic programmes.</p>
+          <ul class="mining-card__areas">
+            <li>Universities</li>
+            <li>Colleges</li>
+            <li>Business schools</li>
+            <li>Professional institutes</li>
+            <li>Research universities</li>
+            <li>Specialist academies</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 36V20l-4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 36V24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M28 36V18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M36 36V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="28" cy="10" r="4" stroke="currentColor" stroke-width="2"/><path d="M8 42h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Technical and Vocational Education</h3>
+          <p class="mining-card__desc">Practical training programmes designed to prepare learners for skilled employment, technical careers, and industry-specific roles.</p>
+          <ul class="mining-card__areas">
+            <li>Vocational training centres</li>
+            <li>Technical institutes</li>
+            <li>Trade schools</li>
+            <li>Skills-development centres</li>
+            <li>Apprenticeship programmes</li>
+            <li>Industry certification academies</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="10" width="32" height="22" rx="2" stroke="currentColor" stroke-width="2"/><path d="M18 38h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 32v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 18l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Digital Learning and Educational Technology</h3>
+          <p class="mining-card__desc">Technology-enabled learning systems that improve access, flexibility, personalisation, and delivery.</p>
+          <ul class="mining-card__areas">
+            <li>E-learning platforms</li>
+            <li>Learning-management systems</li>
+            <li>Educational applications</li>
+            <li>Virtual classrooms</li>
+            <li>Artificial-intelligence learning tools</li>
+            <li>Digital content platforms</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="18" width="28" height="22" rx="2" stroke="currentColor" stroke-width="2"/><path d="M24 8l10 10H14L24 8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 28h12M18 34h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Educational Infrastructure</h3>
+          <p class="mining-card__desc">The development and modernisation of facilities that support teaching, research, student life, and academic administration.</p>
+          <ul class="mining-card__areas">
+            <li>School construction</li>
+            <li>Campus development</li>
+            <li>Student accommodation</li>
+            <li>Libraries</li>
+            <li>Laboratories</li>
+            <li>Research facilities</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 40V22M24 40V14M34 40V26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="18" r="4" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="10" r="4" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="22" r="4" stroke="currentColor" stroke-width="2"/><path d="M8 44h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Professional and Workforce Development</h3>
+          <p class="mining-card__desc">Programmes designed to strengthen workplace capability, leadership, technical knowledge, and career progression.</p>
+          <ul class="mining-card__areas">
+            <li>Corporate training centres</li>
+            <li>Leadership-development programmes</li>
+            <li>Executive education</li>
+            <li>Professional certification</li>
+            <li>Workforce upskilling</li>
+            <li>Continuing professional development</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="16" r="6" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="18" r="4" stroke="currentColor" stroke-width="2"/><path d="M8 38c0-5.5 5.4-10 12-10s12 4.5 12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M34 26c3.3 0 6 2.2 6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 14l2-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Special and Inclusive Education</h3>
+          <p class="mining-card__desc">Learning environments and support systems designed to meet a wide range of educational, physical, and developmental needs.</p>
+          <ul class="mining-card__areas">
+            <li>Special-education centres</li>
+            <li>Inclusive-learning programmes</li>
+            <li>Learning-support services</li>
+            <li>Assistive technologies</li>
+            <li>Disability-support programmes</li>
+            <li>Individualised education services</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2"/><path d="M24 14v-8M24 42v-8M14 24H6M42 24h-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 24l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Research and Innovation</h3>
+          <p class="mining-card__desc">Institutions and programmes that advance knowledge, scientific discovery, technology development, and academic collaboration.</p>
+          <ul class="mining-card__areas">
+            <li>Research centres</li>
+            <li>Innovation hubs</li>
+            <li>Academic institutes</li>
+            <li>STEM research programmes</li>
+            <li>Applied-research initiatives</li>
+            <li>Technology-transfer centres</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12h24v28H12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 18h12M18 24h12M18 30h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 8h4v4M36 8h4v4M8 36h4v4M36 36h4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Community and Lifelong Learning</h3>
+          <p class="mining-card__desc">Programmes that support continuous education, literacy, personal development, and community participation at every stage of life.</p>
+          <ul class="mining-card__areas">
+            <li>Adult-education centres</li>
+            <li>Community-learning programmes</li>
+            <li>Literacy initiatives</li>
+            <li>Continuing-education programmes</li>
+            <li>Lifelong-learning platforms</li>
+            <li>Public learning centres</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8h20l8 8v28H10V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M30 8v8h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 22h16M16 28h16M16 34h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Educational Publishing and Content</h3>
+          <p class="mining-card__desc">The creation and distribution of learning materials, curricula, media, and academic resources.</p>
+          <ul class="mining-card__areas">
+            <li>Textbook publishing</li>
+            <li>Digital-content development</li>
+            <li>Curriculum design</li>
+            <li>Educational-media production</li>
+            <li>Academic publications</li>
+            <li>Learning-resource platforms</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 34c-6.6 0-12-5.4-12-12s5.4-12 12-12 12 5.4 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 18v6l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 36l4 4 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">Student Support and Well-Being</h3>
+          <p class="mining-card__desc">Services that improve academic performance, personal development, career readiness, and student welfare.</p>
+          <ul class="mining-card__areas">
+            <li>Career-guidance centres</li>
+            <li>Student counselling</li>
+            <li>Academic-support services</li>
+            <li>Scholarship programmes</li>
+            <li>Student-exchange services</li>
+            <li>Mentorship programmes</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 38V28l-6 4V18l6 4V12h20v26H14z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="24" cy="20" r="4" stroke="currentColor" stroke-width="2"/><path d="M20 30h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M38 16l4-4M38 24h6M38 32l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">STEM and Innovation Education</h3>
+          <p class="mining-card__desc">Learning programmes focused on science, technology, engineering, mathematics, and entrepreneurship.</p>
+          <ul class="mining-card__areas">
+            <li>STEM academies</li>
+            <li>Robotics education</li>
+            <li>Coding schools</li>
+            <li>Artificial-intelligence training</li>
+            <li>Innovation programmes</li>
+            <li>Entrepreneurship education</li>
+          </ul>
+        </div>
+
+        <div class="mining-card reveal">
+          <div class="mining-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/><ellipse cx="24" cy="24" rx="8" ry="16" stroke="currentColor" stroke-width="2"/><path d="M8 24h32" stroke="currentColor" stroke-width="2"/><path d="M10 16h28M10 32h28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="mining-card__title">International and Cross-Border Education</h3>
+          <p class="mining-card__desc">Educational initiatives that support global cooperation, institutional partnerships, student mobility, and international learning.</p>
+          <ul class="mining-card__areas">
+            <li>International campuses</li>
+            <li>Student-exchange programmes</li>
+            <li>Cross-border learning initiatives</li>
+            <li>International accreditation support</li>
+            <li>Global education partnerships</li>
+            <li>Joint academic programmes</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="content-split reveal" style="align-items: center;">
+        <div>
+          <span class="eyebrow">Our Approach</span>
+          <h2>Integrated Education Development</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">IIC takes an integrated view of education, recognising that strong learning outcomes depend on more than physical institutions alone. They require skilled educators, relevant curricula, appropriate technology, inclusive systems, strong governance, and pathways that connect learning with employment and wider economic participation.</p>
+          <div class="opportunities">
+            <span class="opportunity-tag">Accessible Education</span>
+            <span class="opportunity-tag">Quality Teaching</span>
+            <span class="opportunity-tag">Digital Transformation</span>
+            <span class="opportunity-tag">Technical Skills</span>
+            <span class="opportunity-tag">Workforce Development</span>
+            <span class="opportunity-tag">Student Well-Being</span>
+            <span class="opportunity-tag">Research &amp; Innovation</span>
+            <span class="opportunity-tag">International Collaboration</span>
+            <span class="opportunity-tag">Employment Alignment</span>
+            <span class="opportunity-tag">Lifelong Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.7;">IIC is committed to contributing to inclusive, modern, and resilient education systems. Our activities span early learning, schools, universities, technical education, digital platforms, research, educational infrastructure, workforce development, and international collaboration.</p>
+        <p style="color: var(--text-muted); line-height: 1.7;">By combining institutional development, technology, skills training, infrastructure capability, and strategic cooperation, we aim to support learning environments that expand opportunity, strengthen communities, and prepare people for the evolving needs of society and the global economy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2 class="cta-band__title">Explore Education Partnerships</h2>
+      <p class="cta-band__text">Connect with IIC Worldwide to discuss education investment, development, and strategic collaboration.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+        <a href="index.html#sectors" class="btn btn--outline">All Sectors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide" class="footer__brand-logo">
+          <p class="footer__brand-text">A global investment and development group based in Dubai, connecting capital, expertise, and strategic partnerships to drive growth across key markets.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Verticals</h4>
+          <a href="oil-gas.html" class="footer__link">Oil &amp; Gas Trading</a>
+          <a href="mining.html" class="footer__link">Mining</a>
+          <a href="digital-assets.html" class="footer__link">Digital Assets</a>
+          <a href="investment.html" class="footer__link">Investment</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Subsidiaries</h4>
+          <span class="footer__link">IIC Bank</span>
+          <span class="footer__link">IIC Metaverse</span>
+          <span class="footer__link">IIC Oil &amp; Gas</span>
+          <span class="footer__link">IIC General Trading</span>
+          <span class="footer__link">IIC Aviation</span>
+          <span class="footer__link">IIC Holding</span>
+          <span class="footer__link">IIC Express Gold &amp; Diamond</span>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 International Investment Consortium Worldwide. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
