@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIC General Trading</title>
+  <meta name="description" content="IIC General Trading is an international trading and supply-chain company connecting buyers, suppliers, manufacturers, and industries across global markets.">
+  <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ============================================================
+       IIC GENERAL TRADING — Page Styles
+       ============================================================ */
+
+    /* Hero */
+    .trading-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      background: linear-gradient(160deg, #0E1B16 0%, #1A3A33 40%, #1F443C 100%);
+      overflow: hidden;
+      color: #FFFFFF;
+    }
+    .trading-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(196, 154, 60, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(196, 154, 60, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .trading-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(196, 154, 60, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196, 154, 60, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .trading-hero__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .trading-hero__content { max-width: 600px; }
+    .trading-hero__eyebrow {
+      font-family: var(--font-data);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .trading-hero__title {
+      font-family: var(--font-primary);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .trading-hero__subtitle {
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .trading-hero__desc {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #9AB5AD;
+      margin-bottom: 32px;
+    }
+    .trading-hero__buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .trading-hero__logo-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .trading-hero__logo-img {
+      max-width: 420px;
+      width: 100%;
+      filter: drop-shadow(0 8px 40px rgba(196, 154, 60, 0.15));
+    }
+
+    /* About */
+    .trading-about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .trading-about__image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .trading-about__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .trading-about__image span {
+      color: var(--text-muted);
+      font-size: 13px;
+      font-family: var(--font-data);
+    }
+    .trading-about__text h2 { margin-bottom: 24px; }
+    .trading-about__text p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .trading-about__text p:last-child { margin-bottom: 0; }
+
+    /* Services */
+    .trading-services-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+    .trading-services-header h2 { margin-bottom: 16px; }
+    .trading-svc-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .trading-svc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+    }
+    .trading-svc-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+    .trading-svc-card__image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: var(--bg-card-hover, rgba(0,0,0,0.04));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .trading-svc-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .trading-svc-card__image span {
+      color: var(--text-muted);
+      font-size: 12px;
+      font-family: var(--font-data);
+    }
+    .trading-svc-card__body { padding: 28px 24px 32px; }
+    .trading-svc-card__icon {
+      width: 44px;
+      height: 44px;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .trading-svc-card__icon svg { width: 100%; height: 100%; }
+    .trading-svc-card__title {
+      font-family: var(--font-primary);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .trading-svc-card__desc {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* Core Sectors */
+    .trading-sectors-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+    .trading-sectors-header h2 { margin-bottom: 16px; }
+    .trading-sector-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .trading-sector-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 32px 28px;
+      text-align: center;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+    }
+    .trading-sector-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+    .trading-sector-card__icon {
+      width: 48px;
+      height: 48px;
+      color: var(--gold);
+      margin: 0 auto 20px;
+    }
+    .trading-sector-card__icon svg { width: 100%; height: 100%; }
+    .trading-sector-card__title {
+      font-family: var(--font-primary);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* Vision & Mission */
+    .trading-vm {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .trading-vm__card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 48px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .trading-vm__card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold);
+    }
+    .trading-vm__label {
+      font-family: var(--font-data);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-text);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .trading-vm__card h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .trading-vm__card p {
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* Contact */
+    .trading-contact__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .trading-contact__info h2 { margin-bottom: 20px; }
+    .trading-contact__info > p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .trading-contact__detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .trading-contact__detail svg {
+      width: 24px;
+      height: 24px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .trading-contact__detail span {
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+    .trading-contact__form {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 40px;
+    }
+    .trading-contact__form h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--text-dark);
+    }
+    .trading-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .trading-form-group { margin-bottom: 16px; }
+    .trading-form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .trading-form-group input,
+    .trading-form-group textarea,
+    .trading-form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      color: var(--text-dark);
+      background: var(--bg-primary);
+      transition: border-color var(--duration) var(--ease);
+    }
+    .trading-form-group input:focus,
+    .trading-form-group textarea:focus,
+    .trading-form-group select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .trading-form-group textarea { resize: vertical; min-height: 120px; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .trading-svc-cards { grid-template-columns: repeat(2, 1fr); }
+      .trading-sector-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .trading-hero { min-height: auto; padding: 120px 0 60px; }
+      .trading-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+      .trading-hero__logo-side { order: -1; }
+      .trading-hero__logo-img { max-width: 240px; }
+      .trading-about { grid-template-columns: 1fr; gap: 32px; }
+      .trading-svc-cards { grid-template-columns: 1fr; }
+      .trading-sector-cards { grid-template-columns: 1fr; }
+      .trading-vm { grid-template-columns: 1fr; }
+      .trading-vm__card { padding: 32px 24px; }
+      .trading-contact__grid { grid-template-columns: 1fr; gap: 32px; }
+      .trading-contact__form { padding: 28px 20px; }
+      .trading-form-row { grid-template-columns: 1fr; }
+      .trading-hero__buttons { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+        <a href="contact.html" class="nav__link">Contact Us</a>
+      </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+      <a href="contact.html" class="nav__link">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="trading-hero">
+    <div class="container">
+      <div class="trading-hero__inner">
+        <div class="trading-hero__content">
+          <span class="trading-hero__eyebrow reveal">IIC General Trading</span>
+          <h1 class="trading-hero__title reveal reveal-delay-1">Reaching Beyond Borders</h1>
+          <p class="trading-hero__subtitle reveal reveal-delay-1">International Trading &amp; Supply Chain Solutions</p>
+          <p class="trading-hero__desc reveal reveal-delay-2">IIC General Trading is an international trading and supply-chain company connecting buyers, suppliers, manufacturers, and industries across global markets. We deliver reliable sourcing, procurement, logistics, distribution, and commercial trading solutions for commodities, industrial materials, and commercial goods.</p>
+          <div class="trading-hero__buttons reveal reveal-delay-2">
+            <a href="#services" class="btn btn--primary">Explore Our Services</a>
+            <a href="#contact" class="btn btn--outline" style="color: var(--gold); border-color: var(--gold-border);">Contact Us</a>
+          </div>
+        </div>
+        <div class="trading-hero__logo-side reveal reveal-delay-1">
+          <img src="Media/IIC General Trading/Logo.png" alt="IIC General Trading" class="trading-hero__logo-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about" class="section section--primary">
+    <div class="container">
+      <div class="trading-about">
+        <div class="trading-about__image reveal">
+          <img src="Media/IIC General Trading/about-trading.jpg" alt="About IIC General Trading" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>about-trading.jpg</span>';">
+        </div>
+        <div class="trading-about__text reveal reveal-delay-1">
+          <span class="eyebrow">About Us</span>
+          <h2>About IIC General Trading</h2>
+          <p>IIC General Trading is the commercial trading and supply-chain division of the International Investment Consortium (IIC), providing integrated procurement, sourcing, logistics, and international trade solutions.</p>
+          <p>Our business connects producers, manufacturers, suppliers, and buyers through a reliable global network designed to simplify cross-border trade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section section--dark">
+    <div class="container">
+      <div class="trading-services-header reveal">
+        <span class="eyebrow">Our Services</span>
+        <h2>End-to-End Trading &amp; Supply Chain Solutions</h2>
+      </div>
+      <div class="trading-svc-cards">
+        <div class="trading-svc-card reveal">
+          <div class="trading-svc-card__image">
+            <img src="Media/IIC General Trading/service-global-sourcing.jpg" alt="Global Sourcing" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-global-sourcing.jpg</span>';">
+          </div>
+          <div class="trading-svc-card__body">
+            <div class="trading-svc-card__icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="16" stroke="currentColor" stroke-width="2"/><path d="M22 6c4.5 3.5 7 9 7 16s-2.5 12.5-7 16c-4.5-3.5-7-9-7-16s2.5-12.5 7-16z" stroke="currentColor" stroke-width="2"/><path d="M6 22h32M8 14h28M8 30h28" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3 class="trading-svc-card__title">Global Sourcing</h3>
+            <p class="trading-svc-card__desc">Identifying and connecting with reliable suppliers and manufacturers across international markets to meet diverse procurement needs.</p>
+          </div>
+        </div>
+        <div class="trading-svc-card reveal reveal-delay-1">
+          <div class="trading-svc-card__image">
+            <img src="Media/IIC General Trading/service-international-trading.jpg" alt="International Trading" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-international-trading.jpg</span>';">
+          </div>
+          <div class="trading-svc-card__body">
+            <div class="trading-svc-card__icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 32V18l16-10 16 10v14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 32h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 32V22h6v10M24 32V22h6v10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="22" cy="14" r="2" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3 class="trading-svc-card__title">International Trading</h3>
+            <p class="trading-svc-card__desc">Facilitating secure and efficient cross-border commercial transactions with transparency, compliance, and competitive terms.</p>
+          </div>
+        </div>
+        <div class="trading-svc-card reveal reveal-delay-2">
+          <div class="trading-svc-card__image">
+            <img src="Media/IIC General Trading/service-procurement.jpg" alt="Procurement Solutions" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-procurement.jpg</span>';">
+          </div>
+          <div class="trading-svc-card__body">
+            <div class="trading-svc-card__icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="10" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 18h32M14 26h8M14 30h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M30 26h4v6h-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="trading-svc-card__title">Procurement Solutions</h3>
+            <p class="trading-svc-card__desc">Delivering structured procurement services that streamline purchasing, reduce costs, and ensure quality across supply chains.</p>
+          </div>
+        </div>
+        <div class="trading-svc-card reveal">
+          <div class="trading-svc-card__image">
+            <img src="Media/IIC General Trading/service-logistics.jpg" alt="Logistics &amp; Distribution" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-logistics.jpg</span>';">
+          </div>
+          <div class="trading-svc-card__body">
+            <div class="trading-svc-card__icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 30V14h20v16H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 18h8l6 8v4H24V18z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="32" r="3" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="32" r="3" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3 class="trading-svc-card__title">Logistics &amp; Distribution</h3>
+            <p class="trading-svc-card__desc">Managing end-to-end logistics including freight, warehousing, customs, and last-mile delivery across multiple regions.</p>
+          </div>
+        </div>
+        <div class="trading-svc-card reveal reveal-delay-1">
+          <div class="trading-svc-card__image">
+            <img src="Media/IIC General Trading/service-commodity-trading.jpg" alt="Commodity Trading" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-commodity-trading.jpg</span>';">
+          </div>
+          <div class="trading-svc-card__body">
+            <div class="trading-svc-card__icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 34l8-10 6 6 8-12 10 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6v32h32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="trading-svc-card__title">Commodity Trading</h3>
+            <p class="trading-svc-card__desc">Trading in raw materials and commodities across energy, agriculture, metals, and minerals with secure and transparent operations.</p>
+          </div>
+        </div>
+        <div class="trading-svc-card reveal reveal-delay-2">
+          <div class="trading-svc-card__image">
+            <img src="Media/IIC General Trading/service-supply-chain.jpg" alt="Supply Chain Management" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-supply-chain.jpg</span>';">
+          </div>
+          <div class="trading-svc-card__body">
+            <div class="trading-svc-card__icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="22" r="5" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="32" r="5" stroke="currentColor" stroke-width="2"/><path d="M15 20l14-6M15 24l14 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="trading-svc-card__title">Supply Chain Management</h3>
+            <p class="trading-svc-card__desc">Designing and optimizing supply-chain systems that improve efficiency, reduce waste, and strengthen operational resilience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE SECTORS -->
+  <section id="sectors" class="section section--primary">
+    <div class="container">
+      <div class="trading-sectors-header reveal">
+        <span class="eyebrow">Core Sectors</span>
+        <h2>Industries We Serve</h2>
+      </div>
+      <div class="trading-sector-cards">
+        <div class="trading-sector-card reveal">
+          <div class="trading-sector-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 40l8-16 8 8 8-20 8 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 40h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="12" r="4" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="trading-sector-card__title">Commodities</h3>
+        </div>
+        <div class="trading-sector-card reveal reveal-delay-1">
+          <div class="trading-sector-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 40V16h12v24M28 40V8h12v32" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 40h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 22h4M12 28h4M12 34h4M32 14h4M32 20h4M32 26h4M32 32h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="trading-sector-card__title">Industrial Materials</h3>
+        </div>
+        <div class="trading-sector-card reveal reveal-delay-2">
+          <div class="trading-sector-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 20h32M16 28h6M16 32h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M32 26h4v8h-4z" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="trading-sector-card__title">Commercial Goods</h3>
+        </div>
+        <div class="trading-sector-card reveal">
+          <div class="trading-sector-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4l-4 8h-10l-4 8 6 8-2 12h20l-2-12 6-8-4-8h-10l-4-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 28h8M22 32h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="trading-sector-card__title">Mining &amp; Natural Resources</h3>
+        </div>
+        <div class="trading-sector-card reveal reveal-delay-1">
+          <div class="trading-sector-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 38h36M10 38V22h8v16M20 38V14h8v24M30 38V8h8v30" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 6l6 4 6-2 6 4 6-4 6 2 6-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="trading-sector-card__title">Infrastructure</h3>
+        </div>
+        <div class="trading-sector-card reveal reveal-delay-2">
+          <div class="trading-sector-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="20" r="10" stroke="currentColor" stroke-width="2"/><path d="M24 10v20M14 20h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 36l6-6 6 6M12 42h24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="trading-sector-card__title">Renewable Energy</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section id="vision-mission" class="section section--dark">
+    <div class="container">
+      <div class="trading-vm">
+        <div class="trading-vm__card reveal">
+          <span class="trading-vm__label">Vision</span>
+          <h2>Our Vision</h2>
+          <p>To become a globally recognized trading and supply-chain company that connects markets through efficient, transparent, and sustainable commercial solutions while creating lasting value for businesses and communities worldwide.</p>
+        </div>
+        <div class="trading-vm__card reveal reveal-delay-1">
+          <span class="trading-vm__label">Mission</span>
+          <h2>Our Mission</h2>
+          <p>To simplify international trade by delivering reliable sourcing, procurement, logistics, and supply-chain solutions that strengthen businesses, improve operational efficiency, and support sustainable economic growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT US -->
+  <section id="contact" class="section section--primary">
+    <div class="container">
+      <div class="trading-contact__grid">
+        <div class="trading-contact__info reveal">
+          <span class="eyebrow">Contact Us</span>
+          <h2>Let&rsquo;s Connect Markets Together</h2>
+          <p>Whether you&rsquo;re looking for reliable sourcing partners, procurement support, logistics coordination, or international trading solutions, IIC General Trading is ready to support your business across global markets.</p>
+          <p style="color: var(--text-muted); line-height: 1.75;">Contact us today to discuss your requirements and explore opportunities for collaboration.</p>
+          <div style="margin-top: 32px;">
+            <div class="trading-contact__detail">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>+000 000 0000 (placeholder)</span>
+            </div>
+            <div class="trading-contact__detail">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>info@iicgeneraltrading.com (placeholder)</span>
+            </div>
+          </div>
+        </div>
+        <div class="trading-contact__form reveal reveal-delay-1">
+          <h3>Send Us a Message</h3>
+          <div class="trading-form-row">
+            <div class="trading-form-group">
+              <label for="trading-fname">First Name</label>
+              <input type="text" id="trading-fname" placeholder="Your first name">
+            </div>
+            <div class="trading-form-group">
+              <label for="trading-lname">Last Name</label>
+              <input type="text" id="trading-lname" placeholder="Your last name">
+            </div>
+          </div>
+          <div class="trading-form-group">
+            <label for="trading-email">Email Address</label>
+            <input type="email" id="trading-email" placeholder="your@email.com">
+          </div>
+          <div class="trading-form-group">
+            <label for="trading-company">Company / Organisation</label>
+            <input type="text" id="trading-company" placeholder="Your company name">
+          </div>
+          <div class="trading-form-group">
+            <label for="trading-subject">Subject</label>
+            <select id="trading-subject">
+              <option value="" disabled selected>Select a topic</option>
+              <option value="sourcing">Global Sourcing</option>
+              <option value="trading">International Trading</option>
+              <option value="procurement">Procurement Solutions</option>
+              <option value="logistics">Logistics &amp; Distribution</option>
+              <option value="commodity">Commodity Trading</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+          <div class="trading-form-group">
+            <label for="trading-message">Message</label>
+            <textarea id="trading-message" placeholder="Tell us about your requirements..."></textarea>
+          </div>
+          <button type="button" class="btn btn--primary" style="width: 100%;">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Media/IIC General Trading/Logo.png" alt="IIC General Trading" class="footer__brand-logo">
+          <p class="footer__brand-text">An international trading and supply-chain company connecting buyers, suppliers, manufacturers, and industries across global markets.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <a href="#about" class="footer__link">About Us</a>
+          <a href="#services" class="footer__link">Our Services</a>
+          <a href="#sectors" class="footer__link">Core Sectors</a>
+          <a href="#vision-mission" class="footer__link">Vision &amp; Mission</a>
+          <a href="#contact" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <span class="footer__link">Global Sourcing</span>
+          <span class="footer__link">International Trading</span>
+          <span class="footer__link">Procurement Solutions</span>
+          <span class="footer__link">Logistics &amp; Distribution</span>
+          <span class="footer__link">Commodity Trading</span>
+          <span class="footer__link">Supply Chain Management</span>
+        </div>
+        <div>
+          <h4 class="footer__heading">IIC Worldwide</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About IIC Worldwide</a>
+          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
+          <a href="contact.html" class="footer__link">Contact IIC Worldwide</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 IIC General Trading LLC. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

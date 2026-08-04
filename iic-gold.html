@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIC Express Gold &amp; Diamond</title>
+  <meta name="description" content="IIC Express Gold and Diamond is a global precious metals and minerals company specializing in gold mining, refining, trading, diamonds, and precious stones.">
+  <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap">
+  <style>
+    /* ============================================================
+       IIC EXPRESS GOLD & DIAMOND — Page Styles
+       ============================================================ */
+
+    /* Hero */
+    .gold-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      background: linear-gradient(160deg, #0E1B16 0%, #1A3A33 40%, #1F443C 100%);
+      overflow: hidden;
+      color: #FFFFFF;
+    }
+    .gold-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(196, 154, 60, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(196, 154, 60, 0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .gold-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(196, 154, 60, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196, 154, 60, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .gold-hero__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .gold-hero__content { max-width: 600px; }
+    .gold-hero__eyebrow {
+      font-family: var(--font-data);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .gold-hero__title {
+      font-family: var(--font-primary);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+    .gold-hero__subtitle {
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .gold-hero__desc {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #9AB5AD;
+      margin-bottom: 32px;
+    }
+    .gold-hero__tagline {
+      font-family: var(--font-data);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #9AB5AD;
+      margin-bottom: 32px;
+      display: block;
+    }
+    .gold-hero__buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .gold-hero__logo-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gold-hero__logo-img {
+      max-width: 500px;
+      width: 100%;
+      filter: drop-shadow(0 8px 40px rgba(196, 154, 60, 0.2));
+    }
+
+    /* About */
+    .gold-about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .gold-about__image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gold-about__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gold-about__image span {
+      color: var(--text-muted);
+      font-size: 13px;
+      font-family: var(--font-data);
+    }
+    .gold-about__text h2 { margin-bottom: 24px; }
+    .gold-about__text p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .gold-about__text p:last-child { margin-bottom: 0; }
+
+    /* Services */
+    .gold-services-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+    .gold-services-header .eyebrow { margin-bottom: 12px; }
+    .gold-services-header h2 { margin-bottom: 16px; }
+    .gold-services-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .gold-services-cards--bottom {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 740px;
+      margin: 24px auto 0;
+    }
+    .gold-svc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+    }
+    .gold-svc-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+    .gold-svc-card__image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: var(--bg-card-hover, rgba(0,0,0,0.04));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .gold-svc-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gold-svc-card__image span {
+      color: var(--text-muted);
+      font-size: 12px;
+      font-family: var(--font-data);
+    }
+    .gold-svc-card__body { padding: 28px 24px 32px; }
+.gold-svc-card__title {
+      font-family: var(--font-primary);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .gold-svc-card__desc {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* Operations */
+    .gold-ops__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .gold-ops__map {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gold-ops__map img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gold-ops__map span {
+      color: var(--text-muted);
+      font-size: 13px;
+      font-family: var(--font-data);
+    }
+    .gold-ops__text h2 { margin-bottom: 12px; font-size: 32px; white-space: nowrap; }
+    .gold-ops__text > p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .gold-ops__group { margin-bottom: 28px; }
+    .gold-ops__group:last-child { margin-bottom: 0; }
+    .gold-ops__group h4 {
+      font-family: var(--font-data);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-text);
+      margin-bottom: 12px;
+    }
+    .gold-ops__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .gold-ops__tag {
+      font-size: 14px;
+      color: var(--text-muted);
+      background: var(--bg-card-hover, rgba(0,0,0,0.04));
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 6px 16px;
+      white-space: nowrap;
+    }
+    .gold-ops__note {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-top: 28px;
+    }
+
+    /* Why Choose Us */
+    .gold-why-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+    .gold-why-header h2 { margin-bottom: 16px; }
+    .gold-why-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .gold-why-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 32px 28px;
+      text-align: center;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+    }
+    .gold-why-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+    .gold-why-card__icon {
+      width: 48px;
+      height: 48px;
+      color: var(--gold);
+      margin: 0 auto 20px;
+    }
+    .gold-why-card__icon svg { width: 100%; height: 100%; }
+    .gold-why-card__title {
+      font-family: var(--font-primary);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .gold-why-card__desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Vision & Mission */
+    .gold-vm {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .gold-vm__card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 48px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .gold-vm__card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold);
+    }
+    .gold-vm__label {
+      font-family: var(--font-data);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-text);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .gold-vm__card h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .gold-vm__card p {
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* Sustainability */
+    .gold-sustain {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .gold-sustain h2 { margin-bottom: 20px; }
+    .gold-sustain > p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+    .gold-sustain__items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .gold-sustain__item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 15px;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+    .gold-sustain__item svg {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* Contact */
+    .gold-contact__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .gold-contact__info h2 { margin-bottom: 20px; }
+    .gold-contact__info > p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .gold-contact__detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .gold-contact__detail svg {
+      width: 24px;
+      height: 24px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .gold-contact__detail span {
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+    .gold-contact__form {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 40px;
+    }
+    .gold-contact__form h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--text-dark);
+    }
+    .gold-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .gold-form-group { margin-bottom: 16px; }
+    .gold-form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .gold-form-group input,
+    .gold-form-group textarea,
+    .gold-form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      color: var(--text-dark);
+      background: var(--bg-primary);
+      transition: border-color var(--duration) var(--ease);
+    }
+    .gold-form-group input:focus,
+    .gold-form-group textarea:focus,
+    .gold-form-group select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .gold-form-group textarea { resize: vertical; min-height: 120px; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .gold-hero__inner { gap: 48px; }
+      .gold-services-cards { grid-template-columns: repeat(2, 1fr); }
+      .gold-services-cards--bottom { grid-template-columns: 1fr 1fr; }
+      .gold-why-cards { grid-template-columns: repeat(2, 1fr); }
+      .gold-sustain__items { grid-template-columns: repeat(2, 1fr); }
+      .gold-about__grid { gap: 40px; }
+      .gold-ops__grid { gap: 40px; }
+      .gold-contact__grid { gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .gold-hero { min-height: auto; padding: 100px 0 60px; }
+      .gold-hero__inner { grid-template-columns: 1fr; gap: 32px; }
+      .gold-hero__logo-side { order: -1; }
+      .gold-hero__logo-img { max-width: 260px; }
+      .gold-hero__buttons { flex-direction: column; }
+      .gold-hero__buttons .btn { text-align: center; }
+      .gold-about__grid { grid-template-columns: 1fr; gap: 32px; }
+      .gold-services-cards { grid-template-columns: 1fr; }
+      .gold-services-cards--bottom { grid-template-columns: 1fr; max-width: 100%; }
+      .gold-ops__grid { grid-template-columns: 1fr; gap: 32px; }
+      .gold-ops__text h2 { white-space: normal; font-size: 28px; }
+      .gold-why-cards { grid-template-columns: 1fr; }
+      .gold-vm { grid-template-columns: 1fr; }
+      .gold-vm__card { padding: 32px 24px; }
+      .gold-sustain__items { grid-template-columns: 1fr; }
+      .gold-contact__grid { grid-template-columns: 1fr; gap: 32px; }
+      .gold-contact__form { padding: 28px 20px; }
+      .gold-contact__detail { align-items: flex-start; }
+      .gold-form-row { grid-template-columns: 1fr; }
+      .gold-services-header h2,
+      .gold-why-header h2 { font-size: 28px; }
+    }
+    @media (max-width: 480px) {
+      .gold-hero { padding: 90px 0 48px; }
+      .gold-hero__logo-img { max-width: 220px; }
+      .gold-hero__desc { font-size: 15px; }
+      .gold-svc-card__body { padding: 20px 16px 24px; }
+      .gold-why-card { padding: 24px 20px; }
+      .gold-contact__form { padding: 24px 16px; }
+      .gold-vm__card { padding: 28px 20px; }
+      .gold-sustain__item { padding: 14px 16px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+        <a href="contact.html" class="nav__link">Contact Us</a>
+      </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+      <a href="contact.html" class="nav__link">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="gold-hero">
+    <div class="container">
+      <div class="gold-hero__inner">
+        <div class="gold-hero__content">
+          <span class="gold-hero__eyebrow reveal">IIC Express Gold &amp; Diamond</span>
+          <h1 class="gold-hero__title reveal reveal-delay-1">From Mine to Global Markets</h1>
+          <p class="gold-hero__subtitle reveal reveal-delay-1">Trusted Excellence in Gold, Diamonds &amp; Precious Stones</p>
+          <p class="gold-hero__desc reveal reveal-delay-2">IIC Express Gold and Diamond is a global precious metals and minerals company specializing in gold mining, refining, trading, diamonds, and precious stones. Through strategic operations across Africa and international partnerships, we deliver ethically sourced, high-quality resources that meet international standards for governments, institutions, investors, and commercial buyers.</p>
+          <span class="gold-hero__tagline reveal reveal-delay-2">Your Trusted Partner in Precious Resources</span>
+          <div class="gold-hero__buttons reveal reveal-delay-2">
+            <a href="#services" class="btn btn--primary">Explore Our Services</a>
+            <a href="#contact" class="btn btn--outline" style="color: var(--gold); border-color: var(--gold-border);">Contact Us</a>
+          </div>
+        </div>
+        <div class="gold-hero__logo-side reveal reveal-delay-1">
+          <img src="Media/IIC Express Gold/Logo.png" alt="IIC Express Gold and Diamond" class="gold-hero__logo-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about" class="section section--primary">
+    <div class="container">
+      <div class="gold-about__grid">
+        <div class="gold-about__image reveal">
+          <img src="Media/IIC Express Gold/about-gold.jpg" alt="About IIC Express Gold and Diamond" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>about-gold.jpg</span>';">
+        </div>
+        <div class="gold-about__text reveal reveal-delay-1">
+          <span class="eyebrow">About Us</span>
+          <h2>About IIC Express Gold and Diamond</h2>
+          <p>IIC Express Gold and Diamond is committed to building a sustainable and transparent precious metals industry by integrating mining operations, refining capabilities, and international trading under one organization.</p>
+          <p>Our expertise spans the entire value chain&mdash;from exploration and extraction to refining, valuation, and global distribution&mdash;allowing us to provide reliable and secure solutions for our partners worldwide.</p>
+          <p>With operations across multiple regions, we focus on responsible resource development, compliance with international standards, and long-term partnerships built on integrity and trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section section--dark">
+    <div class="container">
+      <div class="gold-services-header reveal">
+        <span class="eyebrow">Our Services</span>
+        <h2>Comprehensive Precious Metals &amp; Mineral Solutions</h2>
+      </div>
+      <div class="gold-services-cards">
+        <div class="gold-svc-card reveal">
+          <div class="gold-svc-card__image">
+            <img src="Media/IIC Express Gold/service-refinery.jpg" alt="Gold Refinery" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-refinery.jpg</span>';">
+          </div>
+          <div class="gold-svc-card__body">
+            <h3 class="gold-svc-card__title">Gold Refinery</h3>
+            <p class="gold-svc-card__desc">Transforming raw gold into internationally recognized, investment-grade products through advanced refining processes that prioritize purity, quality assurance, and global compliance.</p>
+          </div>
+        </div>
+        <div class="gold-svc-card reveal reveal-delay-1">
+          <div class="gold-svc-card__image">
+            <img src="Media/IIC Express Gold/service-mining.jpg" alt="Gold Mining" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-mining.jpg</span>';">
+          </div>
+          <div class="gold-svc-card__body">
+            <h3 class="gold-svc-card__title">Gold Mining</h3>
+            <p class="gold-svc-card__desc">Responsible exploration and extraction of gold resources through sustainable mining practices and strategic partnerships across resource-rich regions.</p>
+          </div>
+        </div>
+        <div class="gold-svc-card reveal reveal-delay-2">
+          <div class="gold-svc-card__image">
+            <img src="Media/IIC Express Gold/service-trading.jpg" alt="Gold Trading" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-trading.jpg</span>';">
+          </div>
+          <div class="gold-svc-card__body">
+            <h3 class="gold-svc-card__title">Gold Trading</h3>
+            <p class="gold-svc-card__desc">Facilitating secure domestic and international gold transactions while maintaining transparency, competitive pricing, and efficient logistics.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gold-services-cards gold-services-cards--bottom">
+        <div class="gold-svc-card reveal">
+          <div class="gold-svc-card__image">
+            <img src="Media/IIC Express Gold/service-precious-stones.jpg" alt="Precious Stones" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-precious-stones.jpg</span>';">
+          </div>
+          <div class="gold-svc-card__body">
+            <h3 class="gold-svc-card__title">Precious Stones</h3>
+            <p class="gold-svc-card__desc">Sourcing, evaluating, and supplying high-quality precious gemstones through trusted mining operations and verified supply chains.</p>
+          </div>
+        </div>
+        <div class="gold-svc-card reveal reveal-delay-1">
+          <div class="gold-svc-card__image">
+            <img src="Media/IIC Express Gold/service-diamonds.jpg" alt="Diamonds" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>service-diamonds.jpg</span>';">
+          </div>
+          <div class="gold-svc-card__body">
+            <h3 class="gold-svc-card__title">Diamonds</h3>
+            <p class="gold-svc-card__desc">Providing ethically sourced natural diamonds for commercial, industrial, and investment purposes with strict quality verification and responsible sourcing standards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATIONS -->
+  <section id="operations" class="section section--primary">
+    <div class="container">
+      <div class="gold-ops__grid">
+        <div class="gold-ops__map reveal">
+          <img src="Media/IIC Express Gold/operations-map.jpg" alt="Operations Map" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>operations-map.jpg</span>';">
+        </div>
+        <div class="gold-ops__text reveal reveal-delay-1">
+          <span class="eyebrow">Our Operations</span>
+          <h2>Strategic Global Presence</h2>
+          <p>IIC Express Gold and Diamond operates through strategically positioned mining and trading networks that connect valuable natural resources with international markets.</p>
+          <div class="gold-ops__group">
+            <h4>Operational Countries</h4>
+            <div class="gold-ops__tags">
+              <span class="gold-ops__tag">South Sudan</span>
+              <span class="gold-ops__tag">Burundi</span>
+            </div>
+          </div>
+          <div class="gold-ops__group">
+            <h4>Mining Operations</h4>
+            <div class="gold-ops__tags">
+              <span class="gold-ops__tag">Central Africa</span>
+              <span class="gold-ops__tag">West Africa</span>
+              <span class="gold-ops__tag">East Africa</span>
+              <span class="gold-ops__tag">Pakistan</span>
+              <span class="gold-ops__tag">Balkan States</span>
+            </div>
+          </div>
+          <p class="gold-ops__note">Our regional presence enables us to build long-term relationships with mining communities, government agencies, investors, and commercial partners while maintaining efficient supply chains.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why-us" class="section section--dark">
+    <div class="container">
+      <div class="gold-why-header reveal">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>Why Partner With IIC Express Gold and Diamond?</h2>
+      </div>
+      <div class="gold-why-cards">
+        <div class="gold-why-card reveal">
+          <div class="gold-why-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 5h7v3.7a14.5 14.5 0 0 1 4.2 1.7l2.6-2.6 5 5-2.6 2.6a14.5 14.5 0 0 1 1.7 4.2H42v7h-3.7a14.5 14.5 0 0 1-1.7 4.2l2.6 2.6-5 5-2.6-2.6a14.5 14.5 0 0 1-4.2 1.7V41h-7v-3.7a14.5 14.5 0 0 1-4.2-1.7l-2.6 2.6-5-5 2.6-2.6a14.5 14.5 0 0 1-1.7-4.2H6v-7h3.7a14.5 14.5 0 0 1 1.7-4.2l-2.6-2.6 5-5 2.6 2.6a14.5 14.5 0 0 1 4.2-1.7V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="24" cy="23" r="6.5" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="gold-why-card__title">Integrated Value Chain</h3>
+          <p class="gold-why-card__desc">From mining and extraction to refining and international trading.</p>
+        </div>
+        <div class="gold-why-card reveal reveal-delay-1">
+          <div class="gold-why-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><path d="M24 6c5 4 8 10 8 18s-3 14-8 18c-5-4-8-10-8-18s3-14 8-18z" stroke="currentColor" stroke-width="2"/><path d="M6 24h36M8 16h32M8 32h32" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3 class="gold-why-card__title">Global Network</h3>
+          <p class="gold-why-card__desc">Strong operational presence across Africa with expanding international reach.</p>
+        </div>
+        <div class="gold-why-card reveal reveal-delay-2">
+          <div class="gold-why-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2 6-12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="gold-why-card__title">Quality Assurance</h3>
+          <p class="gold-why-card__desc">Commitment to internationally accepted quality and operational standards.</p>
+        </div>
+        <div class="gold-why-card reveal">
+          <div class="gold-why-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 44c-8 0-16-6-16-16V12l16-8 16 8v16c0 10-8 16-16 16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 24l6 6 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="gold-why-card__title">Responsible Operations</h3>
+          <p class="gold-why-card__desc">Promoting ethical sourcing, sustainability, and responsible mining practices.</p>
+        </div>
+        <div class="gold-why-card reveal reveal-delay-1">
+          <div class="gold-why-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 20a8 8 0 1 1 16 0" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="32" r="6" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="2"/><path d="M22 32h4M24 8v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="gold-why-card__title">Strategic Partnerships</h3>
+          <p class="gold-why-card__desc">Collaborating with governments, institutions, mining operators, and global buyers.</p>
+        </div>
+        <div class="gold-why-card reveal reveal-delay-2">
+          <div class="gold-why-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 10c4-2 8-3 18-3v30c-10 0-14 1-18 3V10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M42 10c-4-2-8-3-18-3v30c10 0 14 1 18 3V10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 16h7M12 22h7M12 28h7M29 16h7M29 22h7M29 28h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="gold-why-card__title">Industry Expertise</h3>
+          <p class="gold-why-card__desc">Experienced professionals with extensive knowledge of precious metals and mineral markets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section id="vision-mission" class="section section--primary">
+    <div class="container">
+      <div class="gold-vm">
+        <div class="gold-vm__card reveal">
+          <span class="gold-vm__label">Vision</span>
+          <h2>Our Vision</h2>
+          <p>To become one of the world&rsquo;s most trusted and respected providers of precious metals and gemstones by delivering excellence, integrity, and sustainable value throughout the mining and trading ecosystem.</p>
+        </div>
+        <div class="gold-vm__card reveal reveal-delay-1">
+          <span class="gold-vm__label">Mission</span>
+          <h2>Our Mission</h2>
+          <p>To responsibly explore, mine, refine, and trade precious resources while creating lasting value for our partners, communities, and stakeholders through innovation, transparency, and operational excellence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUSTAINABILITY -->
+  <section id="sustainability" class="section section--dark">
+    <div class="container">
+      <div class="gold-sustain reveal">
+        <span class="eyebrow">Sustainability</span>
+        <h2>Responsible Mining for a Better Future</h2>
+        <p>At IIC Express Gold and Diamond, sustainability is integrated into every stage of our operations. We strive to:</p>
+      </div>
+      <div class="gold-sustain__items" style="max-width: 800px; margin: 0 auto;">
+        <div class="gold-sustain__item reveal">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Promote responsible mining practices
+        </div>
+        <div class="gold-sustain__item reveal reveal-delay-1">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Support local communities
+        </div>
+        <div class="gold-sustain__item reveal reveal-delay-2">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Protect the environment
+        </div>
+        <div class="gold-sustain__item reveal">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Encourage ethical sourcing
+        </div>
+        <div class="gold-sustain__item reveal reveal-delay-1">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Maintain transparent operations
+        </div>
+        <div class="gold-sustain__item reveal reveal-delay-2">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Foster long-term economic development
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT US -->
+  <section id="contact" class="section section--primary">
+    <div class="container">
+      <div class="gold-contact__grid">
+        <div class="gold-contact__info reveal">
+          <span class="eyebrow">Contact Us</span>
+          <h2>Let&rsquo;s Build Valuable Partnerships</h2>
+          <p>Whether you&rsquo;re seeking reliable gold suppliers, refining services, diamond sourcing, or strategic mining partnerships, IIC Express Gold and Diamond is ready to support your business with professionalism, integrity, and global expertise.</p>
+          <p style="color: var(--text-muted); line-height: 1.75;">Contact us today to discuss your requirements and explore opportunities for collaboration.</p>
+          <div style="margin-top: 32px;">
+            <div class="gold-contact__detail">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>+971 4 834 7004</span>
+            </div>
+            <div class="gold-contact__detail">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>office@iicgold.com</span>
+            </div>
+            <div class="gold-contact__detail">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+              <span>Ground Floor, Al Shafar Park Tower, Sheikh Zayed Road, Dubai, United Arab Emirates</span>
+            </div>
+          </div>
+        </div>
+        <div class="gold-contact__form reveal reveal-delay-1">
+          <h3>Send Us a Message</h3>
+          <div class="gold-form-row">
+            <div class="gold-form-group">
+              <label for="gold-fname">First Name</label>
+              <input type="text" id="gold-fname" placeholder="Your first name">
+            </div>
+            <div class="gold-form-group">
+              <label for="gold-lname">Last Name</label>
+              <input type="text" id="gold-lname" placeholder="Your last name">
+            </div>
+          </div>
+          <div class="gold-form-group">
+            <label for="gold-email">Email Address</label>
+            <input type="email" id="gold-email" placeholder="your@email.com">
+          </div>
+          <div class="gold-form-group">
+            <label for="gold-subject">Subject</label>
+            <select id="gold-subject">
+              <option value="" disabled selected>Select a topic</option>
+              <option value="gold-trading">Gold Trading</option>
+              <option value="refinery">Gold Refinery</option>
+              <option value="mining">Mining Partnership</option>
+              <option value="diamonds">Diamonds &amp; Precious Stones</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+          <div class="gold-form-group">
+            <label for="gold-message">Message</label>
+            <textarea id="gold-message" placeholder="Tell us about your requirements..."></textarea>
+          </div>
+          <button type="button" class="btn btn--primary" style="width: 100%;">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <span style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 18px; color: #fff; letter-spacing: 0.05em; display: block; margin-bottom: 16px;">IIC EXPRESS GOLD &amp; DIAMOND</span>
+          <p class="footer__brand-text">A global precious metals and minerals company specializing in gold mining, refining, trading, diamonds, and precious stones.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <a href="#about" class="footer__link">About Us</a>
+          <a href="#services" class="footer__link">Our Services</a>
+          <a href="#operations" class="footer__link">Operations</a>
+          <a href="#why-us" class="footer__link">Why Choose Us</a>
+          <a href="#contact" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <span class="footer__link">Gold Refinery</span>
+          <span class="footer__link">Gold Mining</span>
+          <span class="footer__link">Gold Trading</span>
+          <span class="footer__link">Precious Stones</span>
+          <span class="footer__link">Diamonds</span>
+        </div>
+        <div>
+          <h4 class="footer__heading">IIC Worldwide</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About IIC Worldwide</a>
+          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
+          <a href="contact.html" class="footer__link">Contact IIC Worldwide</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 IIC Express Gold &amp; Diamond. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
