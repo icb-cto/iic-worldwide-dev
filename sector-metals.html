@@ -106,15 +106,17 @@
 
     /* Sector Detail Cards */
     .sector-detail-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 24px;
+      justify-content: center;
     }
     .sector-detail-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       overflow: hidden;
+      flex: 0 1 calc(25% - 18px);
       transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
     }
     .sector-detail-card:hover {
@@ -122,38 +124,18 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
-    .sector-detail-card__img-wrap {
-      position: relative;
-      aspect-ratio: 480 / 320;
-      background: var(--bg-card, #f5f5f0);
-      overflow: hidden;
+    .sector-detail-card__icon {
+      width: 48px;
+      height: 48px;
+      color: var(--gold);
+      margin-bottom: 16px;
     }
-    .sector-detail-card__img {
+    .sector-detail-card__icon svg {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .sector-detail-card__placeholder {
-      display: none;
-      position: absolute;
-      inset: 0;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
-      line-height: 1.5;
-      background: var(--bg-card, #f5f5f0);
-    }
-    .sector-detail-card__placeholder small {
-      display: block;
-      margin-top: 4px;
-      font-size: 11px;
-      opacity: 0.6;
     }
     .sector-detail-card__body {
-      padding: 20px;
+      padding: 28px 24px 32px;
     }
     .sector-detail-card__title {
       font-family: var(--font-heading);
@@ -171,10 +153,10 @@
     @media (max-width: 1024px) {
       .approach-item { grid-template-columns: 1fr; gap: 32px; }
       .approach-item--reverse { direction: ltr; }
-      .sector-detail-cards { grid-template-columns: repeat(2, 1fr); }
+      .sector-detail-card { flex: 0 1 calc(50% - 12px); }
     }
     @media (max-width: 768px) {
-      .sector-detail-cards { grid-template-columns: 1fr; }
+      .sector-detail-card { flex: 0 1 100%; }
       .approach-item__number { font-size: 48px; }
     }
   </style>
@@ -313,44 +295,40 @@
       <div class="sector-detail-cards">
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Metals/card-gold-dore.jpg" alt="Gold Dor&eacute; Bars" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Gold Dor&eacute; Bars<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 32l6-20h20l6 20H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 32h32v6H8v-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 20h12M16 26h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Gold Dor&eacute; Bars</h3>
             <p class="sector-detail-card__desc">Semi-refined gold dor&eacute; bars sourced from artisanal and industrial mining operations &mdash; assayed, documented, and delivered to international refineries and bullion dealers with full chain-of-custody compliance.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Metals/card-diamonds.jpg" alt="Diamonds" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Diamonds<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4l-12 20h24L24 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 24l12 20 12-20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 24h24" stroke="currentColor" stroke-width="2"/><path d="M18 24l6-10 6 10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Diamonds</h3>
             <p class="sector-detail-card__desc">Rough and polished diamonds traded through our precious commodities division &mdash; Kimberley Process certified, gemologically graded, and connecting mining sources with cutting centres and international buyers.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Metals/card-copper.jpg" alt="Copper Cathodes" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Copper Cathodes<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="10" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 18h32M8 26h32M8 34h32" stroke="currentColor" stroke-width="2"/><path d="M20 10v28M32 10v28" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Copper Cathodes</h3>
             <p class="sector-detail-card__desc">LME-grade copper cathodes sourced from smelters and refineries &mdash; traded in bulk for manufacturers, construction companies, and metal traders requiring reliable, verified copper supply.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Metals/card-industrial-metals.jpg" alt="Industrial Metals" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Industrial Metals<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 38l4-14h20l4 14H10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 24l2-8h16l2 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 16l2-6h12l2 6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 38h28v4H10v-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Industrial Metals</h3>
             <p class="sector-detail-card__desc">Trading of aluminium, zinc, tin, lead, and other industrial metals &mdash; connecting mining and smelting operations with manufacturers, fabricators, and commodity traders across global markets.</p>
           </div>

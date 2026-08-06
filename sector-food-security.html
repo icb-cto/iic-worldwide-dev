@@ -106,15 +106,17 @@
 
     /* Sector Detail Cards */
     .sector-detail-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 24px;
+      justify-content: center;
     }
     .sector-detail-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       overflow: hidden;
+      flex: 0 1 calc(25% - 18px);
       transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
     }
     .sector-detail-card:hover {
@@ -122,38 +124,18 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
-    .sector-detail-card__img-wrap {
-      position: relative;
-      aspect-ratio: 480 / 320;
-      background: var(--bg-card, #f5f5f0);
-      overflow: hidden;
+    .sector-detail-card__icon {
+      width: 48px;
+      height: 48px;
+      color: var(--gold);
+      margin-bottom: 16px;
     }
-    .sector-detail-card__img {
+    .sector-detail-card__icon svg {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .sector-detail-card__placeholder {
-      display: none;
-      position: absolute;
-      inset: 0;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
-      line-height: 1.5;
-      background: var(--bg-card, #f5f5f0);
-    }
-    .sector-detail-card__placeholder small {
-      display: block;
-      margin-top: 4px;
-      font-size: 11px;
-      opacity: 0.6;
     }
     .sector-detail-card__body {
-      padding: 20px;
+      padding: 28px 24px 32px;
     }
     .sector-detail-card__title {
       font-family: var(--font-heading);
@@ -171,10 +153,10 @@
     @media (max-width: 1024px) {
       .approach-item { grid-template-columns: 1fr; gap: 32px; }
       .approach-item--reverse { direction: ltr; }
-      .sector-detail-cards { grid-template-columns: repeat(2, 1fr); }
+      .sector-detail-card { flex: 0 1 calc(50% - 12px); }
     }
     @media (max-width: 768px) {
-      .sector-detail-cards { grid-template-columns: 1fr; }
+      .sector-detail-card { flex: 0 1 100%; }
       .approach-item__number { font-size: 48px; }
     }
   </style>
@@ -314,77 +296,70 @@
       <div class="sector-detail-cards">
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Food Security/card-sugar.jpg" alt="Sugar" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Sugar<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="12" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/><rect x="26" y="12" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/><rect x="12" y="26" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/><rect x="26" y="26" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Sugar</h3>
             <p class="sector-detail-card__desc">ICUMSA 45 White Refined Sugar, bulk sugar supply solutions, and international delivery programs &mdash; sourced from verified producers for global markets.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Food Security/card-rice.jpg" alt="Rice" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Rice<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 38c0-6 4-10 10-14 6 4 10 8 10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 24V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 14c-4-2-8-1-10 2M24 14c4-2 8-1 10 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 38h28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Rice</h3>
             <p class="sector-detail-card__desc">White Rice, Basmati Rice, and Long Grain Rice varieties &mdash; connecting major rice-producing regions with importers and distributors worldwide.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Food Security/card-wheat.jpg" alt="Wheat" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Wheat<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6v36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 10c-6 0-10 4-10 8s4 6 10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 10c6 0 10 4 10 8s-4 6-10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 24c-4 0-8 3-8 6s3 5 8 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 24c4 0 8 3 8 6s-3 5-8 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 42h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Wheat</h3>
             <p class="sector-detail-card__desc">Trading of milling wheat and feed wheat from verified producers, supporting bulk supply programs for flour mills, food manufacturers, and national procurement agencies.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Food Security/card-corn.jpg" alt="Corn" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Corn<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 42V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 20c-2-6-6-10-12-12 2 8 6 14 12 16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 20c2-6 6-10 12-12-2 8-6 14-12 16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 28c-3-4-6-6-10-6 1 5 4 8 10 10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 28c3-4 6-6 10-6-1 5-4 8-10 10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Corn</h3>
             <p class="sector-detail-card__desc">Sourcing and supply of corn and maize for feed, food processing, and industrial use &mdash; connecting growers with international buyers through structured trading programmes.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Food Security/card-soybeans.jpg" alt="Soybeans" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Soybeans<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="24" cy="24" rx="8" ry="12" stroke="currentColor" stroke-width="2"/><path d="M24 12c-8 0-14 4-14 12s6 12 14 12" stroke="currentColor" stroke-width="2"/><path d="M24 12c8 0 14 4 14 12s-6 12-14 12" stroke="currentColor" stroke-width="2"/><path d="M16 24h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Soybeans</h3>
             <p class="sector-detail-card__desc">International soybean trading for oil extraction, animal feed, and food manufacturing &mdash; sourced from major producing regions with full quality verification and documentation.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Food Security/card-cooking-oil.jpg" alt="Cooking Oil" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Cooking Oil<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 8h8v6a8 8 0 01-8 8h0a8 8 0 01-8-8v-2a4 4 0 014-4h4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 22v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 42h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 30c4-2 8-1 10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Cooking Oil</h3>
             <p class="sector-detail-card__desc">Supply and distribution of palm oil, sunflower oil, soybean oil, and other edible cooking oils from producing regions to refineries, food manufacturers, and retail markets.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Food Security/card-pulses.jpg" alt="Pulses" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Pulses<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="20" r="6" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="20" r="6" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="32" r="6" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Pulses</h3>
             <p class="sector-detail-card__desc">Trading of lentils, chickpeas, beans, and other pulses &mdash; connecting producers in key growing regions with importers, food processors, and wholesale distributors worldwide.</p>
           </div>

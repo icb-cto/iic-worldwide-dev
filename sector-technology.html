@@ -106,15 +106,17 @@
 
     /* Sector Detail Cards */
     .sector-detail-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 24px;
+      justify-content: center;
     }
     .sector-detail-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       overflow: hidden;
+      flex: 0 1 calc(25% - 18px);
       transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
     }
     .sector-detail-card:hover {
@@ -122,38 +124,18 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
-    .sector-detail-card__img-wrap {
-      position: relative;
-      aspect-ratio: 480 / 320;
-      background: var(--bg-card, #f5f5f0);
-      overflow: hidden;
+    .sector-detail-card__icon {
+      width: 48px;
+      height: 48px;
+      color: var(--gold);
+      margin-bottom: 16px;
     }
-    .sector-detail-card__img {
+    .sector-detail-card__icon svg {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .sector-detail-card__placeholder {
-      display: none;
-      position: absolute;
-      inset: 0;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
-      line-height: 1.5;
-      background: var(--bg-card, #f5f5f0);
-    }
-    .sector-detail-card__placeholder small {
-      display: block;
-      margin-top: 4px;
-      font-size: 11px;
-      opacity: 0.6;
     }
     .sector-detail-card__body {
-      padding: 20px;
+      padding: 28px 24px 32px;
     }
     .sector-detail-card__title {
       font-family: var(--font-heading);
@@ -171,10 +153,10 @@
     @media (max-width: 1024px) {
       .approach-item { grid-template-columns: 1fr; gap: 32px; }
       .approach-item--reverse { direction: ltr; }
-      .sector-detail-cards { grid-template-columns: repeat(2, 1fr); }
+      .sector-detail-card { flex: 0 1 calc(50% - 12px); }
     }
     @media (max-width: 768px) {
-      .sector-detail-cards { grid-template-columns: 1fr; }
+      .sector-detail-card { flex: 0 1 100%; }
       .approach-item__number { font-size: 48px; }
     }
   </style>
@@ -314,88 +296,80 @@
       <div class="sector-detail-cards">
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Technology/card-it-equipment.jpg" alt="Information Technology (IT) Equipment" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">IT Equipment<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="6" width="20" height="36" rx="2" stroke="currentColor" stroke-width="2"/><path d="M14 14h20M14 34h20" stroke="currentColor" stroke-width="2"/><path d="M20 20h8M20 26h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="38" r="1.5" fill="currentColor"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Information Technology (IT) Equipment</h3>
             <p class="sector-detail-card__desc">Servers, networking equipment, data centre infrastructure, storage systems, and enterprise IT solutions sourced from leading global manufacturers for government and corporate buyers.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Technology/card-computer-hardware.jpg" alt="Computer Hardware &amp; Accessories" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Computer Hardware<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 34h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="6" y="12" width="36" height="22" rx="2" stroke="currentColor" stroke-width="2"/><path d="M18 40h12M24 34v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 20h8M14 24h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Computer Hardware &amp; Accessories</h3>
             <p class="sector-detail-card__desc">Desktops, laptops, monitors, printers, peripherals, and accessories &mdash; procured in bulk from authorised distributors for enterprises, institutions, and government projects.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Technology/card-telecom.jpg" alt="Telecommunications Equipment" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Telecommunications<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 20l8-6 8 6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 20v22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 42h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 28c4 0 6-2 6-4M38 28c-4 0-6-2-6-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 34c6 0 8-2 8-6M42 34c-6 0-8-2-8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Telecommunications Equipment</h3>
             <p class="sector-detail-card__desc">Mobile network infrastructure, fibre optic equipment, radio systems, satellite communications, and telecom towers &mdash; supporting operators and governments building connectivity.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Technology/card-industrial-machinery.jpg" alt="Industrial Machinery" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Industrial Machinery<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="24" r="10" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="24" r="4" stroke="currentColor" stroke-width="2"/><path d="M30 14h10v20H30" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M34 14v-4M36 14v-6M34 34v4M36 34v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Industrial Machinery</h3>
             <p class="sector-detail-card__desc">Heavy machinery, manufacturing equipment, processing plants, and industrial tools sourced from OEMs for construction, mining, agriculture, and manufacturing sectors.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Technology/card-electrical.jpg" alt="Electrical Equipment" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Electrical Equipment<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 4L16 24h8l-4 20L36 20h-8l4-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Electrical Equipment</h3>
             <p class="sector-detail-card__desc">Transformers, switchgear, cables, generators, and power distribution systems &mdash; connecting electrical equipment manufacturers with utility companies and infrastructure developers.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Technology/card-renewable-solar.jpg" alt="Renewable Energy &amp; Solar Equipment" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Renewable &amp; Solar<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="14" r="8" stroke="currentColor" stroke-width="2"/><path d="M24 6v-2M24 22v2M16 14h-2M32 14h2M18.3 8.3l-1.4-1.4M29.7 8.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="10" y="28" width="28" height="14" rx="1" stroke="currentColor" stroke-width="2"/><path d="M18 28v14M30 28v14M10 35h28" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Renewable Energy &amp; Solar Equipment</h3>
             <p class="sector-detail-card__desc">Solar panels, inverters, battery storage, wind turbine components, and renewable energy installation equipment &mdash; sourced for projects across emerging markets.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Technology/card-smart-solutions.jpg" alt="Smart Business Solutions" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Smart Solutions<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 28c-4-2-6-6-6-10a12 12 0 0124 0c0 4-2 8-6 10" stroke="currentColor" stroke-width="2"/><path d="M36 18a8 8 0 00-8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="14" y="28" width="12" height="4" rx="1" stroke="currentColor" stroke-width="2"/><rect x="16" y="32" width="8" height="4" rx="1" stroke="currentColor" stroke-width="2"/><path d="M20 36v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Smart Business Solutions</h3>
             <p class="sector-detail-card__desc">Enterprise software, cloud infrastructure, cybersecurity systems, and digital transformation solutions &mdash; enabling businesses to modernise operations and improve productivity.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Technology/card-automation.jpg" alt="Automation &amp; Industrial Systems" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Automation Systems<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 40V28l-8-8v-8h8v8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 20h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="30" cy="14" r="6" stroke="currentColor" stroke-width="2"/><path d="M30 10v8M26 14h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 40h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M30 28v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Automation &amp; Industrial Systems</h3>
             <p class="sector-detail-card__desc">PLC systems, SCADA, robotics, conveyor systems, and process automation equipment &mdash; supporting factories, plants, and industrial operations seeking efficiency through automation.</p>
           </div>

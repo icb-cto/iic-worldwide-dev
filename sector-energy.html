@@ -106,15 +106,17 @@
 
     /* Sector Detail Cards */
     .sector-detail-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 24px;
+      justify-content: center;
     }
     .sector-detail-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       overflow: hidden;
+      flex: 0 1 calc(25% - 18px);
       transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
     }
     .sector-detail-card:hover {
@@ -122,38 +124,18 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
-    .sector-detail-card__img-wrap {
-      position: relative;
-      aspect-ratio: 480 / 320;
-      background: var(--bg-card, #f5f5f0);
-      overflow: hidden;
+    .sector-detail-card__icon {
+      width: 48px;
+      height: 48px;
+      color: var(--gold);
+      margin-bottom: 16px;
     }
-    .sector-detail-card__img {
+    .sector-detail-card__icon svg {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .sector-detail-card__placeholder {
-      display: none;
-      position: absolute;
-      inset: 0;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
-      line-height: 1.5;
-      background: var(--bg-card, #f5f5f0);
-    }
-    .sector-detail-card__placeholder small {
-      display: block;
-      margin-top: 4px;
-      font-size: 11px;
-      opacity: 0.6;
     }
     .sector-detail-card__body {
-      padding: 20px;
+      padding: 28px 24px 32px;
     }
     .sector-detail-card__title {
       font-family: var(--font-heading);
@@ -171,10 +153,10 @@
     @media (max-width: 1024px) {
       .approach-item { grid-template-columns: 1fr; gap: 32px; }
       .approach-item--reverse { direction: ltr; }
-      .sector-detail-cards { grid-template-columns: repeat(2, 1fr); }
+      .sector-detail-card { flex: 0 1 calc(50% - 12px); }
     }
     @media (max-width: 768px) {
-      .sector-detail-cards { grid-template-columns: 1fr; }
+      .sector-detail-card { flex: 0 1 100%; }
       .approach-item__number { font-size: 48px; }
     }
   </style>
@@ -314,55 +296,50 @@
       <div class="sector-detail-cards">
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Energy/card-diesel-en590.jpg" alt="Diesel EN590 10 PPM" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Diesel EN590<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4c-4 6-12 14-12 22a12 12 0 0024 0c0-8-8-16-12-22z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 30a6 6 0 006 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Diesel EN590 10 PPM</h3>
             <p class="sector-detail-card__desc">Ultra-low sulphur diesel conforming to EN590 specifications at 10 PPM &mdash; sourced through our trading network for international delivery to distributors and end-users.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Energy/card-mgo.jpg" alt="Marine Gas Oil (MGO)" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Marine Gas Oil<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 36h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 36l2-12h28l2 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 24V16h6v8M28 24V16h6v8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Marine Gas Oil (MGO)</h3>
             <p class="sector-detail-card__desc">Marine-grade gas oil for the shipping and maritime industry &mdash; meeting IMO sulphur regulations and delivered through our port and bunkering partner network.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Energy/card-base-oil.jpg" alt="Base Oil" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Base Oil<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="24" cy="12" rx="12" ry="6" stroke="currentColor" stroke-width="2"/><path d="M12 12v24c0 3.3 5.4 6 12 6s12-2.7 12-6V12" stroke="currentColor" stroke-width="2"/><path d="M12 24c0 3.3 5.4 6 12 6s12-2.7 12-6" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Base Oil</h3>
             <p class="sector-detail-card__desc">Trading of Group I, II, and III base oils for lubricant manufacturers &mdash; connecting refineries with blending plants and industrial consumers across global markets.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Energy/card-bitumen.jpg" alt="Bitumen" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Bitumen<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 34h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 34c4-2 8-3 16-3s12 1 16 3" stroke="currentColor" stroke-width="2"/><path d="M10 31V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M38 31V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 22c4-2 8-3 14-3s10 1 14 3" stroke="currentColor" stroke-width="2"/><path d="M4 40h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Bitumen</h3>
             <p class="sector-detail-card__desc">Penetration-grade and polymer-modified bitumen for road construction and infrastructure projects &mdash; supplied in bulk from refinery sources to contractors and government agencies.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Energy/card-petroleum-products.jpg" alt="Other Petroleum Products" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Petroleum Products<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="20" width="12" height="20" rx="1" stroke="currentColor" stroke-width="2"/><rect x="28" y="8" width="12" height="32" rx="1" stroke="currentColor" stroke-width="2"/><path d="M14 8v12M14 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 28h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 34h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="34" cy="14" r="2" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Other Petroleum Products</h3>
             <p class="sector-detail-card__desc">Trading of fuel oil, gasoline, jet fuel, naphtha, and other refined petroleum products through our group network of trading partners and supply chain infrastructure.</p>
           </div>

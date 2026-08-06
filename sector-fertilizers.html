@@ -106,15 +106,17 @@
 
     /* Sector Detail Cards */
     .sector-detail-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 24px;
+      justify-content: center;
     }
     .sector-detail-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       overflow: hidden;
+      flex: 0 1 calc(25% - 18px);
       transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
     }
     .sector-detail-card:hover {
@@ -122,38 +124,18 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
-    .sector-detail-card__img-wrap {
-      position: relative;
-      aspect-ratio: 480 / 320;
-      background: var(--bg-card, #f5f5f0);
-      overflow: hidden;
+    .sector-detail-card__icon {
+      width: 48px;
+      height: 48px;
+      color: var(--gold);
+      margin-bottom: 16px;
     }
-    .sector-detail-card__img {
+    .sector-detail-card__icon svg {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .sector-detail-card__placeholder {
-      display: none;
-      position: absolute;
-      inset: 0;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
-      line-height: 1.5;
-      background: var(--bg-card, #f5f5f0);
-    }
-    .sector-detail-card__placeholder small {
-      display: block;
-      margin-top: 4px;
-      font-size: 11px;
-      opacity: 0.6;
     }
     .sector-detail-card__body {
-      padding: 20px;
+      padding: 28px 24px 32px;
     }
     .sector-detail-card__title {
       font-family: var(--font-heading);
@@ -171,10 +153,10 @@
     @media (max-width: 1024px) {
       .approach-item { grid-template-columns: 1fr; gap: 32px; }
       .approach-item--reverse { direction: ltr; }
-      .sector-detail-cards { grid-template-columns: repeat(2, 1fr); }
+      .sector-detail-card { flex: 0 1 calc(50% - 12px); }
     }
     @media (max-width: 768px) {
-      .sector-detail-cards { grid-template-columns: 1fr; }
+      .sector-detail-card { flex: 0 1 100%; }
       .approach-item__number { font-size: 48px; }
     }
   </style>
@@ -313,55 +295,50 @@
       <div class="sector-detail-cards">
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Fertilizers/card-urea.jpg" alt="Urea" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Urea<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="20" r="8" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="20" r="3" fill="currentColor"/><path d="M24 28v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 42h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 14l-4-4M32 14l4-4M16 26l-4 4M32 26l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Urea</h3>
             <p class="sector-detail-card__desc">Agricultural-grade urea (46-0-0) for international markets &mdash; sourced from major producing regions and delivered in prilled and granular forms to distributors, cooperatives, and government procurement agencies.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Fertilizers/card-sulphur.jpg" alt="Sulphur" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Sulphur<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6l10 10-10 10-10-10L24 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 26l10 10-10 10-10-10L24 26z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 16v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Sulphur</h3>
             <p class="sector-detail-card__desc">Industrial-grade sulphur supply for global industries &mdash; including fertilizer manufacturing, chemical processing, and industrial applications. Available in lump, granular, and liquid forms from verified refinery and gas-processing sources.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Fertilizers/card-dap.jpg" alt="DAP" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">DAP<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 42V24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 24c-4-6-12-10-14-8s2 8 6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 24c4-6 12-10 14-8s-2 8-6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 16c-2-4-1-10 2-12 3 2 4 8 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 42h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">DAP (Diammonium Phosphate)</h3>
             <p class="sector-detail-card__desc">High-phosphorus fertilizer (18-46-0) widely used as a starter fertilizer and for broadacre application &mdash; sourced from leading producers for agricultural markets across Africa, Asia, and the Middle East.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Fertilizers/card-map.jpg" alt="MAP" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">MAP<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 8h16l4 16H12L16 8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 24v12a4 4 0 004 4h16a4 4 0 004-4V24" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 24v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 28h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">MAP (Monoammonium Phosphate)</h3>
             <p class="sector-detail-card__desc">A versatile phosphorus-based fertilizer (11-52-0) used in a wide range of soil types and crops &mdash; traded in bulk for agricultural distributors, blending operations, and institutional buyers.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Fertilizers/card-npk.jpg" alt="NPK" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">NPK<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="14" r="6" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="14" r="6" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="28" r="6" stroke="currentColor" stroke-width="2"/><path d="M20 18l2 6M28 18l-2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 34v6M20 40h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">NPK (Compound Fertilizers)</h3>
             <p class="sector-detail-card__desc">Balanced NPK compound fertilizers in various formulations tailored to specific crop and soil requirements &mdash; connecting blending plants and manufacturers with agricultural markets worldwide.</p>
           </div>
