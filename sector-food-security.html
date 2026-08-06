@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Security &mdash; IIC Worldwide</title>
+  <meta name="description" content="IIC Worldwide connects food producers with buyers through a trusted commodity trading platform, ensuring supply chain integrity, trade finance, and quality verification across global food markets.">
+  <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero--bg {
+      background: url('Media/Sectors/Food Security.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    .page-hero--bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 36, 32, 0.55);
+    }
+    .page-hero--bg .page-hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero--bg .eyebrow,
+    .page-hero--bg .eyebrow a {
+      color: var(--gold) !important;
+    }
+    .page-hero--bg .page-hero__title {
+      color: #fff;
+    }
+    .page-hero--bg .page-hero__subtitle {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Approach Items */
+    .approach-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+    .approach-item:last-child {
+      margin-bottom: 0;
+    }
+    .approach-item--reverse {
+      direction: rtl;
+    }
+    .approach-item--reverse > * {
+      direction: ltr;
+    }
+    .approach-item__number {
+      font-family: var(--font-data, var(--font-heading));
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .approach-item__title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .approach-item__text {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .approach-item__img-wrap {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-card, #f5f5f0);
+      aspect-ratio: 960 / 600;
+    }
+    .approach-item__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .approach-item__placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      background: var(--bg-card, #f5f5f0);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+    }
+    .approach-item__placeholder small {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+
+    /* Sector Detail Cards */
+    .sector-detail-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .sector-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
+    }
+    .sector-detail-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    .sector-detail-card__img-wrap {
+      position: relative;
+      aspect-ratio: 480 / 320;
+      background: var(--bg-card, #f5f5f0);
+      overflow: hidden;
+    }
+    .sector-detail-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .sector-detail-card__placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.5;
+      background: var(--bg-card, #f5f5f0);
+    }
+    .sector-detail-card__placeholder small {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      opacity: 0.6;
+    }
+    .sector-detail-card__body {
+      padding: 20px;
+    }
+    .sector-detail-card__title {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .sector-detail-card__desc {
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .approach-item { grid-template-columns: 1fr; gap: 32px; }
+      .approach-item--reverse { direction: ltr; }
+      .sector-detail-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .sector-detail-cards { grid-template-columns: 1fr; }
+      .approach-item__number { font-size: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+        <a href="contact.html" class="nav__link">Contact Us</a>
+      </div>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+      <a href="contact.html" class="nav__link">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--bg">
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="eyebrow reveal"><a href="index.html">Sectors</a> &mdash; Food Security</span>
+        <h1 class="page-hero__title reveal reveal-delay-1">Food Security</h1>
+        <p class="page-hero__subtitle reveal reveal-delay-2">Connecting food producers with global buyers through a trusted commodity trading platform &mdash; bridging supply and demand, facilitating trade finance, and ensuring quality verification across the food value chain.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="content-split">
+        <div class="reveal">
+          <span class="eyebrow">Sector Overview</span>
+          <h2>Opening Markets for Food Commodities</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Global food markets are vast yet fragmented. Producers in surplus regions struggle to reach buyers in deficit markets, while importers face uncertainty around quality, pricing, and delivery reliability. These gaps in the food supply chain limit trade potential and undermine food security for millions.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">IIC Worldwide operates as a commodity trading and finance platform that opens food markets to producers, buyers, sellers, and suppliers. By bridging supply and demand, we create a structured, verified marketplace where food commodities can be traded with confidence, transparency, and financial backing.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Our platform addresses the critical challenges that prevent food from moving efficiently between producers and consumers &mdash; from trade finance gaps and quality verification to logistics coordination and regulatory compliance.</p>
+          <p style="color: var(--text-muted);">Whether sourcing rice from South-East Asia, livestock from East Africa, or processed foods from the Middle East, IIC provides the infrastructure, financial solutions, and verified trading environment that legitimate market participants need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto 56px;">
+        <span class="eyebrow">Our Approach</span>
+        <h2>How We Facilitate Food Trade</h2>
+        <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-top: 16px;">IIC connects every stage of the food commodity value chain &mdash; from agricultural sourcing and quality verification to trade finance and last-mile distribution &mdash; through a single, trusted platform.</p>
+      </div>
+
+      <!-- Approach Item 1 -->
+      <div class="approach-item reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Food Security/approach-commodity-sourcing.jpg" alt="Agricultural Commodity Sourcing" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Agricultural Commodity Sourcing<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">01</div>
+          <h3 class="approach-item__title">Agricultural Commodity Sourcing</h3>
+          <p class="approach-item__text">IIC connects verified agricultural producers with qualified buyers across international markets. Our sourcing network spans key food-producing regions, enabling access to staple grains, fresh produce, livestock products, and processed food commodities. Every supplier on our platform undergoes verification to ensure legitimacy, production capacity, and compliance with trade requirements. By aggregating supply from multiple origins, we help buyers secure competitive pricing and reliable volumes while giving producers direct access to markets they could not reach independently.</p>
+        </div>
+      </div>
+
+      <!-- Approach Item 2 -->
+      <div class="approach-item approach-item--reverse reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Food Security/approach-supply-chain.jpg" alt="Supply Chain &amp; Distribution" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Supply Chain &amp; Distribution<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">02</div>
+          <h3 class="approach-item__title">Supply Chain &amp; Distribution</h3>
+          <p class="approach-item__text">Efficient distribution is the backbone of food security. IIC coordinates logistics across shipping, cold-chain storage, warehousing, and last-mile delivery to ensure food commodities move from origin to destination without degradation or delay. Our platform integrates logistics partners, port operators, and freight forwarders into a coordinated supply chain that participants can track and manage. By reducing transit times and minimising wastage, we help preserve the value of perishable and non-perishable food products throughout the distribution process.</p>
+        </div>
+      </div>
+
+      <!-- Approach Item 3 -->
+      <div class="approach-item reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Food Security/approach-trade-finance.jpg" alt="Trade Finance for Food" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Trade Finance for Food<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">03</div>
+          <h3 class="approach-item__title">Trade Finance for Food</h3>
+          <p class="approach-item__text">Access to capital remains one of the largest barriers to food trade, particularly for small and mid-sized producers and importers. IIC provides structured trade finance solutions &mdash; including letters of credit, pre-export financing, receivables financing, and payment guarantees &mdash; that enable transactions which would otherwise not proceed. Our financial solutions are designed specifically for commodity trade, with terms and structures that reflect the realities of agricultural production cycles, seasonal supply patterns, and cross-border payment requirements.</p>
+        </div>
+      </div>
+
+      <!-- Approach Item 4 -->
+      <div class="approach-item approach-item--reverse reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Food Security/approach-quality-verification.jpg" alt="Quality Verification &amp; Standards" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Quality Verification &amp; Standards<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">04</div>
+          <h3 class="approach-item__title">Quality Verification &amp; Standards</h3>
+          <p class="approach-item__text">Trust is the foundation of commodity trading. IIC integrates quality verification at every stage &mdash; from pre-shipment inspection and laboratory testing to certification and compliance documentation. Our platform works with accredited inspection agencies and certification bodies to verify that food commodities meet the grade specifications, safety standards, and regulatory requirements of destination markets. This verification process protects both buyers and sellers, reduces disputes, and builds the confidence required for repeat trading relationships.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMMODITY FOCUS AREAS -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto 48px;">
+        <span class="eyebrow">Agricultural Commodities</span>
+        <h2>What We Trade</h2>
+        <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-top: 16px;">Our platform supports the trading of key agricultural commodities and fertilizers, connecting verified producers and buyers across international markets.</p>
+      </div>
+      <div class="sector-detail-cards">
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Food Security/card-sugar.jpg" alt="Sugar" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Sugar<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Sugar</h3>
+            <p class="sector-detail-card__desc">ICUMSA 45 White Refined Sugar, bulk sugar supply solutions, and international delivery programs &mdash; sourced from verified producers for global markets.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Food Security/card-rice.jpg" alt="Rice" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Rice<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Rice</h3>
+            <p class="sector-detail-card__desc">White Rice, Basmati Rice, and Long Grain Rice varieties &mdash; connecting major rice-producing regions with importers and distributors worldwide.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Food Security/card-wheat.jpg" alt="Wheat" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Wheat<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Wheat</h3>
+            <p class="sector-detail-card__desc">Trading of milling wheat and feed wheat from verified producers, supporting bulk supply programs for flour mills, food manufacturers, and national procurement agencies.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Food Security/card-corn.jpg" alt="Corn" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Corn<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Corn</h3>
+            <p class="sector-detail-card__desc">Sourcing and supply of corn and maize for feed, food processing, and industrial use &mdash; connecting growers with international buyers through structured trading programmes.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Food Security/card-soybeans.jpg" alt="Soybeans" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Soybeans<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Soybeans</h3>
+            <p class="sector-detail-card__desc">International soybean trading for oil extraction, animal feed, and food manufacturing &mdash; sourced from major producing regions with full quality verification and documentation.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Food Security/card-cooking-oil.jpg" alt="Cooking Oil" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Cooking Oil<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Cooking Oil</h3>
+            <p class="sector-detail-card__desc">Supply and distribution of palm oil, sunflower oil, soybean oil, and other edible cooking oils from producing regions to refineries, food manufacturers, and retail markets.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Food Security/card-pulses.jpg" alt="Pulses" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Pulses<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Pulses</h3>
+            <p class="sector-detail-card__desc">Trading of lentils, chickpeas, beans, and other pulses &mdash; connecting producers in key growing regions with importers, food processors, and wholesale distributors worldwide.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.7;">IIC Worldwide is building a food commodity trading platform that brings transparency, financial access, and trust to global food markets. By connecting verified producers with qualified buyers, providing trade finance solutions, and ensuring quality at every stage, we help food reach the markets that need it most.</p>
+        <p style="color: var(--text-muted); line-height: 1.7;">Our vision is a world where legitimate food trade flows freely &mdash; where producers receive fair value for their output, buyers receive the quality and quantity they contracted, and the financial infrastructure exists to make every viable transaction possible.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2 class="cta-band__title">Trade Food Commodities with Confidence</h2>
+      <p class="cta-band__text">Connect with IIC Worldwide to explore sourcing opportunities, trade finance solutions, and access to verified food commodity markets.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+        <a href="index.html#sectors" class="btn btn--outline">All Sectors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide" class="footer__brand-logo">
+          <p class="footer__brand-text">A global commodity, trade, and finance platform based in Dubai &mdash; connecting producers, buyers, and suppliers across food, energy, services, and technology markets.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Verticals</h4>
+          <a href="sector-food-security.html" class="footer__link">Food Security</a>
+          <a href="sector-energy.html" class="footer__link">Energy</a>
+          <a href="sector-fertilizers.html" class="footer__link">Fertilizers</a>
+          <a href="sector-metals.html" class="footer__link">Metals &amp; Precious Commodities</a>
+          <a href="sector-services.html" class="footer__link">Services</a>
+          <a href="sector-technology.html" class="footer__link">Technology</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Subsidiaries</h4>
+          <span class="footer__link">IIC Bank</span>
+          <span class="footer__link">IIC Metaverse</span>
+          <span class="footer__link">IIC Oil &amp; Gas</span>
+          <span class="footer__link">IIC General Trading</span>
+          <span class="footer__link">IIC Aviation</span>
+          <span class="footer__link">IIC Holding</span>
+          <span class="footer__link">IIC Express Gold &amp; Diamond</span>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 International Investment Consortium Worldwide. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

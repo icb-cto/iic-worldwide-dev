@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology &amp; Industrial Solutions &mdash; IIC Worldwide</title>
+  <meta name="description" content="IIC Worldwide supports the sourcing and international trade of technology equipment, industrial machinery, telecommunications, renewable energy components, and smart business solutions through trusted global manufacturers and suppliers.">
+  <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero--bg {
+      background: url('Media/Sectors/Technology.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    .page-hero--bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 36, 32, 0.55);
+    }
+    .page-hero--bg .page-hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero--bg .eyebrow,
+    .page-hero--bg .eyebrow a {
+      color: var(--gold) !important;
+    }
+    .page-hero--bg .page-hero__title {
+      color: #fff;
+    }
+    .page-hero--bg .page-hero__subtitle {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Approach Items */
+    .approach-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+    .approach-item:last-child {
+      margin-bottom: 0;
+    }
+    .approach-item--reverse {
+      direction: rtl;
+    }
+    .approach-item--reverse > * {
+      direction: ltr;
+    }
+    .approach-item__number {
+      font-family: var(--font-data, var(--font-heading));
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .approach-item__title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .approach-item__text {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .approach-item__img-wrap {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-card, #f5f5f0);
+      aspect-ratio: 960 / 600;
+    }
+    .approach-item__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .approach-item__placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      background: var(--bg-card, #f5f5f0);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+    }
+    .approach-item__placeholder small {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+
+    /* Sector Detail Cards */
+    .sector-detail-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .sector-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
+    }
+    .sector-detail-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    .sector-detail-card__img-wrap {
+      position: relative;
+      aspect-ratio: 480 / 320;
+      background: var(--bg-card, #f5f5f0);
+      overflow: hidden;
+    }
+    .sector-detail-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .sector-detail-card__placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.5;
+      background: var(--bg-card, #f5f5f0);
+    }
+    .sector-detail-card__placeholder small {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      opacity: 0.6;
+    }
+    .sector-detail-card__body {
+      padding: 20px;
+    }
+    .sector-detail-card__title {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .sector-detail-card__desc {
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .approach-item { grid-template-columns: 1fr; gap: 32px; }
+      .approach-item--reverse { direction: ltr; }
+      .sector-detail-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .sector-detail-cards { grid-template-columns: 1fr; }
+      .approach-item__number { font-size: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+        <a href="contact.html" class="nav__link">Contact Us</a>
+      </div>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+      <a href="contact.html" class="nav__link">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--bg">
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="eyebrow reveal"><a href="index.html">Sectors</a> &mdash; Technology &amp; Industrial Solutions</span>
+        <h1 class="page-hero__title reveal reveal-delay-1">Technology &amp; Industrial Solutions</h1>
+        <p class="page-hero__subtitle reveal reveal-delay-2">Supporting the sourcing and international trade of technology equipment, industrial machinery, and smart business solutions through trusted global manufacturers and suppliers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="content-split">
+        <div class="reveal">
+          <span class="eyebrow">Sector Overview</span>
+          <h2>Sourcing Technology &amp; Industrial Equipment</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Recognising the growing demand for advanced technologies, IIC General Trading LLC-FZ supports the sourcing and international trade of technology and industrial equipment through trusted global manufacturers and suppliers.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Businesses across emerging markets face significant challenges in procuring high-quality IT equipment, telecommunications infrastructure, industrial machinery, and renewable energy components. Fragmented supply chains, unverified suppliers, and limited access to trade finance create barriers that prevent organisations from accessing the technology they need to grow.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">IIC Worldwide bridges this gap by connecting buyers with verified manufacturers and suppliers &mdash; providing the sourcing expertise, trade finance, and logistics coordination required to move technology and industrial equipment across international borders efficiently and reliably.</p>
+          <p style="color: var(--text-muted);">Our capabilities span from information technology and telecommunications to industrial machinery, electrical equipment, renewable energy components, and smart business solutions &mdash; serving governments, enterprises, and institutional buyers across the Middle East, Africa, and Asia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto 56px;">
+        <span class="eyebrow">Our Approach</span>
+        <h2>How We Facilitate Technology Trade</h2>
+        <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-top: 16px;">IIC connects buyers of technology and industrial equipment with verified global manufacturers and suppliers &mdash; handling sourcing, verification, trade finance, and logistics.</p>
+      </div>
+
+      <!-- Approach Item 1 -->
+      <div class="approach-item reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Technology/approach-trading-platform.jpg" alt="Global Sourcing Network" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Global Sourcing Network<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">01</div>
+          <h3 class="approach-item__title">Global Sourcing Network</h3>
+          <p class="approach-item__text">IIC maintains relationships with trusted technology manufacturers, OEMs, and authorised distributors across North America, Europe, and Asia. Our sourcing team identifies the right suppliers for each procurement requirement &mdash; whether a government agency needs telecommunications infrastructure, an enterprise requires IT hardware, or a contractor is sourcing industrial machinery. Every supplier undergoes verification for product authenticity, manufacturing capacity, and regulatory compliance before joining our network.</p>
+        </div>
+      </div>
+
+      <!-- Approach Item 2 -->
+      <div class="approach-item approach-item--reverse reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Technology/approach-fintech.jpg" alt="Trade Finance for Equipment" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Trade Finance for Equipment<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">02</div>
+          <h3 class="approach-item__title">Trade Finance for Equipment</h3>
+          <p class="approach-item__text">Large-scale technology and industrial equipment purchases require structured financing. IIC provides trade finance solutions including letters of credit, deferred payment arrangements, and structured funding that enable buyers to acquire the equipment they need. Our financial solutions are tailored to the realities of equipment procurement &mdash; supporting milestone-based payments, pre-shipment financing, and post-delivery credit terms that align with project timelines and budgets.</p>
+        </div>
+      </div>
+
+      <!-- Approach Item 3 -->
+      <div class="approach-item reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Technology/approach-blockchain.jpg" alt="Quality Assurance &amp; Compliance" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Quality Assurance<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">03</div>
+          <h3 class="approach-item__title">Quality Assurance &amp; Compliance</h3>
+          <p class="approach-item__text">Technology and industrial equipment must meet specific technical standards, certifications, and regulatory requirements for each destination market. IIC coordinates pre-shipment inspections, product certification, and compliance documentation to ensure that every item delivered meets the buyer&rsquo;s specifications. We work with accredited testing laboratories and certification bodies to verify product quality, safety standards, and warranty terms before goods leave the manufacturer.</p>
+        </div>
+      </div>
+
+      <!-- Approach Item 4 -->
+      <div class="approach-item approach-item--reverse reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Technology/approach-data-analytics.jpg" alt="Logistics &amp; Delivery" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Logistics &amp; Delivery<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">04</div>
+          <h3 class="approach-item__title">Logistics &amp; Delivery</h3>
+          <p class="approach-item__text">Moving technology and industrial equipment across borders requires specialised logistics &mdash; from packaging and freight forwarding to customs clearance and last-mile delivery. IIC coordinates the full logistics chain, working with freight partners, customs brokers, and in-country delivery agents to ensure equipment arrives safely, on time, and with all necessary documentation for import clearance and installation.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLATFORM COMPONENTS -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto 48px;">
+        <span class="eyebrow">Our Capabilities</span>
+        <h2>Technology &amp; Equipment We Source</h2>
+        <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-top: 16px;">Our sourcing capabilities span across key technology and industrial categories, connecting buyers with verified manufacturers and suppliers worldwide.</p>
+      </div>
+      <div class="sector-detail-cards">
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Technology/card-it-equipment.jpg" alt="Information Technology (IT) Equipment" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">IT Equipment<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Information Technology (IT) Equipment</h3>
+            <p class="sector-detail-card__desc">Servers, networking equipment, data centre infrastructure, storage systems, and enterprise IT solutions sourced from leading global manufacturers for government and corporate buyers.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Technology/card-computer-hardware.jpg" alt="Computer Hardware &amp; Accessories" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Computer Hardware<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Computer Hardware &amp; Accessories</h3>
+            <p class="sector-detail-card__desc">Desktops, laptops, monitors, printers, peripherals, and accessories &mdash; procured in bulk from authorised distributors for enterprises, institutions, and government projects.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Technology/card-telecom.jpg" alt="Telecommunications Equipment" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Telecommunications<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Telecommunications Equipment</h3>
+            <p class="sector-detail-card__desc">Mobile network infrastructure, fibre optic equipment, radio systems, satellite communications, and telecom towers &mdash; supporting operators and governments building connectivity.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Technology/card-industrial-machinery.jpg" alt="Industrial Machinery" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Industrial Machinery<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Industrial Machinery</h3>
+            <p class="sector-detail-card__desc">Heavy machinery, manufacturing equipment, processing plants, and industrial tools sourced from OEMs for construction, mining, agriculture, and manufacturing sectors.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Technology/card-electrical.jpg" alt="Electrical Equipment" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Electrical Equipment<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Electrical Equipment</h3>
+            <p class="sector-detail-card__desc">Transformers, switchgear, cables, generators, and power distribution systems &mdash; connecting electrical equipment manufacturers with utility companies and infrastructure developers.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Technology/card-renewable-solar.jpg" alt="Renewable Energy &amp; Solar Equipment" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Renewable &amp; Solar<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Renewable Energy &amp; Solar Equipment</h3>
+            <p class="sector-detail-card__desc">Solar panels, inverters, battery storage, wind turbine components, and renewable energy installation equipment &mdash; sourced for projects across emerging markets.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Technology/card-smart-solutions.jpg" alt="Smart Business Solutions" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Smart Solutions<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Smart Business Solutions</h3>
+            <p class="sector-detail-card__desc">Enterprise software, cloud infrastructure, cybersecurity systems, and digital transformation solutions &mdash; enabling businesses to modernise operations and improve productivity.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Technology/card-automation.jpg" alt="Automation &amp; Industrial Systems" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Automation Systems<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Automation &amp; Industrial Systems</h3>
+            <p class="sector-detail-card__desc">PLC systems, SCADA, robotics, conveyor systems, and process automation equipment &mdash; supporting factories, plants, and industrial operations seeking efficiency through automation.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.7;">IIC Worldwide is building a trusted sourcing and trade platform for technology and industrial equipment &mdash; connecting buyers in emerging markets with the world&rsquo;s leading manufacturers and suppliers. By combining sourcing expertise with trade finance, quality assurance, and logistics coordination, we make it possible for organisations to procure the technology they need to grow.</p>
+        <p style="color: var(--text-muted); line-height: 1.7;">From IT infrastructure and telecommunications to industrial machinery and renewable energy components, our capabilities are designed to serve the real procurement needs of governments, enterprises, and institutions across the Middle East, Africa, and Asia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2 class="cta-band__title">Source Technology &amp; Industrial Equipment</h2>
+      <p class="cta-band__text">Connect with IIC Worldwide to explore sourcing opportunities for IT equipment, industrial machinery, telecommunications, and renewable energy components.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+        <a href="index.html#sectors" class="btn btn--outline">All Sectors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide" class="footer__brand-logo">
+          <p class="footer__brand-text">A global commodity, trade, and finance platform based in Dubai &mdash; connecting producers, buyers, and suppliers across food, energy, services, and technology markets.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Verticals</h4>
+          <a href="sector-food-security.html" class="footer__link">Food Security</a>
+          <a href="sector-energy.html" class="footer__link">Energy</a>
+          <a href="sector-fertilizers.html" class="footer__link">Fertilizers</a>
+          <a href="sector-metals.html" class="footer__link">Metals &amp; Precious Commodities</a>
+          <a href="sector-services.html" class="footer__link">Services</a>
+          <a href="sector-technology.html" class="footer__link">Technology</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Subsidiaries</h4>
+          <span class="footer__link">IIC Bank</span>
+          <span class="footer__link">IIC Metaverse</span>
+          <span class="footer__link">IIC Oil &amp; Gas</span>
+          <span class="footer__link">IIC General Trading</span>
+          <span class="footer__link">IIC Aviation</span>
+          <span class="footer__link">IIC Holding</span>
+          <span class="footer__link">IIC Express Gold &amp; Diamond</span>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 International Investment Consortium Worldwide. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services &mdash; IIC Worldwide</title>
+  <meta name="description" content="IIC Worldwide provides a verified marketplace for finding legitimate, trusted service providers across professional consulting, engineering, logistics, legal, construction, IT, and more.">
+  <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero--bg {
+      background: url('Media/Sectors/Services.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    .page-hero--bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 36, 32, 0.55);
+    }
+    .page-hero--bg .page-hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    .page-hero--bg .eyebrow,
+    .page-hero--bg .eyebrow a {
+      color: var(--gold) !important;
+    }
+    .page-hero--bg .page-hero__title {
+      color: #fff;
+    }
+    .page-hero--bg .page-hero__subtitle {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Approach Items */
+    .approach-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+    .approach-item:last-child {
+      margin-bottom: 0;
+    }
+    .approach-item--reverse {
+      direction: rtl;
+    }
+    .approach-item--reverse > * {
+      direction: ltr;
+    }
+    .approach-item__number {
+      font-family: var(--font-data, var(--font-heading));
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .approach-item__title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+    .approach-item__text {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .approach-item__img-wrap {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-card, #f5f5f0);
+      aspect-ratio: 960 / 600;
+    }
+    .approach-item__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .approach-item__placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      background: var(--bg-card, #f5f5f0);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+    }
+    .approach-item__placeholder small {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+
+    /* Sector Detail Cards */
+    .sector-detail-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .sector-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
+    }
+    .sector-detail-card:hover {
+      border-color: var(--border-gold);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    .sector-detail-card__img-wrap {
+      position: relative;
+      aspect-ratio: 480 / 320;
+      background: var(--bg-card, #f5f5f0);
+      overflow: hidden;
+    }
+    .sector-detail-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .sector-detail-card__placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.5;
+      background: var(--bg-card, #f5f5f0);
+    }
+    .sector-detail-card__placeholder small {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      opacity: 0.6;
+    }
+    .sector-detail-card__body {
+      padding: 20px;
+    }
+    .sector-detail-card__title {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .sector-detail-card__desc {
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .approach-item { grid-template-columns: 1fr; gap: 32px; }
+      .approach-item--reverse { direction: ltr; }
+      .sector-detail-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .sector-detail-cards { grid-template-columns: 1fr; }
+      .approach-item__number { font-size: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+        <a href="contact.html" class="nav__link">Contact Us</a>
+      </div>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+      <a href="contact.html" class="nav__link">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--bg">
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="eyebrow reveal"><a href="index.html">Sectors</a> &mdash; Services</span>
+        <h1 class="page-hero__title reveal reveal-delay-1">Services</h1>
+        <p class="page-hero__subtitle reveal reveal-delay-2">A verified marketplace for finding legitimate, trusted service providers &mdash; connecting organisations with qualified professionals across consulting, engineering, logistics, legal, IT, construction, and operational services.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="content-split">
+        <div class="reveal">
+          <span class="eyebrow">Sector Overview</span>
+          <h2>The Trusted Services Marketplace</h2>
+          <div class="gold-line"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Finding reliable, verified service providers is one of the most persistent challenges in international trade and project delivery. Organisations operating across borders need partners they can trust &mdash; from engineering firms and logistics companies to legal advisors and IT specialists &mdash; yet the process of identifying, vetting, and engaging these providers is often fragmented, opaque, and time-consuming.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">IIC Worldwide operates a services marketplace that connects organisations with legitimate, verified service providers. Our platform addresses the trust gap by requiring every listed provider to undergo verification of credentials, track record, financial standing, and regulatory compliance before they can participate.</p>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Whether a buyer needs a construction contractor in West Africa, a freight forwarder in the Gulf, or a compliance consultant in South-East Asia, our platform provides a structured environment where service procurement is transparent, competitive, and backed by verification.</p>
+          <p style="color: var(--text-muted);">Beyond matching buyers with providers, IIC offers procurement solutions and service finance that help organisations manage complex, multi-vendor engagements with the financial flexibility to structure payments around project milestones and deliverables.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto 56px;">
+        <span class="eyebrow">Our Approach</span>
+        <h2>How We Connect Services</h2>
+        <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-top: 16px;">IIC provides the infrastructure to find, verify, engage, and pay service providers &mdash; creating a marketplace where trust is built in and procurement is streamlined.</p>
+      </div>
+
+      <!-- Approach Item 1 -->
+      <div class="approach-item reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Services/approach-provider-marketplace.jpg" alt="Service Provider Marketplace" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Service Provider Marketplace<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">01</div>
+          <h3 class="approach-item__title">Service Provider Marketplace</h3>
+          <p class="approach-item__text">IIC maintains a curated directory of service providers across multiple disciplines and geographies. Organisations can search, compare, and engage providers based on capability, location, sector experience, and availability. Our marketplace is structured to support both one-off engagements and long-term retainer arrangements. Providers are categorised by service type, market coverage, and specialisation &mdash; making it straightforward for buyers to identify the right partner for their specific requirements without relying on personal networks or unverified referrals.</p>
+        </div>
+      </div>
+
+      <!-- Approach Item 2 -->
+      <div class="approach-item approach-item--reverse reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Services/approach-verification-trust.jpg" alt="Verification &amp; Trust" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Verification &amp; Trust<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">02</div>
+          <h3 class="approach-item__title">Verification &amp; Trust</h3>
+          <p class="approach-item__text">Every service provider on the IIC platform undergoes a structured verification process. We assess corporate registration, professional licences, insurance coverage, financial health, key personnel credentials, and past performance references. Providers that meet our standards receive verified status, giving buyers confidence that they are engaging with legitimate, capable organisations. Verification is not a one-time event &mdash; we conduct periodic reviews and monitor provider performance through client feedback, project completion data, and compliance tracking to maintain the integrity of the marketplace.</p>
+        </div>
+      </div>
+
+      <!-- Approach Item 3 -->
+      <div class="approach-item reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Services/approach-procurement.jpg" alt="Procurement Solutions" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Procurement Solutions<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">03</div>
+          <h3 class="approach-item__title">Procurement Solutions</h3>
+          <p class="approach-item__text">Complex projects often require multiple service providers working in coordination. IIC offers procurement management tools that help organisations issue requests for proposals, evaluate bids, negotiate terms, and manage contracts through a single platform. Our procurement solutions are designed for cross-border engagements where coordinating vendors across jurisdictions, currencies, and regulatory environments adds significant complexity. From tender management and bid evaluation to contract administration and performance tracking, we streamline the entire procurement lifecycle.</p>
+        </div>
+      </div>
+
+      <!-- Approach Item 4 -->
+      <div class="approach-item approach-item--reverse reveal">
+        <div class="approach-item__img-wrap">
+          <img src="Media/Sectors/Services/approach-service-finance.jpg" alt="Service Finance" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <span class="approach-item__placeholder">Service Finance<small>960 x 600 px</small></span>
+        </div>
+        <div>
+          <div class="approach-item__number">04</div>
+          <h3 class="approach-item__title">Service Finance</h3>
+          <p class="approach-item__text">Payment terms and cash flow are critical factors in service engagements, particularly for smaller providers working on large projects. IIC offers financial solutions that bridge the gap between service delivery and payment &mdash; including milestone-based payment structures, escrow services, invoice financing, and performance bonds. These tools protect both buyers and providers: buyers gain assurance that funds are released only upon verified delivery, while providers gain access to working capital that enables them to take on larger engagements without cash-flow constraints.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICE CATEGORIES -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto 48px;">
+        <span class="eyebrow">Service Categories</span>
+        <h2>Services Available on Our Platform</h2>
+        <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-top: 16px;">Our marketplace covers a broad range of professional and operational services, each supported by verified providers ready to engage.</p>
+      </div>
+      <div class="sector-detail-cards">
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Services/card-professional-consulting.jpg" alt="Professional Consulting" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Professional Consulting<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Professional Consulting</h3>
+            <p class="sector-detail-card__desc">Management consultants, strategy advisors, financial analysts, and subject-matter experts available for project-based or retainer engagements across industries and markets.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Services/card-engineering-technical.jpg" alt="Engineering &amp; Technical" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Engineering &amp; Technical<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Engineering &amp; Technical</h3>
+            <p class="sector-detail-card__desc">Civil, mechanical, electrical, and process engineering firms providing design, supervision, inspection, and technical advisory services for infrastructure and industrial projects.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Services/card-logistics-freight.jpg" alt="Logistics &amp; Freight" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Logistics &amp; Freight<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Logistics &amp; Freight</h3>
+            <p class="sector-detail-card__desc">Freight forwarders, customs brokers, shipping agents, warehousing operators, and last-mile delivery providers supporting the physical movement of goods across borders.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Services/card-legal-compliance.jpg" alt="Legal &amp; Compliance" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Legal &amp; Compliance<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Legal &amp; Compliance</h3>
+            <p class="sector-detail-card__desc">Law firms, regulatory advisors, and compliance specialists offering corporate law, trade law, contract drafting, dispute resolution, and anti-money-laundering advisory services.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Services/card-construction-services.jpg" alt="Construction Services" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Construction Services<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Construction Services</h3>
+            <p class="sector-detail-card__desc">General contractors, subcontractors, project managers, and quantity surveyors for commercial, industrial, residential, and infrastructure construction projects.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Services/card-it-digital.jpg" alt="IT &amp; Digital Services" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">IT &amp; Digital Services<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">IT &amp; Digital Services</h3>
+            <p class="sector-detail-card__desc">Software developers, systems integrators, cybersecurity firms, cloud service providers, and digital transformation consultants supporting technology-driven business operations.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Services/card-maintenance-operations.jpg" alt="Maintenance &amp; Operations" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Maintenance &amp; Operations<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Maintenance &amp; Operations</h3>
+            <p class="sector-detail-card__desc">Facility management companies, industrial maintenance teams, equipment servicing firms, and operational support providers for ongoing asset management and upkeep.</p>
+          </div>
+        </div>
+
+        <div class="sector-detail-card reveal">
+          <div class="sector-detail-card__img-wrap">
+            <img src="Media/Sectors/Services/card-security-risk.jpg" alt="Security &amp; Risk Management" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
+            <span class="sector-detail-card__placeholder">Security &amp; Risk Management<br><small>480 x 320 px</small></span>
+          </div>
+          <div class="sector-detail-card__body">
+            <h3 class="sector-detail-card__title">Security &amp; Risk Management</h3>
+            <p class="sector-detail-card__desc">Physical security providers, risk assessment consultants, due-diligence investigators, and crisis management specialists protecting assets, personnel, and operations.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.7;">IIC Worldwide is building a services marketplace where trust is the foundation. By verifying every provider, structuring procurement processes, and offering financial solutions that protect both parties, we remove the friction and risk that characterise traditional service procurement in international markets.</p>
+        <p style="color: var(--text-muted); line-height: 1.7;">Our goal is a platform where any organisation &mdash; regardless of size or geography &mdash; can find, engage, and pay a qualified service provider with the confidence that comes from verified credentials, transparent terms, and institutional-grade oversight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2 class="cta-band__title">Find Verified Service Providers</h2>
+      <p class="cta-band__text">Connect with IIC Worldwide to access our services marketplace, find qualified providers, and streamline your procurement process.</p>
+      <div class="btn-group" style="justify-content: center;">
+        <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+        <a href="index.html#sectors" class="btn btn--outline">All Sectors</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide" class="footer__brand-logo">
+          <p class="footer__brand-text">A global commodity, trade, and finance platform based in Dubai &mdash; connecting producers, buyers, and suppliers across food, energy, services, and technology markets.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Verticals</h4>
+          <a href="sector-food-security.html" class="footer__link">Food Security</a>
+          <a href="sector-energy.html" class="footer__link">Energy</a>
+          <a href="sector-fertilizers.html" class="footer__link">Fertilizers</a>
+          <a href="sector-metals.html" class="footer__link">Metals &amp; Precious Commodities</a>
+          <a href="sector-services.html" class="footer__link">Services</a>
+          <a href="sector-technology.html" class="footer__link">Technology</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Subsidiaries</h4>
+          <span class="footer__link">IIC Bank</span>
+          <span class="footer__link">IIC Metaverse</span>
+          <span class="footer__link">IIC Oil &amp; Gas</span>
+          <span class="footer__link">IIC General Trading</span>
+          <span class="footer__link">IIC Aviation</span>
+          <span class="footer__link">IIC Holding</span>
+          <span class="footer__link">IIC Express Gold &amp; Diamond</span>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 International Investment Consortium Worldwide. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
