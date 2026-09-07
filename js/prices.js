@@ -14,7 +14,7 @@
 var PRICE_CONFIG = {
   metalsApiKey: 'EQCZCZF193MYEMVENSGK217VENSGK',
   commoditiesApiKey: 'DEMO',
-  metalsCacheTTL: 28800000,
+  metalsCacheTTL: 60000, //28800000
   refreshInterval: 60000,
   currency: 'USD'
 };
