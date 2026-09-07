@@ -97,13 +97,15 @@ var PRICE_CONFIG = {
   /* --- LocalStorage cache helpers --- */
   var METALS_CACHE_KEY = 'iic_goldapi_cache';
 
-  function getMetalsCache() {
+  function getMetalsCache(ignoreExpiry) {
     try {
       var raw = localStorage.getItem(METALS_CACHE_KEY);
       if (!raw) return null;
       var parsed = JSON.parse(raw);
-      var age = Date.now() - (parsed.ts || 0);
-      if (age > PRICE_CONFIG.metalsCacheTTL) return null;
+      if (!ignoreExpiry) {
+        var age = Date.now() - (parsed.ts || 0);
+        if (age > PRICE_CONFIG.metalsCacheTTL) return null;
+      }
       return parsed;
     } catch (e) { return null; }
   }
@@ -138,6 +140,15 @@ var PRICE_CONFIG = {
     var pending = toFetch.length;
     if (pending === 0) { callback(null, 'demo'); return; }
 
+    function fallbackToStaleCache() {
+      var stale = getMetalsCache(true);
+      if (stale && stale.prices) {
+        processGoldApiData(stale.prices, symbols, callback, 'cached');
+      } else {
+        callback(null, 'demo');
+      }
+    }
+
     toFetch.forEach(function (metal) {
       fetch('https://www.goldapi.io/api/' + metal + '/USD', {
         headers: { 'x-access-token': PRICE_CONFIG.goldApiKey }
@@ -149,8 +160,12 @@ var PRICE_CONFIG = {
           }
           pending--;
           if (pending === 0) {
-            setMetalsCache(results);
-            processGoldApiData(results, symbols, callback, 'live');
+            if (Object.keys(results).length > 0) {
+              setMetalsCache(results);
+              processGoldApiData(results, symbols, callback, 'live');
+            } else {
+              fallbackToStaleCache();
+            }
           }
         })
         .catch(function () {
@@ -160,7 +175,7 @@ var PRICE_CONFIG = {
               setMetalsCache(results);
               processGoldApiData(results, symbols, callback, 'live');
             } else {
-              callback(null, 'error');
+              fallbackToStaleCache();
             }
           }
         });
