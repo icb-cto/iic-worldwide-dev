@@ -676,6 +676,17 @@
     </div>
   </section>
 
+  <!-- LIVE COMMODITY PRICES -->
+  <section class="price-ticker">
+    <div class="container">
+      <div class="price-ticker__header">
+        <span class="price-ticker__title">Live Commodity Prices (USD)</span>
+        <span class="price-status price-status--demo" id="commodity-prices-status">Loading prices&hellip;</span>
+      </div>
+      <div id="commodity-prices"></div>
+    </div>
+  </section>
+
   <!-- ABOUT — Who We Are -->
   <section id="about" class="section section--primary">
     <div class="container">
@@ -1150,6 +1161,15 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/prices.js"></script>
+  <script>
+  initCommodityPriceCarousel('commodity-prices', [
+    'XAU_G', 'XAG_G', 'COPPER_G',
+    'WTI', 'BRENT', 'NG',
+    'SUGAR', 'RICE', 'WHEAT', 'CORN', 'SOYBEAN',
+    'UREA'
+  ], 4, 5000);
+  </script>
   <script>
   (function() {
     var form = document.getElementById('trading-contact-form');

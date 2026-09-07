@@ -571,6 +571,17 @@
     </div>
   </section>
 
+  <!-- LIVE PRICES -->
+  <section class="price-ticker">
+    <div class="container">
+      <div class="price-ticker__header">
+        <span class="price-ticker__title">Live Gold &amp; Diamond Prices (USD)</span>
+        <span class="price-status price-status--demo" id="gold-prices-status">Loading prices&hellip;</span>
+      </div>
+      <div class="price-grid" style="grid-template-columns: repeat(2, 1fr);" id="gold-prices"></div>
+    </div>
+  </section>
+
   <!-- ABOUT US -->
   <section id="about" class="section section--primary">
     <div class="container">
@@ -904,6 +915,10 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/prices.js"></script>
+  <script>
+  initMetalsPriceTicker('gold-prices', ['XAU_G', 'DIAMOND']);
+  </script>
   <script>
   (function() {
     var form = document.getElementById('gold-contact-form');
