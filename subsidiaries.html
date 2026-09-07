@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subsidiaries — IIC Worldwide</title>
+  <meta name="description" content="IIC Worldwide brings together specialized companies across finance, energy, trade, aviation, commodities, and digital innovation.">
+  <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .sub-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .sub-showcase__card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--duration) var(--ease), background var(--duration) var(--ease);
+    }
+    .sub-showcase__card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s var(--ease-out);
+    }
+    .sub-showcase__card:hover {
+      border-color: var(--border-gold);
+      background: var(--bg-card-hover);
+    }
+    .sub-showcase__card:hover::before {
+      transform: scaleX(1);
+    }
+    .sub-showcase__card--featured {
+      grid-column: 1 / -1;
+      text-align: center;
+      align-items: center;
+    }
+    .sub-showcase__logo {
+      height: 56px;
+      width: auto;
+      max-width: 200px;
+      object-fit: contain;
+      margin-bottom: 24px;
+    }
+    .sub-showcase__card--featured .sub-showcase__logo {
+      height: 64px;
+      max-width: 240px;
+    }
+    .sub-showcase__tag {
+      font-family: var(--font-data);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-text);
+      margin-bottom: 16px;
+    }
+    .sub-showcase__title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+    .sub-showcase__text {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      flex: 1;
+    }
+    .sub-showcase__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 24px;
+      text-decoration: none;
+      transition: gap var(--duration) var(--ease);
+    }
+    .sub-showcase__card:hover .sub-showcase__link {
+      gap: 12px;
+    }
+    .sub-showcase__logo-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+      margin-bottom: 24px;
+    }
+    .sub-showcase__logo-text svg {
+      height: 40px;
+      width: auto;
+    }
+    @media (max-width: 768px) {
+      .sub-showcase {
+        grid-template-columns: 1fr;
+      }
+      .sub-showcase__card {
+        padding: 32px 28px;
+      }
+      .sub-showcase__card--featured {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About Us</a>
+        <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
+        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+        <a href="contact.html" class="nav__link">Contact Us</a>
+      </div>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="about.html" class="nav__link">About Us</a>
+      <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
+      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
+      <a href="contact.html" class="nav__link">Contact Us</a>
+
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="eyebrow reveal">Subsidiaries</span>
+        <h1 class="page-hero__title reveal reveal-delay-1">Our Integrated Ecosystem</h1>
+        <p class="page-hero__subtitle reveal reveal-delay-2">Specialized companies working across key global industries, forming one connected portfolio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE INTRO -->
+  <section class="section section--primary">
+    <div class="container">
+      <div class="section-header section-header--center reveal" style="max-width: 780px; margin-left: auto; margin-right: auto;">
+        <span class="eyebrow">Portfolio Overview</span>
+        <h2>An Ecosystem Built for Growth</h2>
+        <p style="color: var(--text-muted); line-height: 1.7; margin-top: 16px;">IIC Worldwide brings together a portfolio of specialized companies across key global industries. Together, our subsidiaries form an integrated ecosystem delivering solutions in finance, energy, trade, aviation, commodities, and digital innovation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSIDIARIES GRID -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="sub-showcase">
+
+        <!-- IIC Bank -->
+        <a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" class="sub-showcase__card reveal" style="text-decoration: none; color: inherit;">
+          <img src="Media/IICB.png" alt="IIC Bank" class="sub-showcase__logo">
+          <span class="sub-showcase__tag">Banking &amp; Finance</span>
+          <p class="sub-showcase__text">Providing innovative banking and financial solutions that connect markets, support businesses, and enable secure cross-border transactions across emerging economies.</p>
+          <span class="sub-showcase__link">Visit Website <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <!-- IIC Metaverse -->
+        <a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer" class="sub-showcase__card reveal reveal-delay-1" style="text-decoration: none; color: inherit;">
+          <img src="Media/IIC Metaverse.png" alt="IIC Metaverse" class="sub-showcase__logo">
+          <span class="sub-showcase__tag">Digital / Blockchain</span>
+          <p class="sub-showcase__text">Driving digital transformation through blockchain, emerging technologies, and next-generation financial solutions that shape the future of digital economies.</p>
+          <span class="sub-showcase__link">Visit Website <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <!-- IIC Oil & Gas -->
+        <a href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer" class="sub-showcase__card reveal" style="text-decoration: none; color: inherit;">
+          <img src="Media/IIC Oil and Gas.png" alt="IIC Oil &amp; Gas" class="sub-showcase__logo">
+          <span class="sub-showcase__tag">Energy</span>
+          <p class="sub-showcase__text">Delivering energy solutions across the oil and gas sector through responsible operations, strategic partnerships, and a commitment to efficiency and global standards.</p>
+          <span class="sub-showcase__link">Visit Website <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <!-- IIC General Trading -->
+        <a href="iic-general-trading.html" class="sub-showcase__card reveal reveal-delay-1" style="text-decoration: none; color: inherit;">
+          <img src="Media/IIC General Trading.png" alt="IIC General Trading" class="sub-showcase__logo">
+          <span class="sub-showcase__tag">Trade &amp; Logistics</span>
+          <p class="sub-showcase__text">Connecting global markets through reliable sourcing, distribution, and supply chain solutions for commodities and industrial products.</p>
+          <span class="sub-showcase__link">Visit Website <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <!-- IIC Aviation -->
+        <div class="sub-showcase__card reveal">
+          <div class="sub-showcase__logo-text">
+            <svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
+              <text x="30" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#C49A3C">IIC</text>
+              <text x="76" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="400" fill="#5A7068">Aviation</text>
+            </svg>
+          </div>
+          <span class="sub-showcase__tag">Aviation Finance</span>
+          <p class="sub-showcase__text">Supporting aviation growth through tailored financing, leasing, and asset solutions that enable airlines and aviation partners to expand with confidence.</p>
+        </div>
+
+        <!-- IIC Holding -->
+        <div class="sub-showcase__card reveal reveal-delay-1">
+          <div class="sub-showcase__logo-text">
+            <svg viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg">
+              <text x="28" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#C49A3C">IIC</text>
+              <text x="74" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="400" fill="#5A7068">Holding</text>
+            </svg>
+          </div>
+          <span class="sub-showcase__tag">Regional Investment</span>
+          <p class="sub-showcase__text">Driving strategic investments and development initiatives across South Sudan and East Africa to create sustainable economic growth and long-term value.</p>
+        </div>
+
+        <!-- IIC Express Gold & Diamond -->
+        <a href="iic-gold.html" class="sub-showcase__card sub-showcase__card--featured reveal" style="text-decoration: none; color: inherit;">
+          <img src="Media/IIC Express Gold and Diamond.png" alt="IIC Express Gold and Diamond" class="sub-showcase__logo">
+          <span class="sub-showcase__tag">Precious Metals / Commodities</span>
+          <p class="sub-showcase__text" style="max-width: 560px;">Specializing in precious metals and commodity solutions through responsible sourcing, secure trading, and trusted global partnerships.</p>
+          <span class="sub-showcase__link">Visit Website <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2 class="cta-band__title">Explore Partnership Opportunities</h2>
+      <p class="cta-band__text">Connect with IIC Worldwide to discuss investment, joint ventures and strategic collaboration across our subsidiaries.</p>
+      <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide" class="footer__brand-logo">
+          <p class="footer__brand-text">A global commodity, trade, and finance platform based in Dubai &mdash; connecting producers, buyers, and suppliers across food, energy, services, and technology markets.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="subsidiaries.html" class="footer__link">Subsidiaries</a>
+          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
+          <a href="contact.html" class="footer__link">Contact Us</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Sectors</h4>
+          <a href="sector-food-security.html" class="footer__link">Food Security</a>
+          <a href="sector-energy.html" class="footer__link">Energy</a>
+          <a href="sector-fertilizers.html" class="footer__link">Fertilizers</a>
+          <a href="sector-metals.html" class="footer__link">Metals &amp; Precious Commodities</a>
+          <a href="sector-services.html" class="footer__link">Services</a>
+          <a href="sector-technology.html" class="footer__link">Technology</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Subsidiaries</h4>
+          <a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Bank</a>
+          <a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Metaverse</a>
+          <a href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Oil &amp; Gas</a>
+          <a href="iic-general-trading.html" class="footer__link">IIC General Trading</a>
+          <span class="footer__link">IIC Aviation</span>
+          <span class="footer__link">IIC Holding</span>
+          <a href="iic-gold.html" class="footer__link">IIC Express Gold &amp; Diamond</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 International Investment Consortium Worldwide. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

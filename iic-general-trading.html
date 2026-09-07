@@ -143,18 +143,22 @@
       line-height: 1.75;
       margin-bottom: 12px;
     }
+    .chairman__left {
+      text-align: center;
+    }
     .chairman__name {
       font-family: var(--font-primary);
       font-weight: 700;
       color: var(--text-dark);
       font-size: 16px;
-      margin-top: 20px;
+      margin-top: 16px;
     }
     .chairman__role {
       font-family: var(--font-data);
       font-size: 13px;
       color: var(--gold-text);
       letter-spacing: 0.05em;
+      margin-top: 2px;
     }
 
     /* About / Who We Are */
@@ -294,12 +298,12 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
     }
     .trading-svc-card__icon {
-      width: 48px;
-      height: 48px;
+      width: 36px;
+      height: 36px;
       color: var(--gold);
       margin-bottom: 20px;
     }
-    .trading-svc-card__icon svg { width: 100%; height: 100%; }
+    .trading-svc-card__icon svg { width: 100%; height: 100%; stroke-width: 1.5; }
     .trading-svc-card__title {
       font-family: var(--font-primary);
       font-size: 20px;
@@ -344,12 +348,12 @@
       transform: translateY(-2px);
     }
     .portfolio-card__icon {
-      width: 48px;
-      height: 48px;
+      width: 36px;
+      height: 36px;
       color: var(--gold);
       margin: 0 auto 20px;
     }
-    .portfolio-card__icon svg { width: 100%; height: 100%; }
+    .portfolio-card__icon svg { width: 100%; height: 100%; stroke-width: 1.5; }
     .portfolio-card__title {
       font-family: var(--font-primary);
       font-size: 17px;
@@ -448,12 +452,12 @@
       border-color: var(--border-gold);
     }
     .values-card__icon {
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
       color: var(--gold);
       margin: 0 auto 16px;
     }
-    .values-card__icon svg { width: 100%; height: 100%; }
+    .values-card__icon svg { width: 100%; height: 100%; stroke-width: 1.5; }
     .values-card__title {
       font-family: var(--font-primary);
       font-size: 18px;
@@ -493,12 +497,12 @@
       border-color: var(--border-gold);
     }
     .why-card__icon {
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       color: var(--gold);
       flex-shrink: 0;
     }
-    .why-card__icon svg { width: 100%; height: 100%; }
+    .why-card__icon svg { width: 100%; height: 100%; stroke-width: 1.2; }
     .why-card__title {
       font-family: var(--font-primary);
       font-size: 17px;
@@ -604,7 +608,7 @@
       .trading-hero__logo-img { max-width: 240px; }
       .trading-hero__buttons { flex-direction: column; }
       .chairman { grid-template-columns: 1fr; gap: 32px; }
-      .chairman__photo { max-width: 200px; }
+      .chairman__left { max-width: 200px; }
       .trading-about { grid-template-columns: 1fr; gap: 32px; }
       .group-stats { grid-template-columns: repeat(2, 1fr); }
       .trading-vm { grid-template-columns: 1fr; }
@@ -634,7 +638,7 @@
       <div class="nav__links">
         <a href="index.html" class="nav__link">Home</a>
         <a href="about.html" class="nav__link">About Us</a>
-        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
         <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
         <a href="contact.html" class="nav__link">Contact Us</a>
       </div>
@@ -645,7 +649,7 @@
     <div class="nav__mobile">
       <a href="index.html" class="nav__link">Home</a>
       <a href="about.html" class="nav__link">About Us</a>
-      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
       <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
       <a href="contact.html" class="nav__link">Contact Us</a>
     </div>
@@ -714,8 +718,12 @@
   <section id="chairman" class="section section--dark">
     <div class="container">
       <div class="chairman">
-        <div class="chairman__photo reveal">
-          <img src="Media/IIC General Trading/chairman.jpg" alt="Dato Dr. Arshad Mahmood" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>Dato Dr. Arshad Mahmood<br>Group Chairman</span>';">
+        <div class="chairman__left reveal">
+          <div class="chairman__photo">
+            <img src="Media/IIC General Trading/chairman.jpg" alt="Dato Dr. Arshad Mahmood" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>Dato Dr. Arshad Mahmood<br>Group Chairman</span>';">
+          </div>
+          <div class="chairman__name">Dato Dr. Arshad Mahmood</div>
+          <div class="chairman__role">Group Chairman, IIC Worldwide</div>
         </div>
         <div class="chairman__text reveal reveal-delay-1">
           <span class="eyebrow">Chairman&rsquo;s Message</span>
@@ -723,8 +731,6 @@
           <blockquote>&ldquo;At IIC General Trading, we believe that international trade is more than just the movement of goods &mdash; it is the foundation of economic growth, development, and global connectivity. Our mission is to bridge markets, build lasting partnerships, and deliver value across every transaction.&rdquo;</blockquote>
           <p>Since the founding of IIC General Trading, we have remained committed to our core principles of integrity, reliability, and professionalism. We have built a company that our partners and clients trust to deliver consistent results, even in the most complex and challenging market conditions.</p>
           <p>As we continue to expand our global reach, we remain focused on creating sustainable trading relationships that benefit all stakeholders &mdash; from producers and suppliers to buyers and end consumers.</p>
-          <div class="chairman__name">Dato Dr. Arshad Mahmood</div>
-          <div class="chairman__role">Group Chairman, IIC Worldwide</div>
         </div>
       </div>
     </div>
@@ -759,28 +765,28 @@
       <div class="trading-svc-cards">
         <div class="trading-svc-card reveal">
           <div class="trading-svc-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><path d="M24 6c5 4 8 10 8 18s-3 14-8 18c-5-4-8-10-8-18s3-14 8-18z" stroke="currentColor" stroke-width="2"/><path d="M6 24h36M8 14h32M8 34h32" stroke="currentColor" stroke-width="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"/><path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"/><path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"/><circle cx="12" cy="12" r="10"/></svg>
           </div>
           <h3 class="trading-svc-card__title">Global Sourcing</h3>
           <p class="trading-svc-card__desc">Identifying, verifying, and connecting with reliable producers, manufacturers, and suppliers across international markets. We source commodities from origin countries with established quality standards and certifications.</p>
         </div>
         <div class="trading-svc-card reveal reveal-delay-1">
           <div class="trading-svc-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 36V20l16-12 16 12v16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 36h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 36V24h6v12M26 36V24h6v12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="24" cy="16" r="2" stroke="currentColor" stroke-width="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20"/><path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"/></svg>
           </div>
           <h3 class="trading-svc-card__title">International Trading</h3>
           <p class="trading-svc-card__desc">Facilitating secure, compliant, and efficient cross-border commodity transactions. We manage trade negotiations, contract structuring, documentation, and execution with full transparency and competitive terms.</p>
         </div>
         <div class="trading-svc-card reveal">
           <div class="trading-svc-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 36V18h14v18M28 36V10h14v26" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 36h36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2"/><path d="M24 20v8M20 24h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>
           </div>
           <h3 class="trading-svc-card__title">Supply Chain Solutions</h3>
           <p class="trading-svc-card__desc">End-to-end supply chain management including procurement, quality inspection, logistics coordination, warehousing, freight forwarding, customs clearance, and last-mile delivery across multiple regions.</p>
         </div>
         <div class="trading-svc-card reveal reveal-delay-1">
           <div class="trading-svc-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 40l8-12 8 6 8-16 8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 8v32h32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="36" cy="16" r="4" stroke="currentColor" stroke-width="2"/><path d="M36 14v4M34 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>
           </div>
           <h3 class="trading-svc-card__title">Market Development</h3>
           <p class="trading-svc-card__desc">Identifying new market opportunities, developing trade routes, and establishing commercial relationships in emerging and established markets. We help connect supply to demand across growing economies.</p>
@@ -800,42 +806,42 @@
       <div class="portfolio-cards">
         <a href="sector-food-security.html" class="portfolio-card reveal">
           <div class="portfolio-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 8c-4 4-6 10-4 16 2 6 8 10 14 10s10-4 10-8c0-6-8-8-12-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 34v8M16 42h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 8c0 8-6 14-10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/><path d="M11.47 17.47 13 19l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L5 19l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M15.47 13.47 17 15l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/><path d="M19.47 9.47 21 11l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L13 11l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z"/></svg>
           </div>
           <h3 class="portfolio-card__title">Food Security</h3>
           <p class="portfolio-card__items">Sugar, Rice, Wheat, Corn, Soybeans, Cooking Oil, Pulses</p>
         </a>
         <a href="sector-energy.html" class="portfolio-card reveal reveal-delay-1">
           <div class="portfolio-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 4L16 24h8l-4 20L36 20h-8l4-16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0-.59-1.42L18 5"/><path d="M14 21V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16"/><path d="M2 21h13"/><path d="M3 7h11"/><path d="m9 11-2 3h3l-2 3"/></svg>
           </div>
           <h3 class="portfolio-card__title">Energy</h3>
           <p class="portfolio-card__items">Diesel EN590, MGO, Base Oil, Bitumen, Petroleum Products</p>
         </a>
         <a href="sector-fertilizers.html" class="portfolio-card reveal reveal-delay-2">
           <div class="portfolio-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M24 20c-6-2-12 2-12 8h24c0-6-6-10-12-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 28c0 4 2 8 6 12M30 28c0 4-2 8-6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="12" r="6" stroke="currentColor" stroke-width="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="19" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="20" cy="19" r="2"/><circle cx="4" cy="19" r="2"/><circle cx="8" cy="12" r="2"/></svg>
           </div>
           <h3 class="portfolio-card__title">Fertilizers</h3>
           <p class="portfolio-card__items">Urea, Sulphur, DAP, MAP, NPK Compounds</p>
         </a>
         <a href="sector-metals.html" class="portfolio-card reveal">
           <div class="portfolio-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4l-4 8h-10l-4 8 6 8-2 12h20l-2-12 6-8-4-8h-10l-4-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 28h8M22 32h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h.01"/><path d="M17 7h.01"/><path d="M7 17h.01"/><path d="M17 17h.01"/></svg>
           </div>
           <h3 class="portfolio-card__title">Metals &amp; Precious Commodities</h3>
           <p class="portfolio-card__items">Gold Dor&eacute; Bars, Diamonds, Copper Cathodes, Industrial Metals</p>
         </a>
         <a href="sector-technology.html" class="portfolio-card reveal reveal-delay-1">
           <div class="portfolio-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="8" width="36" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 40h16M24 32v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 18h8M14 22h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="34" cy="20" r="4" stroke="currentColor" stroke-width="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
           </div>
           <h3 class="portfolio-card__title">Technology &amp; Industrial</h3>
           <p class="portfolio-card__items">IT Equipment, Telecom, Industrial Machinery, Solar, Automation</p>
         </a>
         <a href="sector-services.html" class="portfolio-card reveal reveal-delay-2">
           <div class="portfolio-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2"/><path d="M8 40c0-8 7-14 16-14s16 6 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7" r="4"/><path d="M10.3 15H7a4 4 0 0 0-4 4v2"/><circle cx="17" cy="17" r="3"/><path d="m21 21-1.9-1.9"/></svg>
           </div>
           <h3 class="portfolio-card__title">Services</h3>
           <p class="portfolio-card__items">Consulting, Advisory, Market Access, Trade Finance Support</p>
@@ -912,42 +918,42 @@
       <div class="values-cards">
         <div class="values-card reveal">
           <div class="values-card__icon">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 6l-8 16h16L22 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="22" cy="16" r="2" fill="currentColor"/><path d="M22 20v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 30h24v6H10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </div>
           <h3 class="values-card__title">Integrity</h3>
           <p class="values-card__desc">Operating with honesty, ethical standards, and full transparency in every transaction and business relationship.</p>
         </div>
         <div class="values-card reveal reveal-delay-1">
           <div class="values-card__icon">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 8c-6 0-12 4-12 10s6 10 12 14c6-4 12-8 12-14s-6-10-12-10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 20l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
           </div>
           <h3 class="values-card__title">Trust</h3>
           <p class="values-card__desc">Building lasting confidence through reliable delivery, consistent quality, and dependable service across every market.</p>
         </div>
         <div class="values-card reveal reveal-delay-2">
           <div class="values-card__icon">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="28" height="32" rx="2" stroke="currentColor" stroke-width="2"/><path d="M14 14h16M14 20h12M14 26h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M30 28l-4 4 2 2 6-6-4-4" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15H6a4 4 0 0 0-4 4v2"/><path d="M22 17.5c0 2.499-1.75 3.749-3.83 4.474a.5.5 0 0 1-.335-.005c-2.085-.72-3.835-1.97-3.835-4.47V14a.5.5 0 0 1 .5-.499c1 0 2.25-.6 3.12-1.36a.6.6 0 0 1 .76-.001c.875.765 2.12 1.36 3.12 1.36a.5.5 0 0 1 .5.5z"/><circle cx="9" cy="7" r="4"/></svg>
           </div>
           <h3 class="values-card__title">Professionalism</h3>
           <p class="values-card__desc">Maintaining the highest standards of conduct, expertise, and operational excellence in all aspects of our business.</p>
         </div>
         <div class="values-card reveal">
           <div class="values-card__icon">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="14" stroke="currentColor" stroke-width="2"/><path d="M22 12v10l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l2 4"/></svg>
           </div>
           <h3 class="values-card__title">Commitment</h3>
           <p class="values-card__desc">Delivering on our promises and going beyond expectations to ensure client satisfaction and long-term partnership success.</p>
         </div>
         <div class="values-card reveal reveal-delay-1">
           <div class="values-card__icon">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="18" r="6" stroke="currentColor" stroke-width="2"/><circle cx="30" cy="18" r="6" stroke="currentColor" stroke-width="2"/><path d="M6 36c0-6 4-10 8-10s6 2 8 4c2-2 4-4 8-4s8 4 8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
           </div>
           <h3 class="values-card__title">Partnership</h3>
           <p class="values-card__desc">Fostering collaborative relationships with clients, suppliers, and stakeholders built on mutual respect and shared value creation.</p>
         </div>
         <div class="values-card reveal reveal-delay-2">
           <div class="values-card__icon">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 6l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8l4-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
           </div>
           <h3 class="values-card__title">Excellence</h3>
           <p class="values-card__desc">Pursuing continuous improvement and the highest quality standards in sourcing, trading, and service delivery.</p>
@@ -966,7 +972,7 @@
       <div class="why-cards">
         <div class="why-card reveal">
           <div class="why-card__icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2"/><path d="M20 6c4 3 6 8 6 14s-2 11-6 14c-4-3-6-8-6-14s2-11 6-14z" stroke="currentColor" stroke-width="2"/><path d="M6 20h28" stroke="currentColor" stroke-width="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
           </div>
           <div>
             <h3 class="why-card__title">Global Reach, Local Expertise</h3>
@@ -975,7 +981,7 @@
         </div>
         <div class="why-card reveal reveal-delay-1">
           <div class="why-card__icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6v28M6 20h28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 10l20 20M30 10L10 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/><rect x="3" y="14" width="7" height="7" rx="1"/><circle cx="17.5" cy="17.5" r="3.5"/></svg>
           </div>
           <div>
             <h3 class="why-card__title">Diversified Portfolio</h3>
@@ -984,7 +990,7 @@
         </div>
         <div class="why-card reveal">
           <div class="why-card__icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4l-14 8v16l14 8 14-8V12L20 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 12l14 8 14-8M20 20v16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="m16 17 2 2 4-4"/><path d="M21 11.127V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 .001l1.32-.753"/><path d="M3.29 7 12 12l8.71-5"/><path d="m7.5 4.27 8.997 5.148"/></svg>
           </div>
           <div>
             <h3 class="why-card__title">Verified Supply Chains</h3>
@@ -993,7 +999,7 @@
         </div>
         <div class="why-card reveal reveal-delay-1">
           <div class="why-card__icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="8" width="28" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 16h28" stroke="currentColor" stroke-width="2"/><path d="M14 24h4M14 28h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><circle cx="15" cy="15" r="7"/></svg>
           </div>
           <div>
             <h3 class="why-card__title">Transparent Operations</h3>
@@ -1002,7 +1008,7 @@
         </div>
         <div class="why-card reveal">
           <div class="why-card__icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2"/><path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
           </div>
           <div>
             <h3 class="why-card__title">Trusted by Partners</h3>
@@ -1011,7 +1017,7 @@
         </div>
         <div class="why-card reveal reveal-delay-1">
           <div class="why-card__icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4v8M20 28v8M4 20h8M28 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="20" r="3" fill="currentColor"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2h10"/><path d="M5 6h14"/><rect width="18" height="12" x="3" y="10" rx="2"/></svg>
           </div>
           <div>
             <h3 class="why-card__title">IIC Group Backing</h3>
@@ -1047,41 +1053,49 @@
         </div>
         <div class="trading-contact__form reveal reveal-delay-1">
           <h3>Send Us a Message</h3>
-          <div class="trading-form-row">
-            <div class="trading-form-group">
-              <label for="trading-fname">First Name</label>
-              <input type="text" id="trading-fname" placeholder="Your first name">
+          <form id="trading-contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="4fe20099-f197-49d3-88ae-f0e1021a67f2">
+            <input type="hidden" name="subject" value="New Contact Form Submission — IIC General Trading">
+            <input type="hidden" name="from_name" value="IIC General Trading Contact Form">
+            <input type="hidden" name="redirect" value="">
+            <input type="checkbox" name="botcheck" style="display:none;">
+            <div class="trading-form-row">
+              <div class="trading-form-group">
+                <label for="trading-fname">First Name</label>
+                <input type="text" id="trading-fname" name="first-name" placeholder="Your first name" required>
+              </div>
+              <div class="trading-form-group">
+                <label for="trading-lname">Last Name</label>
+                <input type="text" id="trading-lname" name="last-name" placeholder="Your last name" required>
+              </div>
             </div>
             <div class="trading-form-group">
-              <label for="trading-lname">Last Name</label>
-              <input type="text" id="trading-lname" placeholder="Your last name">
+              <label for="trading-email">Email Address</label>
+              <input type="email" id="trading-email" name="email" placeholder="your@email.com" required>
             </div>
-          </div>
-          <div class="trading-form-group">
-            <label for="trading-email">Email Address</label>
-            <input type="email" id="trading-email" placeholder="your@email.com">
-          </div>
-          <div class="trading-form-group">
-            <label for="trading-company">Company / Organisation</label>
-            <input type="text" id="trading-company" placeholder="Your company name">
-          </div>
-          <div class="trading-form-group">
-            <label for="trading-subject">Subject</label>
-            <select id="trading-subject">
-              <option value="" disabled selected>Select a topic</option>
-              <option value="sourcing">Global Sourcing</option>
-              <option value="trading">International Trading</option>
-              <option value="supply-chain">Supply Chain Solutions</option>
-              <option value="commodity">Commodity Inquiry</option>
-              <option value="partnership">Partnership Opportunity</option>
-              <option value="general">General Inquiry</option>
-            </select>
-          </div>
-          <div class="trading-form-group">
-            <label for="trading-message">Message</label>
-            <textarea id="trading-message" placeholder="Tell us about your requirements..."></textarea>
-          </div>
-          <button type="button" class="btn btn--primary" style="width: 100%;">Send Message</button>
+            <div class="trading-form-group">
+              <label for="trading-company">Company / Organisation</label>
+              <input type="text" id="trading-company" name="company" placeholder="Your company name">
+            </div>
+            <div class="trading-form-group">
+              <label for="trading-subject">Subject</label>
+              <select id="trading-subject" name="subject-field" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option value="Global Sourcing">Global Sourcing</option>
+                <option value="International Trading">International Trading</option>
+                <option value="Supply Chain Solutions">Supply Chain Solutions</option>
+                <option value="Commodity Inquiry">Commodity Inquiry</option>
+                <option value="Partnership Opportunity">Partnership Opportunity</option>
+                <option value="General Inquiry">General Inquiry</option>
+              </select>
+            </div>
+            <div class="trading-form-group">
+              <label for="trading-message">Message</label>
+              <textarea id="trading-message" name="message" placeholder="Tell us about your requirements..." required></textarea>
+            </div>
+            <button type="submit" id="trading-submit-btn" class="btn btn--primary" style="width: 100%;">Send Message</button>
+            <div id="trading-form-status" style="text-align: center; margin-top: 16px; display: none;"></div>
+          </form>
         </div>
       </div>
     </div>
@@ -1092,7 +1106,10 @@
     <div class="container">
       <div class="footer__grid">
         <div>
-          <img src="Media/IIC General Trading/Logo.png" alt="IIC General Trading" class="footer__brand-logo">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <img src="Media/IIC General Trading/Logo.png" alt="IIC General Trading" class="footer__brand-logo" style="margin-bottom: 0;">
+            <span style="font-family: var(--font-primary); font-weight: 700; font-size: 18px; color: #FFFFFF; line-height: 1.3;">IIC General Trading LLC</span>
+          </div>
           <p class="footer__brand-text">A Dubai-based international commodity trading company specializing in sourcing, trading, and supply chain management across energy, agriculture, metals, fertilizers, and industrial sectors.</p>
         </div>
         <div>
@@ -1105,7 +1122,7 @@
           <a href="#contact" class="footer__link">Contact Us</a>
         </div>
         <div>
-          <h4 class="footer__heading">Verticals</h4>
+          <h4 class="footer__heading">Sectors</h4>
           <a href="sector-food-security.html" class="footer__link">Food Security</a>
           <a href="sector-energy.html" class="footer__link">Energy</a>
           <a href="sector-fertilizers.html" class="footer__link">Fertilizers</a>
@@ -1117,7 +1134,7 @@
           <h4 class="footer__heading">IIC Worldwide</h4>
           <a href="index.html" class="footer__link">Home</a>
           <a href="about.html" class="footer__link">About IIC Worldwide</a>
-          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="subsidiaries.html" class="footer__link">Subsidiaries</a>
           <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
           <a href="contact.html" class="footer__link">Contact IIC Worldwide</a>
         </div>
@@ -1133,5 +1150,48 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+  (function() {
+    var form = document.getElementById('trading-contact-form');
+    var btn = document.getElementById('trading-submit-btn');
+    var status = document.getElementById('trading-form-status');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      status.style.display = 'none';
+
+      var data = new FormData(form);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(result) {
+        if (result.success) {
+          status.style.display = 'block';
+          status.style.color = '#16a34a';
+          status.textContent = 'Message sent successfully! We will get back to you soon.';
+          form.reset();
+        } else {
+          status.style.display = 'block';
+          status.style.color = '#dc2626';
+          status.textContent = 'Something went wrong. Please try again or email us directly.';
+        }
+      })
+      .catch(function() {
+        status.style.display = 'block';
+        status.style.color = '#dc2626';
+        status.textContent = 'Network error. Please check your connection and try again.';
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      });
+    });
+  })();
+  </script>
 </body>
 </html>

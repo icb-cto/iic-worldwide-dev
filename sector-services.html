@@ -106,15 +106,17 @@
 
     /* Sector Detail Cards */
     .sector-detail-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 24px;
+      justify-content: center;
     }
     .sector-detail-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
       overflow: hidden;
+      flex: 0 1 calc(25% - 18px);
       transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
     }
     .sector-detail-card:hover {
@@ -122,38 +124,18 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
-    .sector-detail-card__img-wrap {
-      position: relative;
-      aspect-ratio: 480 / 320;
-      background: var(--bg-card, #f5f5f0);
-      overflow: hidden;
+    .sector-detail-card__icon {
+      width: 48px;
+      height: 48px;
+      color: var(--gold);
+      margin-bottom: 16px;
     }
-    .sector-detail-card__img {
+    .sector-detail-card__icon svg {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .sector-detail-card__placeholder {
-      display: none;
-      position: absolute;
-      inset: 0;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 13px;
-      line-height: 1.5;
-      background: var(--bg-card, #f5f5f0);
-    }
-    .sector-detail-card__placeholder small {
-      display: block;
-      margin-top: 4px;
-      font-size: 11px;
-      opacity: 0.6;
     }
     .sector-detail-card__body {
-      padding: 20px;
+      padding: 28px 24px 32px;
     }
     .sector-detail-card__title {
       font-family: var(--font-heading);
@@ -171,10 +153,10 @@
     @media (max-width: 1024px) {
       .approach-item { grid-template-columns: 1fr; gap: 32px; }
       .approach-item--reverse { direction: ltr; }
-      .sector-detail-cards { grid-template-columns: repeat(2, 1fr); }
+      .sector-detail-card { flex: 0 1 calc(50% - 12px); }
     }
     @media (max-width: 768px) {
-      .sector-detail-cards { grid-template-columns: 1fr; }
+      .sector-detail-card { flex: 0 1 100%; }
       .approach-item__number { font-size: 48px; }
     }
   </style>
@@ -190,7 +172,7 @@
       <div class="nav__links">
         <a href="index.html" class="nav__link">Home</a>
         <a href="about.html" class="nav__link">About Us</a>
-        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
         <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
         <a href="contact.html" class="nav__link">Contact Us</a>
       </div>
@@ -202,7 +184,7 @@
     <div class="nav__mobile">
       <a href="index.html" class="nav__link">Home</a>
       <a href="about.html" class="nav__link">About Us</a>
-      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
       <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
       <a href="contact.html" class="nav__link">Contact Us</a>
 
@@ -251,7 +233,7 @@
       <!-- Approach Item 1 -->
       <div class="approach-item reveal">
         <div class="approach-item__img-wrap">
-          <img src="Media/Sectors/Services/approach-provider-marketplace.jpg" alt="Service Provider Marketplace" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <img src="Media/Sectors/Services/approach-marketplace.jpg" alt="Service Provider Marketplace" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
           <span class="approach-item__placeholder">Service Provider Marketplace<small>960 x 600 px</small></span>
         </div>
         <div>
@@ -264,7 +246,7 @@
       <!-- Approach Item 2 -->
       <div class="approach-item approach-item--reverse reveal">
         <div class="approach-item__img-wrap">
-          <img src="Media/Sectors/Services/approach-verification-trust.jpg" alt="Verification &amp; Trust" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
+          <img src="Media/Sectors/Services/approach-verification.jpg" alt="Verification &amp; Trust" onerror="this.style.display='none';this.parentNode.querySelector('.approach-item__placeholder').style.display='flex'">
           <span class="approach-item__placeholder">Verification &amp; Trust<small>960 x 600 px</small></span>
         </div>
         <div>
@@ -314,88 +296,80 @@
       <div class="sector-detail-cards">
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Services/card-professional-consulting.jpg" alt="Professional Consulting" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Professional Consulting<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="14" r="7" stroke="currentColor" stroke-width="2"/><path d="M12 44v-4a12 12 0 0124 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Professional Consulting</h3>
             <p class="sector-detail-card__desc">Management consultants, strategy advisors, financial analysts, and subject-matter experts available for project-based or retainer engagements across industries and markets.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Services/card-engineering-technical.jpg" alt="Engineering &amp; Technical" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Engineering &amp; Technical<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6h8v4.2a14 14 0 014.9 2.83l3.64-2.1 4 6.93-3.64 2.1A14 14 0 0138 24a14 14 0 01-.9 4.14l3.64 2.1-4 6.93-3.64-2.1A14 14 0 0128 37.8V42h-8v-4.2a14 14 0 01-4.9-2.83l-3.64 2.1-4-6.93 3.64-2.1A14 14 0 0110 24a14 14 0 01.9-4.14l-3.64-2.1 4-6.93 3.64 2.1A14 14 0 0120 10.2V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Engineering &amp; Technical</h3>
             <p class="sector-detail-card__desc">Civil, mechanical, electrical, and process engineering firms providing design, supervision, inspection, and technical advisory services for infrastructure and industrial projects.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Services/card-logistics-freight.jpg" alt="Logistics &amp; Freight" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Logistics &amp; Freight<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="18" width="36" height="22" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 26h36" stroke="currentColor" stroke-width="2"/><path d="M16 8h16l4 10H12l4-10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="16" cy="34" r="3" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="34" r="3" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Logistics &amp; Freight</h3>
             <p class="sector-detail-card__desc">Freight forwarders, customs brokers, shipping agents, warehousing operators, and last-mile delivery providers supporting the physical movement of goods across borders.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Services/card-legal-compliance.jpg" alt="Legal &amp; Compliance" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Legal &amp; Compliance<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8h20v32H10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M30 14h8v26h-8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 16h8M16 22h8M16 28h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="36" r="2" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Legal &amp; Compliance</h3>
             <p class="sector-detail-card__desc">Law firms, regulatory advisors, and compliance specialists offering corporate law, trade law, contract drafting, dispute resolution, and anti-money-laundering advisory services.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Services/card-construction-services.jpg" alt="Construction Services" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Construction Services<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="18" height="28" rx="1" stroke="currentColor" stroke-width="2"/><rect x="28" y="6" width="14" height="36" rx="1" stroke="currentColor" stroke-width="2"/><rect x="10" y="18" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="18" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="26" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="26" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="34" width="4" height="8" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="32" y="10" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="32" y="18" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="32" y="26" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.5"/><rect x="32" y="34" width="4" height="4" rx="0.5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Construction Services</h3>
             <p class="sector-detail-card__desc">General contractors, subcontractors, project managers, and quantity surveyors for commercial, industrial, residential, and infrastructure construction projects.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Services/card-it-digital.jpg" alt="IT &amp; Digital Services" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">IT &amp; Digital Services<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="4" y="18" font-family="monospace" font-size="11" font-weight="600" fill="currentColor">10101</text><text x="4" y="30" font-family="monospace" font-size="11" font-weight="600" fill="currentColor">00101</text><text x="4" y="42" font-family="monospace" font-size="11" font-weight="600" fill="currentColor">10110</text></svg>
+            </div>
             <h3 class="sector-detail-card__title">IT &amp; Digital Services</h3>
             <p class="sector-detail-card__desc">Software developers, systems integrators, cybersecurity firms, cloud service providers, and digital transformation consultants supporting technology-driven business operations.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Services/card-maintenance-operations.jpg" alt="Maintenance &amp; Operations" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Maintenance &amp; Operations<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M38 14l-4 4-3-1-1-3 4-4c-3-1.5-6.5-.5-8.5 1.5a7 7 0 00-1.5 7.5L8 35a4.2 4.2 0 000 6 4.2 4.2 0 006 0l16-16a7 7 0 007.5-1.5c2-2 3-5.5 1.5-8.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Maintenance &amp; Operations</h3>
             <p class="sector-detail-card__desc">Facility management companies, industrial maintenance teams, equipment servicing firms, and operational support providers for ongoing asset management and upkeep.</p>
           </div>
         </div>
 
         <div class="sector-detail-card reveal">
-          <div class="sector-detail-card__img-wrap">
-            <img src="Media/Sectors/Services/card-security-risk.jpg" alt="Security &amp; Risk Management" class="sector-detail-card__img" onerror="this.style.display='none';this.parentNode.querySelector('.sector-detail-card__placeholder').style.display='flex'">
-            <span class="sector-detail-card__placeholder">Security &amp; Risk Management<br><small>480 x 320 px</small></span>
-          </div>
           <div class="sector-detail-card__body">
+            <div class="sector-detail-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4L6 12v12c0 11 8 18 18 20 10-2 18-9 18-20V12L24 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 24l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
             <h3 class="sector-detail-card__title">Security &amp; Risk Management</h3>
             <p class="sector-detail-card__desc">Physical security providers, risk assessment consultants, due-diligence investigators, and crisis management specialists protecting assets, personnel, and operations.</p>
           </div>
@@ -439,12 +413,12 @@
           <h4 class="footer__heading">Navigation</h4>
           <a href="index.html" class="footer__link">Home</a>
           <a href="about.html" class="footer__link">About Us</a>
-          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="subsidiaries.html" class="footer__link">Subsidiaries</a>
           <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
           <a href="contact.html" class="footer__link">Contact Us</a>
         </div>
         <div>
-          <h4 class="footer__heading">Verticals</h4>
+          <h4 class="footer__heading">Sectors</h4>
           <a href="sector-food-security.html" class="footer__link">Food Security</a>
           <a href="sector-energy.html" class="footer__link">Energy</a>
           <a href="sector-fertilizers.html" class="footer__link">Fertilizers</a>
@@ -454,13 +428,13 @@
         </div>
         <div>
           <h4 class="footer__heading">Subsidiaries</h4>
-          <span class="footer__link">IIC Bank</span>
-          <span class="footer__link">IIC Metaverse</span>
-          <span class="footer__link">IIC Oil &amp; Gas</span>
-          <span class="footer__link">IIC General Trading</span>
+          <a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Bank</a>
+          <a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Metaverse</a>
+          <a href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Oil &amp; Gas</a>
+          <a href="iic-general-trading.html" class="footer__link">IIC General Trading</a>
           <span class="footer__link">IIC Aviation</span>
           <span class="footer__link">IIC Holding</span>
-          <span class="footer__link">IIC Express Gold &amp; Diamond</span>
+          <a href="iic-gold.html" class="footer__link">IIC Express Gold &amp; Diamond</a>
         </div>
       </div>
       <div class="footer__bottom">

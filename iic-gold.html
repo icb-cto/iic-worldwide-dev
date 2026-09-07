@@ -20,17 +20,16 @@
       display: flex;
       align-items: center;
       padding: 120px 0 80px;
-      background: linear-gradient(160deg, #0E1B16 0%, #1A3A33 40%, #1F443C 100%);
+      background: linear-gradient(160deg, #FAF8F4 0%, #F5F0E8 40%, #EDE6D8 100%);
       overflow: hidden;
-      color: #FFFFFF;
     }
     .gold-hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(196, 154, 60, 0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(196, 154, 60, 0.05) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(196, 154, 60, 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(196, 154, 60, 0.04) 0%, transparent 60%);
       pointer-events: none;
     }
     .gold-hero::after {
@@ -38,8 +37,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(196, 154, 60, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(196, 154, 60, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(196, 154, 60, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196, 154, 60, 0.04) 1px, transparent 1px);
       background-size: 60px 60px;
       pointer-events: none;
     }
@@ -67,20 +66,20 @@
       font-size: clamp(32px, 4vw, 52px);
       font-weight: 800;
       line-height: 1.15;
-      color: #FFFFFF;
+      color: #1A1A1A;
       margin-bottom: 16px;
     }
     .gold-hero__subtitle {
       font-size: clamp(18px, 2vw, 22px);
-      font-weight: 400;
-      color: var(--gold);
+      font-weight: 500;
+      color: #8B6914;
       margin-bottom: 24px;
       line-height: 1.4;
     }
     .gold-hero__desc {
       font-size: 16px;
       line-height: 1.75;
-      color: #9AB5AD;
+      color: #555;
       margin-bottom: 32px;
     }
     .gold-hero__tagline {
@@ -89,7 +88,7 @@
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #9AB5AD;
+      color: #555;
       margin-bottom: 32px;
       display: block;
     }
@@ -106,7 +105,7 @@
     .gold-hero__logo-img {
       max-width: 500px;
       width: 100%;
-      filter: drop-shadow(0 8px 40px rgba(196, 154, 60, 0.2));
+      filter: drop-shadow(0 8px 40px rgba(0, 0, 0, 0.08));
     }
 
     /* About */
@@ -533,7 +532,7 @@
       <div class="nav__links">
         <a href="index.html" class="nav__link">Home</a>
         <a href="about.html" class="nav__link">About Us</a>
-        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
         <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
         <a href="contact.html" class="nav__link">Contact Us</a>
       </div>
@@ -544,7 +543,7 @@
     <div class="nav__mobile">
       <a href="index.html" class="nav__link">Home</a>
       <a href="about.html" class="nav__link">About Us</a>
-      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
       <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
       <a href="contact.html" class="nav__link">Contact Us</a>
     </div>
@@ -818,36 +817,44 @@
         </div>
         <div class="gold-contact__form reveal reveal-delay-1">
           <h3>Send Us a Message</h3>
-          <div class="gold-form-row">
-            <div class="gold-form-group">
-              <label for="gold-fname">First Name</label>
-              <input type="text" id="gold-fname" placeholder="Your first name">
+          <form id="gold-contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="5030b600-00de-4485-9e08-40d449b6ca13">
+            <input type="hidden" name="subject" value="New Contact Form Submission — IIC Express Gold & Diamond">
+            <input type="hidden" name="from_name" value="IIC Express Gold Contact Form">
+            <input type="hidden" name="redirect" value="">
+            <input type="checkbox" name="botcheck" style="display:none;">
+            <div class="gold-form-row">
+              <div class="gold-form-group">
+                <label for="gold-fname">First Name</label>
+                <input type="text" id="gold-fname" name="first-name" placeholder="Your first name" required>
+              </div>
+              <div class="gold-form-group">
+                <label for="gold-lname">Last Name</label>
+                <input type="text" id="gold-lname" name="last-name" placeholder="Your last name" required>
+              </div>
             </div>
             <div class="gold-form-group">
-              <label for="gold-lname">Last Name</label>
-              <input type="text" id="gold-lname" placeholder="Your last name">
+              <label for="gold-email">Email Address</label>
+              <input type="email" id="gold-email" name="email" placeholder="your@email.com" required>
             </div>
-          </div>
-          <div class="gold-form-group">
-            <label for="gold-email">Email Address</label>
-            <input type="email" id="gold-email" placeholder="your@email.com">
-          </div>
-          <div class="gold-form-group">
-            <label for="gold-subject">Subject</label>
-            <select id="gold-subject">
-              <option value="" disabled selected>Select a topic</option>
-              <option value="gold-trading">Gold Trading</option>
-              <option value="refinery">Gold Refinery</option>
-              <option value="mining">Mining Partnership</option>
-              <option value="diamonds">Diamonds &amp; Precious Stones</option>
-              <option value="general">General Inquiry</option>
-            </select>
-          </div>
-          <div class="gold-form-group">
-            <label for="gold-message">Message</label>
-            <textarea id="gold-message" placeholder="Tell us about your requirements..."></textarea>
-          </div>
-          <button type="button" class="btn btn--primary" style="width: 100%;">Send Message</button>
+            <div class="gold-form-group">
+              <label for="gold-subject">Subject</label>
+              <select id="gold-subject" name="subject-field" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option value="Gold Trading">Gold Trading</option>
+                <option value="Gold Refinery">Gold Refinery</option>
+                <option value="Mining Partnership">Mining Partnership</option>
+                <option value="Diamonds & Precious Stones">Diamonds &amp; Precious Stones</option>
+                <option value="General Inquiry">General Inquiry</option>
+              </select>
+            </div>
+            <div class="gold-form-group">
+              <label for="gold-message">Message</label>
+              <textarea id="gold-message" name="message" placeholder="Tell us about your requirements..." required></textarea>
+            </div>
+            <button type="submit" id="gold-submit-btn" class="btn btn--primary" style="width: 100%;">Send Message</button>
+            <div id="gold-form-status" style="text-align: center; margin-top: 16px; display: none;"></div>
+          </form>
         </div>
       </div>
     </div>
@@ -881,7 +888,7 @@
           <h4 class="footer__heading">IIC Worldwide</h4>
           <a href="index.html" class="footer__link">Home</a>
           <a href="about.html" class="footer__link">About IIC Worldwide</a>
-          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="subsidiaries.html" class="footer__link">Subsidiaries</a>
           <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
           <a href="contact.html" class="footer__link">Contact IIC Worldwide</a>
         </div>
@@ -897,5 +904,48 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+  (function() {
+    var form = document.getElementById('gold-contact-form');
+    var btn = document.getElementById('gold-submit-btn');
+    var status = document.getElementById('gold-form-status');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      status.style.display = 'none';
+
+      var data = new FormData(form);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(result) {
+        if (result.success) {
+          status.style.display = 'block';
+          status.style.color = '#16a34a';
+          status.textContent = 'Message sent successfully! We will get back to you soon.';
+          form.reset();
+        } else {
+          status.style.display = 'block';
+          status.style.color = '#dc2626';
+          status.textContent = 'Something went wrong. Please try again or email us directly.';
+        }
+      })
+      .catch(function() {
+        status.style.display = 'block';
+        status.style.color = '#dc2626';
+        status.textContent = 'Network error. Please check your connection and try again.';
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      });
+    });
+  })();
+  </script>
 </body>
 </html>

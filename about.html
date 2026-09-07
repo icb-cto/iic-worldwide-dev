@@ -7,6 +7,31 @@
   <meta name="description" content="IIC Worldwide is a global commodity, trade, and finance platform connecting producers, buyers, and suppliers through verified marketplaces and trade finance solutions.">
   <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .chairman-image { overflow: hidden; border-radius: 8px; }
+    .chairman-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+    .chairman-bio { display: flex; flex-direction: column; justify-content: center; }
+    .chairman-bio p { color: var(--text-muted); line-height: 1.75; margin-bottom: 20px; }
+    .chairman-bio p:last-child { margin-bottom: 0; }
+    .chairman-message { margin-top: 80px; padding: 48px; background: var(--bg-light); border-left: 4px solid var(--gold); }
+    .chairman-message h3 { margin-bottom: 24px; font-size: 20px; }
+    .chairman-message p { color: var(--text-muted); line-height: 1.8; font-size: 16px; margin-bottom: 16px; }
+    .vision-mission .content-split { margin-bottom: 64px; align-items: stretch; }
+    .vision-mission .content-split > div { padding: 32px; border-left: 3px solid var(--gold); }
+    @media (max-width: 1024px) {
+      .chairman-image { max-width: 380px; margin: 0 auto; }
+    }
+    @media (max-width: 768px) {
+      .chairman-message { padding: 32px 24px; margin-top: 48px; }
+      .chairman-message h3 { font-size: 18px; margin-bottom: 16px; }
+      .chairman-image { max-width: 320px; }
+    }
+    @media (max-width: 480px) {
+      .chairman-message { padding: 24px 20px; margin-top: 40px; }
+      .chairman-image { max-width: 100%; }
+      .value-item { padding: 24px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -19,7 +44,7 @@
       <div class="nav__links">
         <a href="index.html" class="nav__link">Home</a>
         <a href="about.html" class="nav__link">About Us</a>
-        <a href="businesses.html" class="nav__link">Subsidiaries</a>
+        <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
         <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
         <a href="contact.html" class="nav__link">Contact Us</a>
       </div>
@@ -31,7 +56,7 @@
     <div class="nav__mobile">
       <a href="index.html" class="nav__link">Home</a>
       <a href="about.html" class="nav__link">About Us</a>
-      <a href="businesses.html" class="nav__link">Subsidiaries</a>
+      <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
       <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
       <a href="contact.html" class="nav__link">Contact Us</a>
 
@@ -58,21 +83,21 @@
         <p>Chairman, International Investment Consortium Worldwide (IIC)</p>
       </div>
 
-      <div class="content-split reveal" style="gap: 60px; align-items: stretch; grid-template-columns: 380px 1fr;">
-        <div style="overflow: hidden; border-radius: 8px;">
-          <img src="Media/About Us/Chairman Photo 2.png" alt="Dato Dr. Arshad Mahmood" style="width: 100%; height: 100%; object-fit: cover; object-position: center 18%;">
+      <div class="content-split content-split--chairman reveal">
+        <div class="chairman-image">
+          <img src="Media/About Us/Chairman Photo 2.png" alt="Dato Dr. Arshad Mahmood">
         </div>
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-          <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 20px;">Dato Dr. Arshad Mahmood is the Founder and Chairman of the International Investment Consortium Inc. (IIC), where he provides the strategic vision that drives the organization&rsquo;s evolution into a global commodity, trade, and finance platform. Under his leadership, IIC has been repositioned to open markets, bridge supply and demand, and deliver financial solutions that enable legitimate trading across borders. His commitment to building trusted marketplaces and connecting producers with buyers has defined IIC&rsquo;s new direction.</p>
-          <p style="color: var(--text-muted); line-height: 1.75; margin-bottom: 20px;">Dato Dr. Arshad holds a Bachelor&rsquo;s Degree in Economics, a Master&rsquo;s Degree in Literature, and an Honorary Doctorate in Management Sciences from ACMIT USA. His multidisciplinary academic foundation, combined with decades of experience in international trade and finance, reflects his dedication to building transparent, accessible, and efficient commodity markets.</p>
-          <p style="color: var(--text-muted); line-height: 1.75;">Guided by a philosophy of creating markets where none exist, Dato Dr. Arshad advocates for connecting those who have commodities and services with those who need them. His vision emphasizes trade finance, verified supply chains, and market infrastructure that empowers producers, buyers, and suppliers to trade with confidence, contributing to economic growth across emerging and established markets alike.</p>
+        <div class="chairman-bio">
+          <p>Dato Dr. Arshad Mahmood is the Founder and Chairman of the International Investment Consortium Inc. (IIC), where he provides the strategic vision that drives the organization&rsquo;s evolution into a global commodity, trade, and finance platform. Under his leadership, IIC has been repositioned to open markets, bridge supply and demand, and deliver financial solutions that enable legitimate trading across borders. His commitment to building trusted marketplaces and connecting producers with buyers has defined IIC&rsquo;s new direction.</p>
+          <p>Dato Dr. Arshad holds a Bachelor&rsquo;s Degree in Economics, a Master&rsquo;s Degree in Literature, and an Honorary Doctorate in Management Sciences from ACMIT USA. His multidisciplinary academic foundation, combined with decades of experience in international trade and finance, reflects his dedication to building transparent, accessible, and efficient commodity markets.</p>
+          <p>Guided by a philosophy of creating markets where none exist, Dato Dr. Arshad advocates for connecting those who have commodities and services with those who need them. His vision emphasizes trade finance, verified supply chains, and market infrastructure that empowers producers, buyers, and suppliers to trade with confidence, contributing to economic growth across emerging and established markets alike.</p>
         </div>
       </div>
 
-      <div class="reveal" style="margin-top: 80px; padding: 48px; background: var(--bg-light); border-left: 4px solid var(--gold);">
-        <h3 style="margin-bottom: 24px; font-size: 20px;">Chairman&rsquo;s Message</h3>
-        <p style="color: var(--text-muted); line-height: 1.8; font-size: 16px; margin-bottom: 16px;">IIC Worldwide exists to open markets and create the connections that make trade possible. We are building a platform where producers, buyers, sellers, and suppliers can find each other, transact with confidence, and access the financial tools they need to grow. Our role is to bridge supply and demand across commodities and services worldwide.</p>
-        <p style="color: var(--text-muted); line-height: 1.8; font-size: 16px; margin-bottom: 24px;">By combining commodity trading infrastructure with trade finance solutions, we ensure that legitimate businesses can access the markets they need. Whether it is agricultural commodities, energy resources, or industrial materials, IIC Worldwide provides the platform, the verification, and the financing to make every transaction secure, transparent, and efficient.</p>
+      <div class="chairman-message reveal">
+        <h3>Chairman&rsquo;s Message</h3>
+        <p>IIC Worldwide exists to open markets and create the connections that make trade possible. We are building a platform where producers, buyers, sellers, and suppliers can find each other, transact with confidence, and access the financial tools they need to grow. Our role is to bridge supply and demand across commodities and services worldwide.</p>
+        <p style="margin-bottom: 24px;">By combining commodity trading infrastructure with trade finance solutions, we ensure that legitimate businesses can access the markets they need. Whether it is agricultural commodities, energy resources, or industrial materials, IIC Worldwide provides the platform, the verification, and the financing to make every transaction secure, transparent, and efficient.</p>
         <p style="color: var(--text-dark); font-weight: 600;">Dato Dr. Arshad Mahmood, Chairman</p>
         <p style="color: var(--text-muted); font-size: 14px;">International Investment Consortium Worldwide (IIC)</p>
       </div>
@@ -149,7 +174,7 @@
 
       <div class="reveal">
         <h3 style="text-align: center; margin-bottom: 40px;">Core Values</h3>
-        <div class="grid grid-5" style="grid-template-columns: repeat(5, 1fr);">
+        <div class="grid grid-5">
           <div class="value-item" style="border-color: var(--gold-border);">
             <h4 class="value-item__title" style="color: var(--text-dark);">Integrity</h4>
             <p class="value-item__text">Ensuring transparency, accountability, and trust in every trade and transaction.</p>
@@ -187,10 +212,10 @@
 
         <div class="card reveal" style="text-align: center; padding: 0; overflow: hidden;">
           <div style="width: 100%; aspect-ratio: 1; background: var(--bg-card-hover, rgba(0,0,0,0.04)); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-            <img src="Media/Team/member-1.jpg" alt="Team Member" style="width: 100%; height: 100%; object-fit: cover; display: block;" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'color:var(--text-muted);font-size:13px;font-family:var(--font-data)\'>Team Photo<br><small>400 x 400 px</small></span>'">
+            <img src="Media/Team/member-1.jpg" alt="Dato Dr. Arshad Mahmood" style="width: 100%; height: 100%; object-fit: cover; display: block;" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'color:var(--text-muted);font-size:13px;font-family:var(--font-data)\'>Team Photo<br><small>400 x 400 px</small></span>'">
           </div>
           <div style="padding: 24px 20px;">
-            <h4 class="card__title" style="margin-bottom: 4px;">Team Member</h4>
+            <h4 class="card__title" style="margin-bottom: 4px;">Dato Dr. Arshad Mahmood</h4>
             <p style="font-family: var(--font-data); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 12px;">Chairman &amp; CEO</p>
             <p class="card__text">Founding leader responsible for the strategic vision and overall direction of IIC Worldwide, with decades of experience in international trade and finance.</p>
           </div>
@@ -276,12 +301,12 @@
           <h4 class="footer__heading">Navigation</h4>
           <a href="index.html" class="footer__link">Home</a>
           <a href="about.html" class="footer__link">About Us</a>
-          <a href="businesses.html" class="footer__link">Subsidiaries</a>
+          <a href="subsidiaries.html" class="footer__link">Subsidiaries</a>
           <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
           <a href="contact.html" class="footer__link">Contact Us</a>
         </div>
         <div>
-          <h4 class="footer__heading">Verticals</h4>
+          <h4 class="footer__heading">Sectors</h4>
           <a href="sector-food-security.html" class="footer__link">Food Security</a>
           <a href="sector-energy.html" class="footer__link">Energy</a>
           <a href="sector-fertilizers.html" class="footer__link">Fertilizers</a>
@@ -291,13 +316,13 @@
         </div>
         <div>
           <h4 class="footer__heading">Subsidiaries</h4>
-          <span class="footer__link">IIC Bank</span>
-          <span class="footer__link">IIC Metaverse</span>
-          <span class="footer__link">IIC Oil &amp; Gas</span>
-          <span class="footer__link">IIC General Trading</span>
+          <a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Bank</a>
+          <a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Metaverse</a>
+          <a href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Oil &amp; Gas</a>
+          <a href="iic-general-trading.html" class="footer__link">IIC General Trading</a>
           <span class="footer__link">IIC Aviation</span>
           <span class="footer__link">IIC Holding</span>
-          <span class="footer__link">IIC Express Gold &amp; Diamond</span>
+          <a href="iic-gold.html" class="footer__link">IIC Express Gold &amp; Diamond</a>
         </div>
       </div>
       <div class="footer__bottom">
