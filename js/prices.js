@@ -3,19 +3,16 @@
    ============================================================
 
    API SETUP:
-   Sign up for a FREE API key at https://metals.dev (no credit card).
-   Replace the key below. Free plan = 100 requests/month.
+   Sign up for a FREE API key at https://www.goldapi.io
+   Replace the key below. Free plan = 500 requests/month.
    Prices are cached in localStorage (~8 hours) to stay within limits.
-
-   For broader commodities (oil, wheat, sugar, etc.), sign up at
-   https://commodities-api.com (free plan = 100 requests/month).
+   Covers Gold (XAU) and Silver (XAG). Other commodities use
+   indicative reference prices.
    ============================================================ */
 
 var PRICE_CONFIG = {
-  metalsApiKey: 'goldapi-95c93903adab83d4c934c18d674b98d3-io',
-  commoditiesApiKey: 'DEMO',
-  metalsCacheTTL: 60000, //28800000
-  refreshInterval: 60000,
+  goldApiKey: 'goldapi-95c93903adab83d4c934c18d674b98d3-io',
+  metalsCacheTTL: 28800000,
   currency: 'USD'
 };
 
@@ -81,24 +78,24 @@ var PRICE_CONFIG = {
     DIAMOND:  { name: 'Diamond (1ct)',   price: 5200.00,   change: 0.10,  unit: 'ct',    decimals: 0 }
   };
 
-  /* --- Metal symbol map for API --- */
-  var metalMap = {
-    XAU: 'gold', XAU_KG: 'gold', XAU_G: 'gold',
-    XAG: 'silver', XAG_KG: 'silver', XAG_G: 'silver',
-    XPT: 'platinum', XPD: 'palladium'
+  /* --- GoldAPI.io symbol map --- */
+  var goldApiMap = {
+    XAU: 'XAU', XAU_KG: 'XAU', XAU_G: 'XAU',
+    XAG: 'XAG', XAG_KG: 'XAG', XAG_G: 'XAG',
+    XPT: 'XPT', XPD: 'XPD'
   };
 
   var conversionFactors = {
-    XAU_KG: OZ_PER_KG, XAG_KG: OZ_PER_KG, COPPER_KG: LB_PER_KG,
-    XAU_G: 1 / GRAMS_PER_OZ, XAG_G: 1 / GRAMS_PER_OZ, COPPER_G: LB_PER_KG / 1000
+    XAU_KG: OZ_PER_KG, XAG_KG: OZ_PER_KG,
+    XAU_G: 1 / GRAMS_PER_OZ, XAG_G: 1 / GRAMS_PER_OZ
   };
 
-  function isMetalSymbol(sym) {
-    return metalMap[sym] != null;
+  function isLiveSymbol(sym) {
+    return goldApiMap[sym] != null;
   }
 
-  /* --- LocalStorage cache helpers (metals only) --- */
-  var METALS_CACHE_KEY = 'iic_metals_cache';
+  /* --- LocalStorage cache helpers --- */
+  var METALS_CACHE_KEY = 'iic_goldapi_cache';
 
   function getMetalsCache() {
     try {
@@ -113,52 +110,74 @@ var PRICE_CONFIG = {
 
   function setMetalsCache(data) {
     try {
-      localStorage.setItem(METALS_CACHE_KEY, JSON.stringify({ ts: Date.now(), metals: data }));
-    } catch (e) { /* quota exceeded — ignore */ }
+      localStorage.setItem(METALS_CACHE_KEY, JSON.stringify({ ts: Date.now(), prices: data }));
+    } catch (e) { /* quota exceeded */ }
   }
 
-  /* --- Fetch from Metals.dev API (cached, ~25 requests/month) --- */
+  /* --- Fetch from GoldAPI.io (cached, ~8 hours) --- */
   function fetchMetalsPrices(symbols, callback) {
-    if (PRICE_CONFIG.metalsApiKey === 'DEMO') {
+    if (PRICE_CONFIG.goldApiKey === 'DEMO') {
       callback(null, 'demo');
       return;
     }
 
     var cached = getMetalsCache();
-    if (cached && cached.metals) {
-      processMetalsData(cached.metals, symbols, callback, 'cached');
+    if (cached && cached.prices) {
+      processGoldApiData(cached.prices, symbols, callback, 'cached');
       return;
     }
 
-    var url = 'https://api.metals.dev/v1/latest?api_key=' +
-      PRICE_CONFIG.metalsApiKey + '&currency=USD&unit=toz';
+    var uniqueMetals = {};
+    symbols.forEach(function (sym) {
+      var apiSym = goldApiMap[sym];
+      if (apiSym) uniqueMetals[apiSym] = true;
+    });
+    var toFetch = Object.keys(uniqueMetals);
 
-    fetch(url)
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (data && data.metals) {
-          setMetalsCache(data.metals);
-          processMetalsData(data.metals, symbols, callback, 'live');
-        } else {
-          callback(null, 'error');
-        }
+    var results = {};
+    var pending = toFetch.length;
+    if (pending === 0) { callback(null, 'demo'); return; }
+
+    toFetch.forEach(function (metal) {
+      fetch('https://www.goldapi.io/api/' + metal + '/USD', {
+        headers: { 'x-access-token': PRICE_CONFIG.goldApiKey }
       })
-      .catch(function () { callback(null, 'error'); });
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data && data.price) {
+            results[metal] = { price: data.price, chp: data.chp || 0 };
+          }
+          pending--;
+          if (pending === 0) {
+            setMetalsCache(results);
+            processGoldApiData(results, symbols, callback, 'live');
+          }
+        })
+        .catch(function () {
+          pending--;
+          if (pending === 0) {
+            if (Object.keys(results).length > 0) {
+              setMetalsCache(results);
+              processGoldApiData(results, symbols, callback, 'live');
+            } else {
+              callback(null, 'error');
+            }
+          }
+        });
+    });
   }
 
-  function processMetalsData(metals, symbols, callback, mode) {
+  function processGoldApiData(prices, symbols, callback, mode) {
     var result = {};
     symbols.forEach(function (sym) {
-      var key = metalMap[sym];
-      if (key && metals[key] != null) {
-        var prev = cache[sym] ? cache[sym].price : referencePrices[sym].price;
-        var current = metals[key];
+      var apiSym = goldApiMap[sym];
+      if (apiSym && prices[apiSym]) {
+        var current = prices[apiSym].price;
         if (conversionFactors[sym]) current = current * conversionFactors[sym];
-        var pctChange = prev ? ((current - prev) / prev * 100) : 0;
         result[sym] = {
           name: referencePrices[sym].name,
           price: current,
-          change: pctChange,
+          change: prices[apiSym].chp || 0,
           unit: referencePrices[sym].unit,
           decimals: referencePrices[sym].decimals,
           live: true
@@ -167,47 +186,6 @@ var PRICE_CONFIG = {
     });
     cache = Object.assign(cache, result);
     callback(result, mode);
-  }
-
-  /* --- Fetch from Commodities-API --- */
-  function fetchCommodityPrices(symbols, callback) {
-    if (PRICE_CONFIG.commoditiesApiKey === 'DEMO') {
-      callback(null, 'demo');
-      return;
-    }
-
-    var symbolStr = symbols.join(',');
-    var url = 'https://commodities-api.com/api/latest?access_key=' +
-      PRICE_CONFIG.commoditiesApiKey + '&base=USD&symbols=' + symbolStr;
-
-    fetch(url)
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        if (data && data.data && data.data.rates) {
-          var result = {};
-          symbols.forEach(function (sym) {
-            if (data.data.rates[sym] != null) {
-              var rawRate = data.data.rates[sym];
-              var current = rawRate > 0 ? (1 / rawRate) : 0;
-              var prev = cache[sym] ? cache[sym].price : (referencePrices[sym] ? referencePrices[sym].price : current);
-              var pctChange = prev ? ((current - prev) / prev * 100) : 0;
-              result[sym] = {
-                name: referencePrices[sym] ? referencePrices[sym].name : sym,
-                price: current,
-                change: pctChange,
-                unit: referencePrices[sym] ? referencePrices[sym].unit : '',
-                decimals: referencePrices[sym] ? referencePrices[sym].decimals : 2,
-                live: true
-              };
-            }
-          });
-          cache = Object.assign(cache, result);
-          callback(result, 'live');
-        } else {
-          callback(null, 'error');
-        }
-      })
-      .catch(function () { callback(null, 'error'); });
   }
 
   /* --- Build a single price card HTML --- */
@@ -317,9 +295,9 @@ var PRICE_CONFIG = {
     symbols = symbols || ['XAU', 'XAG', 'XPT', 'XPD'];
 
     function refresh() {
-      var metalsToFetch = symbols.filter(function (s) { return isMetalSymbol(s); });
-      if (metalsToFetch.length > 0) {
-        fetchMetalsPrices(metalsToFetch, function (result, mode) {
+      var liveSymbols = symbols.filter(function (s) { return isLiveSymbol(s); });
+      if (liveSymbols.length > 0) {
+        fetchMetalsPrices(liveSymbols, function (result, mode) {
           renderPrices(containerId, symbols, mode);
         });
       } else {
@@ -369,28 +347,14 @@ var PRICE_CONFIG = {
     }
 
     function fetchAll(cb) {
-      var metalsToFetch = symbols.filter(function (s) { return isMetalSymbol(s); });
-      var commoditiesToFetch = symbols.filter(function (s) { return !isMetalSymbol(s) && s !== 'DIAMOND' && s !== 'COPPER_KG'; });
-      var pending = 0;
-      var anyLive = false;
-
-      if (metalsToFetch.length > 0) {
-        pending++;
-        fetchMetalsPrices(metalsToFetch, function (r, m) {
-          if (m === 'live') anyLive = true;
-          pending--;
-          if (pending === 0) cb(anyLive ? 'live' : 'demo');
+      var liveSymbols = symbols.filter(function (s) { return isLiveSymbol(s); });
+      if (liveSymbols.length > 0) {
+        fetchMetalsPrices(liveSymbols, function (r, m) {
+          cb(m === 'live' || m === 'cached' ? m : 'demo');
         });
+      } else {
+        cb('demo');
       }
-      if (commoditiesToFetch.length > 0) {
-        pending++;
-        fetchCommodityPrices(commoditiesToFetch, function (r, m) {
-          if (m === 'live') anyLive = true;
-          pending--;
-          if (pending === 0) cb(anyLive ? 'live' : 'demo');
-        });
-      }
-      if (pending === 0) cb('demo');
     }
 
     function refresh() {
@@ -421,34 +385,20 @@ var PRICE_CONFIG = {
   window.initCommodityPriceTicker = function (containerId, symbols) {
     symbols = symbols || ['XAU', 'XAG', 'COPPER', 'WTI', 'BRENT', 'NG', 'WHEAT', 'CORN', 'SUGAR', 'RICE', 'SOYBEAN', 'UREA'];
 
-    var metalSyms = symbols.filter(function (s) { return isMetalSymbol(s); });
-    var commoditySyms = symbols.filter(function (s) { return !isMetalSymbol(s) && s !== 'DIAMOND' && s !== 'COPPER_KG'; });
+    var liveSyms = symbols.filter(function (s) { return isLiveSymbol(s); });
 
     function refresh() {
-      var pending = 0;
-      var anyLive = false;
-      if (metalSyms.length > 0) {
-        pending++;
-        fetchMetalsPrices(metalSyms, function (r, m) {
-          if (m === 'live') anyLive = true;
-          pending--;
-          if (pending === 0) renderPrices(containerId, symbols, anyLive ? 'live' : 'demo');
+      if (liveSyms.length > 0) {
+        fetchMetalsPrices(liveSyms, function (r, m) {
+          renderPrices(containerId, symbols, m === 'live' || m === 'cached' ? m : 'demo');
         });
+      } else {
+        renderPrices(containerId, symbols, 'demo');
       }
-      if (commoditySyms.length > 0) {
-        pending++;
-        fetchCommodityPrices(commoditySyms, function (r, m) {
-          if (m === 'live') anyLive = true;
-          pending--;
-          if (pending === 0) renderPrices(containerId, symbols, anyLive ? 'live' : 'demo');
-        });
-      }
-      if (pending === 0) renderPrices(containerId, symbols, 'demo');
     }
 
     renderPrices(containerId, symbols, 'demo');
     refresh();
-    timers.push(setInterval(refresh, PRICE_CONFIG.refreshInterval));
   };
 
 })();
