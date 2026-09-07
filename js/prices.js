@@ -11,8 +11,8 @@
    ============================================================ */
 
 var PRICE_CONFIG = {
-  metalsApiKey: 'DEMO',
-  commoditiesApiKey: 'DEMO',
+  metalsApiKey: 'xNhD8C698fZlJIhdKSjboYVpKWC6Byje',
+  commoditiesApiKey: 'xNhD8C698fZlJIhdKSjboYVpKWC6Byje',
   refreshInterval: 60000,
   currency: 'USD'
 };
