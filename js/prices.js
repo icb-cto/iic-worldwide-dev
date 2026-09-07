@@ -4,15 +4,17 @@
 
    API SETUP:
    Sign up for a FREE API key at https://metals.dev (no credit card).
-   Replace the key below. Free plan = 50 requests/day, 60s delay.
+   Replace the key below. Free plan = 100 requests/month.
+   Prices are cached in localStorage (~8 hours) to stay within limits.
 
    For broader commodities (oil, wheat, sugar, etc.), sign up at
    https://commodities-api.com (free plan = 100 requests/month).
    ============================================================ */
 
 var PRICE_CONFIG = {
-  metalsApiKey: 'goldapi-95c93903adab83d4c934c18d674b98d3-io',
+  metalsApiKey: 'EQCZCZF193MYEMVENSGK217VENSGK',
   commoditiesApiKey: 'DEMO',
+  metalsCacheTTL: 28800000,
   refreshInterval: 60000,
   currency: 'USD'
 };
@@ -95,10 +97,36 @@ var PRICE_CONFIG = {
     return metalMap[sym] != null;
   }
 
-  /* --- Fetch from Metals.dev API --- */
+  /* --- LocalStorage cache helpers (metals only) --- */
+  var METALS_CACHE_KEY = 'iic_metals_cache';
+
+  function getMetalsCache() {
+    try {
+      var raw = localStorage.getItem(METALS_CACHE_KEY);
+      if (!raw) return null;
+      var parsed = JSON.parse(raw);
+      var age = Date.now() - (parsed.ts || 0);
+      if (age > PRICE_CONFIG.metalsCacheTTL) return null;
+      return parsed;
+    } catch (e) { return null; }
+  }
+
+  function setMetalsCache(data) {
+    try {
+      localStorage.setItem(METALS_CACHE_KEY, JSON.stringify({ ts: Date.now(), metals: data }));
+    } catch (e) { /* quota exceeded — ignore */ }
+  }
+
+  /* --- Fetch from Metals.dev API (cached, ~25 requests/month) --- */
   function fetchMetalsPrices(symbols, callback) {
     if (PRICE_CONFIG.metalsApiKey === 'DEMO') {
       callback(null, 'demo');
+      return;
+    }
+
+    var cached = getMetalsCache();
+    if (cached && cached.metals) {
+      processMetalsData(cached.metals, symbols, callback, 'cached');
       return;
     }
 
@@ -109,31 +137,36 @@ var PRICE_CONFIG = {
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (data && data.metals) {
-          var result = {};
-          symbols.forEach(function (sym) {
-            var key = metalMap[sym];
-            if (key && data.metals[key] != null) {
-              var prev = cache[sym] ? cache[sym].price : referencePrices[sym].price;
-              var current = data.metals[key];
-              if (conversionFactors[sym]) current = current * conversionFactors[sym];
-              var pctChange = prev ? ((current - prev) / prev * 100) : 0;
-              result[sym] = {
-                name: referencePrices[sym].name,
-                price: current,
-                change: pctChange,
-                unit: referencePrices[sym].unit,
-                decimals: referencePrices[sym].decimals,
-                live: true
-              };
-            }
-          });
-          cache = Object.assign(cache, result);
-          callback(result, 'live');
+          setMetalsCache(data.metals);
+          processMetalsData(data.metals, symbols, callback, 'live');
         } else {
           callback(null, 'error');
         }
       })
       .catch(function () { callback(null, 'error'); });
+  }
+
+  function processMetalsData(metals, symbols, callback, mode) {
+    var result = {};
+    symbols.forEach(function (sym) {
+      var key = metalMap[sym];
+      if (key && metals[key] != null) {
+        var prev = cache[sym] ? cache[sym].price : referencePrices[sym].price;
+        var current = metals[key];
+        if (conversionFactors[sym]) current = current * conversionFactors[sym];
+        var pctChange = prev ? ((current - prev) / prev * 100) : 0;
+        result[sym] = {
+          name: referencePrices[sym].name,
+          price: current,
+          change: pctChange,
+          unit: referencePrices[sym].unit,
+          decimals: referencePrices[sym].decimals,
+          live: true
+        };
+      }
+    });
+    cache = Object.assign(cache, result);
+    callback(result, mode);
   }
 
   /* --- Fetch from Commodities-API --- */
@@ -207,9 +240,14 @@ var PRICE_CONFIG = {
     if (isDemo) {
       statusEl.innerHTML = 'Indicative prices &middot; <a href="#price-setup" style="color:var(--gold)">Connect live API</a>';
       statusEl.className = 'price-status price-status--demo';
+    } else if (mode === 'cached') {
+      var cachedData = getMetalsCache();
+      var cachedTime = cachedData ? new Date(cachedData.ts).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+      statusEl.textContent = 'Market data · Cached ' + cachedTime;
+      statusEl.className = 'price-status price-status--live';
     } else {
       var timeStr = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-      statusEl.textContent = 'Live market data · Updated ' + timeStr + ' · Refreshes every 60s';
+      statusEl.textContent = 'Live market data · Updated ' + timeStr;
       statusEl.className = 'price-status price-status--live';
     }
   }
@@ -291,7 +329,6 @@ var PRICE_CONFIG = {
 
     renderPrices(containerId, symbols, 'demo');
     refresh();
-    timers.push(setInterval(refresh, PRICE_CONFIG.refreshInterval));
   };
 
   /* --- Public: Initialize commodity price carousel (General Trading page) --- */
@@ -365,7 +402,6 @@ var PRICE_CONFIG = {
 
     render();
     refresh();
-    timers.push(setInterval(refresh, PRICE_CONFIG.refreshInterval));
 
     if (wrapper) {
       wrapper.addEventListener('click', function (e) {
