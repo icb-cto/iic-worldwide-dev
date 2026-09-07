@@ -3,16 +3,18 @@
    ============================================================
 
    API SETUP:
-   Sign up for a FREE API key at https://www.goldapi.io
-   Replace the key below. Free plan = 500 requests/month.
-   Prices are cached in localStorage (~8 hours) to stay within limits.
-   Covers Gold (XAU) and Silver (XAG). Other commodities use
-   indicative reference prices.
+   1. Gold & Silver — https://www.goldapi.io (free = 500 req/month)
+      Cached ~8 hours in localStorage.
+   2. Commodities  — https://www.alphavantage.co (free = 25 req/day)
+      Cached ~24 hours (daily prices). Covers oil, gas, grains, etc.
+   Both APIs fall back to last successful price on error.
    ============================================================ */
 
 var PRICE_CONFIG = {
   goldApiKey: 'goldapi-95c93903adab83d4c934c18d674b98d3-io',
+  alphaVantageKey: '3NXQYU6IPOMAQE7C',
   metalsCacheTTL: 28800000,
+  commoditiesCacheTTL: 86400000,
   currency: 'USD'
 };
 
@@ -90,8 +92,29 @@ var PRICE_CONFIG = {
     XAU_G: 1 / GRAMS_PER_OZ, XAG_G: 1 / GRAMS_PER_OZ
   };
 
+  /* --- Alpha Vantage symbol map (commodities) --- */
+  var avMap = {
+    WTI: 'WTI', BRENT: 'BRENT', NG: 'NATURAL_GAS',
+    COPPER: 'COPPER', COPPER_G: 'COPPER', COPPER_KG: 'COPPER',
+    WHEAT: 'WHEAT', CORN: 'CORN', SUGAR: 'SUGAR',
+    SOYBEAN: 'SOYBEANS'
+  };
+
+  var avConversions = {
+    COPPER_G: 1 / 453.592,
+    COPPER_KG: LB_PER_KG
+  };
+
   function isLiveSymbol(sym) {
+    return goldApiMap[sym] != null || avMap[sym] != null;
+  }
+
+  function isGoldApiSymbol(sym) {
     return goldApiMap[sym] != null;
+  }
+
+  function isAVSymbol(sym) {
+    return avMap[sym] != null;
   }
 
   /* --- LocalStorage cache helpers --- */
@@ -193,6 +216,121 @@ var PRICE_CONFIG = {
           name: referencePrices[sym].name,
           price: current,
           change: prices[apiSym].chp || 0,
+          unit: referencePrices[sym].unit,
+          decimals: referencePrices[sym].decimals,
+          live: true
+        };
+      }
+    });
+    cache = Object.assign(cache, result);
+    callback(result, mode);
+  }
+
+  /* --- LocalStorage cache helpers (commodities) --- */
+  var COMMODITIES_CACHE_KEY = 'iic_av_cache';
+
+  function getCommoditiesCache(ignoreExpiry) {
+    try {
+      var raw = localStorage.getItem(COMMODITIES_CACHE_KEY);
+      if (!raw) return null;
+      var parsed = JSON.parse(raw);
+      if (!ignoreExpiry) {
+        var age = Date.now() - (parsed.ts || 0);
+        if (age > PRICE_CONFIG.commoditiesCacheTTL) return null;
+      }
+      return parsed;
+    } catch (e) { return null; }
+  }
+
+  function setCommoditiesCache(data) {
+    try {
+      localStorage.setItem(COMMODITIES_CACHE_KEY, JSON.stringify({ ts: Date.now(), prices: data }));
+    } catch (e) { /* quota exceeded */ }
+  }
+
+  /* --- Fetch from Alpha Vantage (cached, ~24 hours) --- */
+  function fetchCommodityPrices(symbols, callback) {
+    if (PRICE_CONFIG.alphaVantageKey === 'DEMO') {
+      callback(null, 'demo');
+      return;
+    }
+
+    var cached = getCommoditiesCache();
+    if (cached && cached.prices) {
+      processAVData(cached.prices, symbols, callback, 'cached');
+      return;
+    }
+
+    var uniqueFns = {};
+    symbols.forEach(function (sym) {
+      var fn = avMap[sym];
+      if (fn) uniqueFns[fn] = true;
+    });
+    var toFetch = Object.keys(uniqueFns);
+
+    var results = {};
+    var pending = toFetch.length;
+    if (pending === 0) { callback(null, 'demo'); return; }
+
+    function fallbackToStaleCache() {
+      var stale = getCommoditiesCache(true);
+      if (stale && stale.prices) {
+        processAVData(stale.prices, symbols, callback, 'cached');
+      } else {
+        callback(null, 'demo');
+      }
+    }
+
+    toFetch.forEach(function (fn) {
+      var url = 'https://www.alphavantage.co/query?function=' + fn +
+        '&interval=daily&apikey=' + PRICE_CONFIG.alphaVantageKey;
+
+      fetch(url)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data && data.data && data.data.length >= 2) {
+            var today = parseFloat(data.data[0].value);
+            var prev = parseFloat(data.data[1].value);
+            if (!isNaN(today) && today > 0) {
+              var chp = prev > 0 ? ((today - prev) / prev * 100) : 0;
+              results[fn] = { price: today, chp: chp };
+            }
+          }
+          pending--;
+          if (pending === 0) {
+            if (Object.keys(results).length > 0) {
+              setCommoditiesCache(results);
+              processAVData(results, symbols, callback, 'live');
+            } else {
+              fallbackToStaleCache();
+            }
+          }
+        })
+        .catch(function () {
+          pending--;
+          if (pending === 0) {
+            if (Object.keys(results).length > 0) {
+              setCommoditiesCache(results);
+              processAVData(results, symbols, callback, 'live');
+            } else {
+              fallbackToStaleCache();
+            }
+          }
+        });
+    });
+  }
+
+  function processAVData(prices, symbols, callback, mode) {
+    var result = {};
+    symbols.forEach(function (sym) {
+      var fn = avMap[sym];
+      if (fn && prices[fn]) {
+        var current = prices[fn].price;
+        if (avConversions[sym]) current = current * avConversions[sym];
+        result[sym] = {
+          name: referencePrices[sym].name,
+          price: current,
+          change: prices[fn].chp || 0,
           unit: referencePrices[sym].unit,
           decimals: referencePrices[sym].decimals,
           live: true
@@ -362,14 +500,31 @@ var PRICE_CONFIG = {
     }
 
     function fetchAll(cb) {
-      var liveSymbols = symbols.filter(function (s) { return isLiveSymbol(s); });
-      if (liveSymbols.length > 0) {
-        fetchMetalsPrices(liveSymbols, function (r, m) {
-          cb(m === 'live' || m === 'cached' ? m : 'demo');
-        });
-      } else {
-        cb('demo');
+      var metalSyms = symbols.filter(function (s) { return isGoldApiSymbol(s); });
+      var commoditySyms = symbols.filter(function (s) { return isAVSymbol(s); });
+      var pending = 0;
+      var anyLive = false;
+
+      function done() {
+        pending--;
+        if (pending === 0) cb(anyLive ? 'live' : 'demo');
       }
+
+      if (metalSyms.length > 0) {
+        pending++;
+        fetchMetalsPrices(metalSyms, function (r, m) {
+          if (m === 'live' || m === 'cached') anyLive = true;
+          done();
+        });
+      }
+      if (commoditySyms.length > 0) {
+        pending++;
+        fetchCommodityPrices(commoditySyms, function (r, m) {
+          if (m === 'live' || m === 'cached') anyLive = true;
+          done();
+        });
+      }
+      if (pending === 0) cb('demo');
     }
 
     function refresh() {
@@ -400,16 +555,31 @@ var PRICE_CONFIG = {
   window.initCommodityPriceTicker = function (containerId, symbols) {
     symbols = symbols || ['XAU', 'XAG', 'COPPER', 'WTI', 'BRENT', 'NG', 'WHEAT', 'CORN', 'SUGAR', 'RICE', 'SOYBEAN', 'UREA'];
 
-    var liveSyms = symbols.filter(function (s) { return isLiveSymbol(s); });
+    var metalSyms = symbols.filter(function (s) { return isGoldApiSymbol(s); });
+    var commoditySyms = symbols.filter(function (s) { return isAVSymbol(s); });
 
     function refresh() {
-      if (liveSyms.length > 0) {
-        fetchMetalsPrices(liveSyms, function (r, m) {
-          renderPrices(containerId, symbols, m === 'live' || m === 'cached' ? m : 'demo');
-        });
-      } else {
-        renderPrices(containerId, symbols, 'demo');
+      var pending = 0;
+      var anyLive = false;
+      function done() {
+        pending--;
+        if (pending === 0) renderPrices(containerId, symbols, anyLive ? 'live' : 'demo');
       }
+      if (metalSyms.length > 0) {
+        pending++;
+        fetchMetalsPrices(metalSyms, function (r, m) {
+          if (m === 'live' || m === 'cached') anyLive = true;
+          done();
+        });
+      }
+      if (commoditySyms.length > 0) {
+        pending++;
+        fetchCommodityPrices(commoditySyms, function (r, m) {
+          if (m === 'live' || m === 'cached') anyLive = true;
+          done();
+        });
+      }
+      if (pending === 0) renderPrices(containerId, symbols, 'demo');
     }
 
     renderPrices(containerId, symbols, 'demo');
