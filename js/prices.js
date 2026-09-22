@@ -11,8 +11,8 @@
    ============================================================ */
 
 var PRICE_CONFIG = {
-  goldApiKey: 'DEMO', //goldapi-95c93903adab83d4c934c18d674b98d3-io
-  alphaVantageKey: 'DEMO', //3NXQYU6IPOMAQE7C
+  goldApiKey: 'DEMO',
+  alphaVantageKey: 'DEMO',
   metalsCacheTTL: 28800000,
   commoditiesCacheTTL: 86400000,
   currency: 'USD'
