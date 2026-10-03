@@ -1,386 +1,488 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IIC Worldwide — Global Commodity, Trade &amp; Finance Platform</title>
   <meta name="description" content="IIC Worldwide is a global commodity, trade, and finance platform headquartered in Dubai. Connecting producers, buyers, and suppliers — bridging supply and demand through verified trading and financial solutions.">
+  <meta name="theme-color" content="#0E2420">
   <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="Media/Sectors/Energy.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ============ NAVIGATION ============ -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
+  <header class="site-header" data-header>
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
-        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      <a class="nav__logo" href="index.html" aria-label="IIC Worldwide: home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="International Investment Consortium Worldwide" width="2022" height="449">
       </a>
-      <div class="nav__links">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="about.html" class="nav__link">About Us</a>
-        <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
-        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
-        <a href="contact.html" class="nav__link">Contact Us</a>
+      <div class="nav__right">
+        <nav class="nav__links" aria-label="Primary">
+          <a class="nav__link" href="index.html" aria-current="page">Home</a>
+          <a class="nav__link" href="about.html">About Us</a>
+          <a class="nav__link" href="subsidiaries.html">Subsidiaries</a>
+          <a class="nav__link" href="strategy.html">Strategy &amp; Investment</a>
+          <a class="nav__link" href="contact.html">Contact Us</a>
+        </nav>
+        <a class="nav__pill" href="contact.html">Get in touch</a>
+        <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-    <div class="nav__mobile">
-      <a href="index.html" class="nav__link">Home</a>
-      <a href="about.html" class="nav__link">About Us</a>
-      <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
-      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
-      <a href="contact.html" class="nav__link">Contact Us</a>
-
+    <div class="nav__mobile" id="mobile-menu" inert>
+      <nav aria-label="Menu">
+          <a class="nav__link" href="index.html" aria-current="page">Home</a>
+          <a class="nav__link" href="about.html">About Us</a>
+          <a class="nav__link" href="subsidiaries.html">Subsidiaries</a>
+          <a class="nav__link" href="strategy.html">Strategy &amp; Investment</a>
+          <a class="nav__link" href="contact.html">Contact Us</a>
+      </nav>
+      <div class="nav__mobile-foot">
+        <div><h2>Sectors</h2><ul>
+          <li><a href="sector-food-security.html">Food Security</a></li>
+          <li><a href="sector-energy.html">Energy</a></li>
+          <li><a href="sector-fertilizers.html">Fertilizers</a></li>
+          <li><a href="sector-metals.html">Metals &amp; Precious Commodities</a></li>
+          <li><a href="sector-services.html">Services</a></li>
+          <li><a href="sector-technology.html">Technology</a></li>
+        </ul></div>
+        <div><h2>Headquarters</h2>
+          <p>Ground Floor, Al Shafar Park Tower<br>Sheikh Zayed Road, Dubai, UAE</p>
+        </div>
+        <div><h2>Contact</h2><ul>
+          <li><a href="tel:+97148347004">+971 4 834 7004</a></li>
+          <li><a href="mailto:office@iicworldwide.com">office@iicworldwide.com</a></li>
+        </ul></div>
+      </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner">
+  <main id="main">
+    <!-- ============ HERO SLIDER ============ -->
+    <section class="hero" data-hero aria-roledescription="carousel" aria-label="Highlights" tabindex="-1">
+      <div class="hero__slide" aria-roledescription="slide" aria-label="1 of 4">
+        <div class="hero__media"><img src="Media/Sectors/Energy.jpg" alt=""></div>
         <div class="hero__content">
-          <span class="eyebrow reveal">Global Commodity &amp; Trade Platform</span>
-          <h1 class="hero__title reveal reveal-delay-1">Connecting Markets.<br><span>Enabling Trade.</span><br>Financing Growth.</h1>
-          <p class="hero__subtitle reveal reveal-delay-2">Bridging supply and demand across global commodity markets through verified trading, financial solutions, and strategic partnerships.</p>
-          <div class="btn-group reveal reveal-delay-3">
-            <a href="#sectors" class="btn btn--primary">Explore Our Sectors</a>
-            <a href="contact.html" class="btn btn--outline">Partner With Us</a>
-          </div>
-        </div>
-        <div class="hero__visual reveal reveal-delay-2">
-          <img src="Media/IIC Worldwide Square.png" alt="IIC Worldwide" style="max-width: 420px; width: 100%; height: auto; opacity: 0.9;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WHO WE ARE ============ -->
-  <section class="section section--dark">
-    <div class="container">
-      <div class="section-header section-header--center reveal">
-        <span class="eyebrow">Who We Are</span>
-        <h2>International Investment Consortium Worldwide</h2>
-        <div class="gold-line gold-line--center"></div>
-      </div>
-      <div class="reveal reveal-delay-1" style="max-width: 860px; margin: 0 auto; text-align: center;">
-        <p class="text-lg" style="color: var(--text-muted); margin-bottom: 20px;">IIC Worldwide is a global commodity, trade, and finance platform headquartered in Dubai. We open markets by connecting producers, buyers, sellers, and suppliers — creating the infrastructure for legitimate, transparent commerce across borders.</p>
-        <p style="color: var(--text-muted); margin-bottom: 20px;">Our platform bridges supply and demand across key commodity sectors including food, energy, services, and technology. Whether a business needs to source rice, secure fuel, or find a verified service provider, IIC Worldwide connects them with legitimate, vetted partners ready to trade.</p>
-        <p style="color: var(--text-muted); margin-bottom: 20px;">We bridge through finance — providing the trade finance, structured funding, and financial solutions that make transactions possible. By removing financial barriers and enabling access to capital, we help businesses of all sizes participate in global trade.</p>
-        <p style="color: var(--text-muted); margin-bottom: 40px;">Through our integrated platform, IIC Worldwide creates markets where none existed before — bringing together verified trading partners, financial infrastructure, and supply chain solutions to drive economic growth and deliver lasting value for all stakeholders.</p>
-        <a href="about.html" class="btn btn--primary">Know More About Us</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CORE STANDARDS ============ -->
-  <section class="section section--primary">
-    <div class="container">
-      <div class="section-header section-header--center reveal">
-        <span class="eyebrow">What We Do</span>
-        <h2>A Platform Built for Global Trade</h2>
-      </div>
-      <div class="grid grid-3">
-        <div class="card reveal">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-          </div>
-          <h4 class="card__title">Market Access</h4>
-          <p class="card__text">We open doors to global markets — connecting producers, buyers, sellers, and suppliers across borders to create new trade opportunities where they are needed most.</p>
-        </div>
-        <div class="card reveal reveal-delay-1">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3V2"/><path d="m15.4 17.4 3.2-2.8a2 2 0 1 1 2.8 2.9l-3.6 3.3c-.7.8-1.7 1.2-2.8 1.2h-4c-1.1 0-2.1-.4-2.8-1.2l-1.302-1.464A1 1 0 0 0 6.151 19H5"/><path d="M2 14h12a2 2 0 0 1 0 4h-2"/><path d="M4 10h16"/><path d="M5 10a7 7 0 0 1 14 0"/><path d="M5 14v6a1 1 0 0 1-1 1H2"/></svg>
-          </div>
-          <h4 class="card__title">Trade Facilitation</h4>
-          <p class="card__text">We streamline commodity sourcing and supply — making it easier for businesses to find what they need, from agricultural products and energy to industrial goods and professional services.</p>
-        </div>
-        <div class="card reveal reveal-delay-2">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
-          </div>
-          <h4 class="card__title">Trade Finance</h4>
-          <p class="card__text">We bridge through finance — providing structured funding, trade credit, and financial solutions that remove barriers and enable transactions between buyers and sellers worldwide.</p>
-        </div>
-        <div class="card reveal reveal-delay-3">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          </div>
-          <h4 class="card__title">Verified Trading</h4>
-          <p class="card__text">We ensure legitimacy at every step — vetting suppliers and buyers so that every transaction on our platform is conducted between verified, trustworthy trading partners.</p>
-        </div>
-        <div class="card reveal reveal-delay-4">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-          </div>
-          <h4 class="card__title">Supply Chain Integration</h4>
-          <p class="card__text">We deliver end-to-end supply chain solutions — from sourcing and logistics to distribution and delivery — ensuring commodities move efficiently from origin to destination.</p>
-        </div>
-        <div class="card reveal reveal-delay-5">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></svg>
-          </div>
-          <h4 class="card__title">Digital Infrastructure</h4>
-          <p class="card__text">We build the technology platform that powers transparent trading — providing digital tools for market discovery, transaction management, and real-time visibility across the trade lifecycle.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ OPERATIONAL SECTORS ============ -->
-  <section id="sectors" class="section section--dark">
-    <div class="container">
-      <div class="section-header section-header--center reveal">
-        <span class="eyebrow">Operational Sectors</span>
-        <h2>Markets We Serve</h2>
-        <p>IIC Worldwide operates across six core sectors, each structured as a marketplace connecting verified producers, buyers, and suppliers with the finance to trade.</p>
-      </div>
-      <div class="grid grid-3">
-        <a href="sector-food-security.html" class="sector-card reveal">
-          <img src="Media/Sectors/Food Security.jpg" alt="Food Security" class="sector-card__img" onerror="this.style.display='none';this.parentNode.innerHTML='<span>Food Security<br><small>960 x 600 px</small></span>'+this.parentNode.innerHTML;">
-          <h3 class="sector-card__title">Food Security</h3>
-          <p class="sector-card__text">A global marketplace for agricultural commodities &mdash; sugar, rice, wheat, corn, soybeans, cooking oil, and pulses &mdash; connecting verified producers with buyers worldwide.</p>
-          <span class="sector-card__link">Explore More <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a href="sector-energy.html" class="sector-card reveal reveal-delay-1">
-          <img src="Media/Sectors/Energy.jpg" alt="Energy" class="sector-card__img">
-          <h3 class="sector-card__title">Energy</h3>
-          <p class="sector-card__text">A trading platform for petroleum products &mdash; Diesel EN590, Marine Gas Oil, Base Oil, Bitumen &mdash; connecting producers and refiners with end-users across global energy markets.</p>
-          <span class="sector-card__link">Explore More <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a href="sector-fertilizers.html" class="sector-card reveal reveal-delay-2">
-          <img src="Media/Sectors/Fertilizers.jpg" alt="Fertilizers" class="sector-card__img" onerror="this.style.display='none';this.parentNode.innerHTML='<span>Fertilizers<br><small>960 x 600 px</small></span>'+this.parentNode.innerHTML;">
-          <h3 class="sector-card__title">Fertilizers &amp; Industrial Commodities</h3>
-          <p class="sector-card__text">International trade of Urea, Sulphur, DAP, MAP, and NPK fertilizers &mdash; connecting producers with agricultural markets and industrial buyers worldwide.</p>
-          <span class="sector-card__link">Explore More <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a href="sector-metals.html" class="sector-card reveal">
-          <img src="Media/Sectors/Metals.jpg" alt="Metals &amp; Precious Commodities" class="sector-card__img" onerror="this.style.display='none';this.parentNode.innerHTML='<span>Metals<br><small>960 x 600 px</small></span>'+this.parentNode.innerHTML;">
-          <h3 class="sector-card__title">Metals &amp; Precious Commodities</h3>
-          <p class="sector-card__text">Sourcing and trading of Gold Dor&eacute; Bars, Diamonds, Copper Cathodes, and Industrial Metals through specialized group companies and verified supply chains.</p>
-          <span class="sector-card__link">Explore More <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a href="sector-services.html" class="sector-card reveal reveal-delay-1">
-          <img src="Media/Sectors/Services.jpg" alt="Services" class="sector-card__img" onerror="this.style.display='none';this.parentNode.innerHTML='<span>Services<br><small>960 x 600 px</small></span>'+this.parentNode.innerHTML;">
-          <h3 class="sector-card__title">Services</h3>
-          <p class="sector-card__text">A platform connecting businesses with verified professional and commercial service providers &mdash; from logistics and consulting to construction and facility management.</p>
-          <span class="sector-card__link">Explore More <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-        <a href="sector-technology.html" class="sector-card reveal reveal-delay-2">
-          <img src="Media/Sectors/Technology.jpg" alt="Technology &amp; Industrial Solutions" class="sector-card__img" onerror="this.style.display='none';this.parentNode.innerHTML='<span>Technology<br><small>960 x 600 px</small></span>'+this.parentNode.innerHTML;">
-          <h3 class="sector-card__title">Technology &amp; Industrial Solutions</h3>
-          <p class="sector-card__text">Sourcing and international trade of IT equipment, telecommunications, industrial machinery, electrical equipment, renewable energy components, and automation systems.</p>
-          <span class="sector-card__link">Explore More <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SUBSIDIARY NETWORK ============ -->
-  <section class="section section--primary">
-    <div class="container">
-      <div class="section-header section-header--center reveal">
-        <span class="eyebrow">Subsidiary Network</span>
-        <h2>An Integrated Global Ecosystem</h2>
-        <p>IIC Worldwide brings together a group of focused subsidiaries working across finance, energy, trade, aviation, commodities and digital technology — serving markets around the world.</p>
-      </div>
-      <div class="grid grid-3">
-        <a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" class="sub-card sub-card--centered reveal" style="text-decoration: none; color: inherit;">
-          <img src="Media/IICB.png" alt="IIC Bank" class="sub-card__logo sub-card__logo--full">
-          <p class="sub-card__text">A financial institution delivering international banking, structured funding, and digital financial services. The bank supports cross-border transactions, investment activity, and wider access to financial solutions across East Africa and other developing markets.</p>
-        </a>
-        <a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer" class="sub-card sub-card--centered reveal reveal-delay-1" style="text-decoration: none; color: inherit;">
-          <img src="Media/IIC Metaverse.png" alt="IIC Metaverse" class="sub-card__logo sub-card__logo--full">
-          <p class="sub-card__text">A technology-focused platform developing blockchain solutions, virtual environments, and emerging digital finance products. It creates new ways for individuals and institutions to participate in digital economies and technology-enabled investment opportunities.</p>
-        </a>
-        <a href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer" class="sub-card sub-card--centered reveal reveal-delay-2" style="text-decoration: none; color: inherit;">
-          <img src="Media/IIC Oil and Gas.png" alt="IIC Oil &amp; Gas" class="sub-card__logo sub-card__logo--full">
-          <p class="sub-card__text">An integrated energy business supporting trading, infrastructure, and service requirements throughout the oil and gas sector. Its operations emphasize reliable delivery, efficient execution, responsible development, and internationally recognized health, safety, and environmental practices.</p>
-        </a>
-        <a href="iic-general-trading.html" class="sub-card sub-card--centered reveal reveal-delay-3" style="text-decoration: none; color: inherit;">
-          <img src="Media/IIC General Trading.png" alt="IIC General Trading" class="sub-card__logo sub-card__logo--full">
-          <p class="sub-card__text">An international trading and supply-chain company connecting buyers and suppliers across commodities, industrial materials, and commercial goods. It provides coordinated sourcing, logistics, distribution, and delivery solutions while maintaining strong operational and compliance standards.</p>
-        </a>
-        <div class="sub-card sub-card--centered reveal reveal-delay-4">
-          <div class="sub-card__logo sub-card__logo--full" style="display: flex; align-items: center; justify-content: center;">
-            <svg viewBox="0 0 160 40" width="160" height="40" xmlns="http://www.w3.org/2000/svg">
-              <text x="30" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#C49A3C">IIC</text>
-              <text x="76" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="400" fill="#5A7068">Aviation</text>
-            </svg>
-          </div>
-          <p class="sub-card__text">A specialized aviation investment, financing, and leasing platform serving airlines and aviation-sector partners. It supports fleet growth, aircraft acquisition, asset management, and tailored financial structures in expanding regional markets.</p>
-        </div>
-        <div class="sub-card sub-card--centered reveal reveal-delay-5">
-          <div class="sub-card__logo sub-card__logo--full" style="display: flex; align-items: center; justify-content: center;">
-            <svg viewBox="0 0 150 40" width="150" height="40" xmlns="http://www.w3.org/2000/svg">
-              <text x="28" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#C49A3C">IIC</text>
-              <text x="74" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="400" fill="#5A7068">Holding</text>
-            </svg>
-          </div>
-          <p class="sub-card__text">A regional investment and project-development platform supporting strategic initiatives across South Sudan and East Africa. It coordinates capital allocation, corporate governance, and long-term ventures designed to stimulate economic activity and create value within local communities.</p>
-        </div>
-      </div>
-      <div class="reveal" style="margin-top: 24px;">
-        <a href="iic-gold.html" class="sub-card sub-card--centered" style="max-width: 440px; margin: 0 auto; text-decoration: none; color: inherit;">
-          <img src="Media/IIC Express Gold and Diamond.png" alt="IIC Express Gold and Diamond" class="sub-card__logo sub-card__logo--full">
-          <p class="sub-card__text">A Dubai-based precious metals and high-value commodities company engaged in the sourcing, trading, and secure movement of gold, diamonds, and related assets. Its activities are guided by responsible sourcing practices, regulatory compliance, and dependable logistics.</p>
-        </a>
-      </div>
-      <div style="text-align: center; margin-top: 48px;" class="reveal">
-        <a href="subsidiaries.html" class="btn btn--outline">Subsidiaries</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ NEWS ============ -->
-  <section id="news" class="section section--dark">
-    <div class="container">
-      <div class="section-header section-header--center reveal">
-        <span class="eyebrow">Latest News</span>
-        <h2>Insights &amp; Updates</h2>
-        <p>Stay informed with the latest developments, market insights, and strategic updates from across the IIC Worldwide network.</p>
-      </div>
-      <div class="news-carousel reveal" aria-label="News carousel">
-        <div class="news-carousel__track">
-
-          <a href="news-iic-trade-finance-expansion.html" class="news-card">
-            <div class="news-card__image">
-              <img src="Media/News/news-1.jpg" alt="U.S. Farm Exports Surge in 2026" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--text-dim);font-size:13px;font-family:var(--font-data)\'>News Image<br><small>800 x 450 px</small></span>'">
+          <p class="hero__kicker">Global Commodity &amp; Trade Platform</p>
+          <h1 class="hero__title"><strong>Connecting Markets.</strong><br>Enabling Trade.<br>Financing Growth.</h1>
+          <div class="hero__row">
+            <p class="hero__sub">Bridging supply and demand across global commodity markets through verified trading, financial solutions, and strategic partnerships.</p>
+            <div class="btn-group">
+              <a class="btn btn--ghost" href="#sectors">Explore Our Sectors</a>
+              <a class="btn btn--gold" href="contact.html">Partner With Us</a>
             </div>
-            <div class="news-card__body">
-              <h3 class="news-card__title">U.S. Farm Exports Surge 7% in 2026 Despite Ongoing Trade Disputes</h3>
-              <p class="news-card__summary">Global U.S. agricultural exports reach $106.3 billion through seven months, a 7% year-over-year increase, with exports to the European Union up 11% and on pace to set a record.</p>
-              <span class="news-card__meta">Source: Capital Press &bull; USDA</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__slide" aria-roledescription="slide" aria-label="2 of 4">
+        <div class="hero__media"><img src="Media/Sectors/Food Security.jpg" alt="" loading="lazy"></div>
+        <div class="hero__content">
+          <p class="hero__kicker">About IIC Worldwide</p>
+          <p class="hero__title" role="heading" aria-level="2"><strong>A Global Commodity,</strong><br>Trade &amp; Finance<br>Platform</p>
+          <div class="hero__row">
+            <p class="hero__sub">Opening markets, bridging supply and demand, and financing growth for producers, buyers, and suppliers worldwide.</p>
+            <a class="btn btn--ghost" href="about.html">Explore More</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__slide" aria-roledescription="slide" aria-label="3 of 4">
+        <div class="hero__media"><img src="Media/Sectors/Metals.jpg" alt="" loading="lazy"></div>
+        <div class="hero__content">
+          <p class="hero__kicker">Strategy &amp; Investment</p>
+          <p class="hero__title" role="heading" aria-level="2"><strong>Smart Investment,</strong><br>Lasting Results</p>
+          <div class="hero__row">
+            <p class="hero__sub">We invest with purpose &mdash; putting capital to work across key sectors and growing markets to create real, long-term value.</p>
+            <a class="btn btn--ghost" href="strategy.html">Explore More</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__slide" aria-roledescription="slide" aria-label="4 of 4">
+        <div class="hero__media"><img src="Media/Sectors/Technology.jpg" alt="" loading="lazy"></div>
+        <div class="hero__content">
+          <p class="hero__kicker">Subsidiaries</p>
+          <p class="hero__title" role="heading" aria-level="2"><strong>Our Integrated</strong><br>Ecosystem</p>
+          <div class="hero__row">
+            <p class="hero__sub">Specialized companies working across key global industries, forming one connected portfolio.</p>
+            <a class="btn btn--ghost" href="subsidiaries.html">Explore More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__ui">
+        <div class="hero__pager">
+          <span data-hero-num>01</span>
+          <span class="hero__bar" aria-hidden="true"><span></span></span>
+          <div class="hero__dots" data-hero-dots role="group" aria-label="Choose slide"></div>
+        </div>
+        <div class="hero__ctrls">
+          <button class="round-btn" type="button" data-hero-prev aria-label="Previous slide"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+          <button class="round-btn" type="button" data-hero-pause aria-pressed="false" aria-label="Pause slideshow"><svg class="icon vt-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="icon vt-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg></button>
+          <button class="round-btn" type="button" data-hero-next aria-label="Next slide"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <span class="hero__scroll" aria-hidden="true"></span>
+    </section>
+
+    <!-- ============ WHO WE ARE: statement + figures ============ -->
+    <section class="container stats" id="about" aria-labelledby="about-title">
+      <div class="stat-row">
+        <div class="stat-row__text">
+          <span class="chip reveal">Who We Are</span>
+          <h2 class="statement" id="about-title">IIC Worldwide is a global commodity, trade, and finance platform headquartered in Dubai.</h2>
+          <p class="reveal">We open markets by connecting producers, buyers, sellers, and suppliers &mdash; creating the infrastructure for legitimate, transparent commerce across borders.</p>
+          <a class="btn btn--primary reveal" href="about.html">Know More About Us</a>
+        </div>
+        <div class="stat-row__fig reveal">
+          <p class="figure-big" style="background-image:url('Media/Sectors/Fertilizers.jpg')" data-count="6" data-pad="2" aria-hidden="true">06</p>
+          <p class="figure-label">Core operational sectors</p>
+          <p class="figure-value">Food, Energy, Fertilizers, Metals, Services &amp; Technology</p>
+        </div>
+      </div>
+
+      <div class="stat-row stat-row--flip">
+        <div class="stat-row__fig reveal">
+          <p class="figure-big" style="background-image:url('Media/Strategy &amp; Investment/pillar-04-strategic-partnerships.jpg')" data-count="7" data-pad="2" aria-hidden="true">07</p>
+          <p class="figure-label">Companies in the subsidiary network</p>
+          <p class="figure-value">Finance, Energy, Trade, Aviation, Commodities &amp; Digital</p>
+        </div>
+        <div class="stat-row__text">
+          <p class="statement">Our platform bridges supply and demand across key commodity sectors including food, energy, services, and technology.</p>
+          <p class="reveal">Whether a business needs to source rice, secure fuel, or find a verified service provider, IIC Worldwide connects them with legitimate, vetted partners ready to trade.</p>
+        </div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-row__text">
+          <p class="statement">We bridge through finance &mdash; providing the trade finance, structured funding, and financial solutions that make transactions possible.</p>
+          <p class="reveal">By removing financial barriers and enabling access to capital, we help businesses of all sizes participate in global trade. Through our integrated platform, IIC Worldwide creates markets where none existed before &mdash; bringing together verified trading partners, financial infrastructure, and supply chain solutions to drive economic growth and deliver lasting value for all stakeholders.</p>
+        </div>
+        <div class="stat-row__fig reveal">
+          <p class="figure-big" style="background-image:url('Media/Sectors/Metals.jpg')" data-count="1997" aria-hidden="true">1997</p>
+          <p class="figure-label">Year IIC was established, in Hong Kong</p>
+          <p class="figure-value">Middle East, Africa, Asia &amp; Europe</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT WE DO: platforms ============ -->
+    <section class="platforms has-side" data-platforms aria-labelledby="do-title">
+      <p class="side-label" aria-hidden="true"><span>What We Do</span></p>
+      <div class="container platforms__grid">
+        <div class="platforms__media img-reveal">
+          <img class="is-active" src="Media/Strategy &amp; Investment/pillar-03-geographic-expansion.jpg" alt="" loading="lazy">
+          <img src="Media/Sectors/Services/approach-procurement.jpg" alt="" loading="lazy">
+          <img src="Media/Sectors/Food Security/approach-trade-finance.jpg" alt="" loading="lazy">
+          <img src="Media/Sectors/Services/approach-verification.jpg" alt="" loading="lazy">
+          <img src="Media/Sectors/Fertilizers/approach-logistics.jpg" alt="" loading="lazy">
+          <img src="Media/Sectors/Technology/approach-trading-platform.jpg" alt="" loading="lazy">
+          <p class="platforms__count" aria-hidden="true"><b data-platform-num>01</b>/ 06</p>
+        </div>
+        <div>
+          <span class="chip reveal">What We Do</span>
+          <h2 class="display display--caps" id="do-title" style="margin-bottom:40px"><strong>A Platform Built</strong> for Global Trade</h2>
+          <div class="acc reveal" data-accordion>
+            <div class="acc__item is-open">
+              <button class="acc__btn" type="button" aria-expanded="true" aria-controls="acc-1" id="acc-1-btn"><span class="acc__title">Market Access</span><span class="acc__plus" aria-hidden="true"></span></button>
+              <div class="acc__panel" id="acc-1" role="region" aria-labelledby="acc-1-btn"><div><div class="acc__body">
+                <p>We open doors to global markets &mdash; connecting producers, buyers, sellers, and suppliers across borders to create new trade opportunities where they are needed most.</p>
+              </div></div></div>
             </div>
+            <div class="acc__item">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="acc-2" id="acc-2-btn"><span class="acc__title">Trade Facilitation</span><span class="acc__plus" aria-hidden="true"></span></button>
+              <div class="acc__panel" id="acc-2" role="region" aria-labelledby="acc-2-btn"><div><div class="acc__body">
+                <p>We streamline commodity sourcing and supply &mdash; making it easier for businesses to find what they need, from agricultural products and energy to industrial goods and professional services.</p>
+              </div></div></div>
+            </div>
+            <div class="acc__item">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="acc-3" id="acc-3-btn"><span class="acc__title">Trade Finance</span><span class="acc__plus" aria-hidden="true"></span></button>
+              <div class="acc__panel" id="acc-3" role="region" aria-labelledby="acc-3-btn"><div><div class="acc__body">
+                <p>We bridge through finance &mdash; providing structured funding, trade credit, and financial solutions that remove barriers and enable transactions between buyers and sellers worldwide.</p>
+              </div></div></div>
+            </div>
+            <div class="acc__item">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="acc-4" id="acc-4-btn"><span class="acc__title">Verified Trading</span><span class="acc__plus" aria-hidden="true"></span></button>
+              <div class="acc__panel" id="acc-4" role="region" aria-labelledby="acc-4-btn"><div><div class="acc__body">
+                <p>We ensure legitimacy at every step &mdash; vetting suppliers and buyers so that every transaction on our platform is conducted between verified, trustworthy trading partners.</p>
+              </div></div></div>
+            </div>
+            <div class="acc__item">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="acc-5" id="acc-5-btn"><span class="acc__title">Supply Chain Integration</span><span class="acc__plus" aria-hidden="true"></span></button>
+              <div class="acc__panel" id="acc-5" role="region" aria-labelledby="acc-5-btn"><div><div class="acc__body">
+                <p>We deliver end-to-end supply chain solutions &mdash; from sourcing and logistics to distribution and delivery &mdash; ensuring commodities move efficiently from origin to destination.</p>
+              </div></div></div>
+            </div>
+            <div class="acc__item">
+              <button class="acc__btn" type="button" aria-expanded="false" aria-controls="acc-6" id="acc-6-btn"><span class="acc__title">Digital Infrastructure</span><span class="acc__plus" aria-hidden="true"></span></button>
+              <div class="acc__panel" id="acc-6" role="region" aria-labelledby="acc-6-btn"><div><div class="acc__body">
+                <p>We build the technology platform that powers transparent trading &mdash; providing digital tools for market discovery, transaction management, and real-time visibility across the trade lifecycle.</p>
+              </div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OPERATIONAL SECTORS: drag scroller ============ -->
+    <section class="section" id="sectors" aria-labelledby="sectors-title">
+      <div class="container split-head">
+        <div>
+          <span class="chip reveal">Operational Sectors</span>
+          <h2 class="display display--caps" id="sectors-title"><strong>Markets</strong> We Serve</h2>
+        </div>
+        <p class="lead reveal">IIC Worldwide operates across six core sectors, each structured as a marketplace connecting verified producers, buyers, and suppliers with the finance to trade.</p>
+      </div>
+      <div class="hscroll" data-hscroll>
+        <div class="hscroll__track" tabindex="0" aria-label="Sectors, scroll horizontally">
+          <a class="sector-tile reveal" href="sector-food-security.html">
+            <img src="Media/Sectors/Food Security.jpg" alt="" loading="lazy">
+            <span class="sector-tile__num">01</span>
+            <h3>Food Security</h3>
+            <div class="sector-tile__more"><div><p>A global marketplace for agricultural commodities &mdash; sugar, rice, wheat, corn, soybeans, cooking oil, and pulses &mdash; connecting verified producers with buyers worldwide.</p></div></div>
+            <span class="link-more">Explore More</span>
           </a>
-
-          <a href="news-gold-diamond-dubai-launch.html" class="news-card">
-            <div class="news-card__image">
-              <img src="Media/News/news-2.jpg" alt="Gold Prices Retreat From Record Highs" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--text-dim);font-size:13px;font-family:var(--font-data)\'>News Image<br><small>800 x 450 px</small></span>'">
-            </div>
-            <div class="news-card__body">
-              <h3 class="news-card__title">Gold Retreats Over 21% From Record High as Rate-Hike Expectations Grow</h3>
-              <p class="news-card__summary">After reaching a record $5,589 per ounce in January, gold has pulled back to around $4,370 as markets price in a near 60% probability of a Federal Reserve rate hike.</p>
-              <span class="news-card__meta">Source: CBS News &bull; Yahoo Finance</span>
-            </div>
+          <a class="sector-tile reveal" href="sector-energy.html">
+            <img src="Media/Sectors/Energy.jpg" alt="" loading="lazy">
+            <span class="sector-tile__num">02</span>
+            <h3>Energy</h3>
+            <div class="sector-tile__more"><div><p>A trading platform for petroleum products &mdash; Diesel EN590, Marine Gas Oil, Base Oil, Bitumen &mdash; connecting producers and refiners with end-users across global energy markets.</p></div></div>
+            <span class="link-more">Explore More</span>
           </a>
-
-          <a href="news-commodity-market-outlook.html" class="news-card">
-            <div class="news-card__image">
-              <img src="Media/News/news-3.jpg" alt="Commodities Rally in 2026" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--text-dim);font-size:13px;font-family:var(--font-data)\'>News Image<br><small>800 x 450 px</small></span>'">
-            </div>
-            <div class="news-card__body">
-              <h3 class="news-card__title">Commodities Rally Over 30% in 2026 as Supply Risks Reshape Global Markets</h3>
-              <p class="news-card__summary">Geopolitical tensions and supply chain disruptions drive a broad-based commodity surge, with energy prices projected to rise 24% to their highest level since 2022.</p>
-              <span class="news-card__meta">Source: S&amp;P Global &bull; Bloomberg</span>
-            </div>
+          <a class="sector-tile reveal" href="sector-fertilizers.html">
+            <img src="Media/Sectors/Fertilizers.jpg" alt="" loading="lazy">
+            <span class="sector-tile__num">03</span>
+            <h3>Fertilizers &amp; Industrial Commodities</h3>
+            <div class="sector-tile__more"><div><p>International trade of Urea, Sulphur, DAP, MAP, and NPK fertilizers &mdash; connecting producers with agricultural markets and industrial buyers worldwide.</p></div></div>
+            <span class="link-more">Explore More</span>
           </a>
-
-          <a href="news-iic-bank-digital-expansion.html" class="news-card">
-            <div class="news-card__image">
-              <img src="Media/News/news-4.jpg" alt="Banks Enter the Agentic AI Era" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--text-dim);font-size:13px;font-family:var(--font-data)\'>News Image<br><small>800 x 450 px</small></span>'">
-            </div>
-            <div class="news-card__body">
-              <h3 class="news-card__title">Banks Enter the Agentic AI Era as Digital Transformation Accelerates</h3>
-              <p class="news-card__summary">Major institutions including Goldman Sachs and Lloyds Banking Group deploy autonomous AI agents across trade accounting and client operations, marking a new phase in financial services.</p>
-              <span class="news-card__meta">Source: World Economic Forum &bull; FinTech Futures</span>
-            </div>
+          <a class="sector-tile reveal" href="sector-metals.html">
+            <img src="Media/Sectors/Metals.jpg" alt="" loading="lazy">
+            <span class="sector-tile__num">04</span>
+            <h3>Metals &amp; Precious Commodities</h3>
+            <div class="sector-tile__more"><div><p>Sourcing and trading of Gold Dor&eacute; Bars, Diamonds, Copper Cathodes, and Industrial Metals through specialized group companies and verified supply chains.</p></div></div>
+            <span class="link-more">Explore More</span>
           </a>
-
-          <a href="news-food-security-partnership.html" class="news-card">
-            <div class="news-card__image">
-              <img src="Media/News/news-5.jpg" alt="Housing Markets Show Cautious Recovery" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--text-dim);font-size:13px;font-family:var(--font-data)\'>News Image<br><small>800 x 450 px</small></span>'">
-            </div>
-            <div class="news-card__body">
-              <h3 class="news-card__title">Global Housing Markets Show Cautious Recovery as Mortgage Rates Ease</h3>
-              <p class="news-card__summary">Home prices forecast to rise 1.2&ndash;1.7% in 2026 as 30-year fixed mortgage rates edge toward 6.5%, with existing home sales projected to increase 4.3% year-over-year.</p>
-              <span class="news-card__meta">Source: Zillow &bull; National Association of Realtors</span>
-            </div>
+          <a class="sector-tile reveal" href="sector-services.html">
+            <img src="Media/Sectors/Services.jpg" alt="" loading="lazy">
+            <span class="sector-tile__num">05</span>
+            <h3>Services</h3>
+            <div class="sector-tile__more"><div><p>A platform connecting businesses with verified professional and commercial service providers &mdash; from logistics and consulting to construction and facility management.</p></div></div>
+            <span class="link-more">Explore More</span>
           </a>
-
-          <a href="news-iic-aviation-fleet-acquisition.html" class="news-card">
-            <div class="news-card__image">
-              <img src="Media/News/news-6.jpg" alt="Shipping and Logistics Turning Point" onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:var(--text-dim);font-size:13px;font-family:var(--font-data)\'>News Image<br><small>800 x 450 px</small></span>'">
-            </div>
-            <div class="news-card__body">
-              <h3 class="news-card__title">2026 Marks Structural Turning Point for Global Shipping and Logistics</h3>
-              <p class="news-card__summary">The freight industry transitions from post-pandemic recovery to restructuring, with AI investments accelerating while tariff uncertainty and rising last-mile costs reshape supply chains.</p>
-              <span class="news-card__meta">Source: Supply Chain Dive &bull; UPS</span>
-            </div>
+          <a class="sector-tile reveal" href="sector-technology.html">
+            <img src="Media/Sectors/Technology.jpg" alt="" loading="lazy">
+            <span class="sector-tile__num">06</span>
+            <h3>Technology &amp; Industrial Solutions</h3>
+            <div class="sector-tile__more"><div><p>Sourcing and international trade of IT equipment, telecommunications, industrial machinery, electrical equipment, renewable energy components, and automation systems.</p></div></div>
+            <span class="link-more">Explore More</span>
           </a>
-
         </div>
-        <div class="news-carousel__dots"></div>
+        <div class="container hscroll__foot">
+          <div class="hscroll__bar" aria-hidden="true"><span></span></div>
+          <div class="hscroll__nav">
+            <button class="round-btn round-btn--dark" type="button" data-hs-prev aria-label="Previous sectors"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+            <button class="round-btn round-btn--dark" type="button" data-hs-next aria-label="Next sectors"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ PULL QUOTE ============ -->
-  <section class="pull-quote">
-    <div class="container--narrow reveal">
-      <span class="pull-quote__mark">&ldquo;</span>
-      <p class="pull-quote__text">We don't just facilitate trade — we create the markets, build the bridges, and provide the finance that connects those who have with those who need.</p>
-    </div>
-  </section>
+    <!-- ============ SUBSIDIARY NETWORK ============ -->
+    <section class="section section--grey" aria-labelledby="subs-title">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="chip reveal">Subsidiary Network</span>
+            <h2 class="display display--caps" id="subs-title"><strong>An Integrated</strong> Global Ecosystem</h2>
+          </div>
+          <p class="lead reveal">IIC Worldwide brings together a group of focused subsidiaries working across finance, energy, trade, aviation, commodities and digital technology &mdash; serving markets around the world.</p>
+        </div>
+        <div class="co-list">
+          <a class="co-row" href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer">
+            <div class="co-row__logo"><img src="Media/IICB.png" alt="" loading="lazy"></div>
+            <div><h3>IIC Bank</h3><p>A financial institution delivering international banking, structured funding, and digital financial services. The bank supports cross-border transactions, investment activity, and wider access to financial solutions across East Africa and other developing markets.</p></div>
+            <span class="co-row__go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="co-row" href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer">
+            <div class="co-row__logo"><img src="Media/IIC Metaverse.png" alt="" loading="lazy"></div>
+            <div><h3>IIC Metaverse</h3><p>A technology-focused platform developing blockchain solutions, virtual environments, and emerging digital finance products. It creates new ways for individuals and institutions to participate in digital economies and technology-enabled investment opportunities.</p></div>
+            <span class="co-row__go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="co-row" href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer">
+            <div class="co-row__logo"><img src="Media/IIC Oil and Gas.png" alt="" loading="lazy"></div>
+            <div><h3>IIC Oil &amp; Gas</h3><p>An integrated energy business supporting trading, infrastructure, and service requirements throughout the oil and gas sector. Its operations emphasize reliable delivery, efficient execution, responsible development, and internationally recognized health, safety, and environmental practices.</p></div>
+            <span class="co-row__go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="co-row" href="iic-general-trading.html">
+            <div class="co-row__logo"><img src="Media/IIC General Trading.png" alt="" loading="lazy"></div>
+            <div><h3>IIC General Trading</h3><p>An international trading and supply-chain company connecting buyers and suppliers across commodities, industrial materials, and commercial goods. It provides coordinated sourcing, logistics, distribution, and delivery solutions while maintaining strong operational and compliance standards.</p></div>
+            <span class="co-row__go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <div class="co-row co-row--static">
+            <div class="co-row__logo"><svg viewBox="0 0 160 40" aria-hidden="true"><text x="22" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#C49A3C">IIC</text><text x="62" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="400" fill="#174238">Aviation</text></svg></div>
+            <div><h3>IIC Aviation</h3><p>A specialized aviation investment, financing, and leasing platform serving airlines and aviation-sector partners. It supports fleet growth, aircraft acquisition, asset management, and tailored financial structures in expanding regional markets.</p></div>
+            <span class="co-row__go" aria-hidden="true"></span>
+          </div>
+          <div class="co-row co-row--static">
+            <div class="co-row__logo"><svg viewBox="0 0 150 40" aria-hidden="true"><text x="18" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#C49A3C">IIC</text><text x="58" y="28" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="400" fill="#174238">Holding</text></svg></div>
+            <div><h3>IIC Holding</h3><p>A regional investment and project-development platform supporting strategic initiatives across South Sudan and East Africa. It coordinates capital allocation, corporate governance, and long-term ventures designed to stimulate economic activity and create value within local communities.</p></div>
+            <span class="co-row__go" aria-hidden="true"></span>
+          </div>
+          <a class="co-row" href="iic-gold.html">
+            <div class="co-row__logo"><img src="Media/IIC Express Gold and Diamond.png" alt="" loading="lazy"></div>
+            <div><h3>IIC Express Gold &amp; Diamond</h3><p>A Dubai-based precious metals and high-value commodities company engaged in the sourcing, trading, and secure movement of gold, diamonds, and related assets. Its activities are guided by responsible sourcing practices, regulatory compliance, and dependable logistics.</p></div>
+            <span class="co-row__go" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+        <div class="reveal" style="margin-top:48px"><a href="subsidiaries.html" class="btn btn--outline">Subsidiaries</a></div>
+      </div>
+    </section>
 
-  <!-- ============ FOOTER CTA ============ -->
-  <section class="cta-band">
+    <!-- ============ NEWS ============ -->
+    <section class="section" id="news" aria-labelledby="news-title">
+      <div class="container news-head">
+        <div>
+          <span class="chip reveal">Latest News</span>
+          <h2 class="display" id="news-title">Insights &amp; Updates</h2>
+        </div>
+        <p class="lead reveal" style="max-width:44ch;font-size:1rem">Stay informed with the latest developments, market insights, and strategic updates from across the IIC Worldwide network.</p>
+        <span class="rule draw-line" aria-hidden="true"></span>
+      </div>
+      <div class="hscroll" data-hscroll style="margin-top:48px">
+        <div class="hscroll__track" tabindex="0" aria-label="News, scroll horizontally">
+          <article class="news-card reveal">
+            <div class="news-card__media"><img src="Media/News/news-1.jpg" alt="U.S. Farm Exports Surge in 2026" loading="lazy"></div>
+            <div class="news-card__body">
+              <h3><a href="news-iic-trade-finance-expansion.html">U.S. Farm Exports Surge 7% in 2026 Despite Ongoing Trade Disputes</a></h3>
+              <p>Global U.S. agricultural exports reach $106.3 billion through seven months, a 7% year-over-year increase, with exports to the European Union up 11% and on pace to set a record.</p>
+              <div class="news-card__meta"><time datetime="2026-09-04">04 Sep 2026</time> | Capital Press &bull; USDA</div>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-card__media"><img src="Media/News/news-2.jpg" alt="Gold Prices Retreat From Record Highs" loading="lazy"></div>
+            <div class="news-card__body">
+              <h3><a href="news-gold-diamond-dubai-launch.html">Gold Retreats Over 21% From Record High as Rate-Hike Expectations Grow</a></h3>
+              <p>After reaching a record $5,589 per ounce in January, gold has pulled back to around $4,370 as markets price in a near 60% probability of a Federal Reserve rate hike.</p>
+              <div class="news-card__meta"><time datetime="2026-09-04">04 Sep 2026</time> | CBS News &bull; Yahoo Finance</div>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-card__media"><img src="Media/News/news-3.jpg" alt="Commodities Rally in 2026" loading="lazy"></div>
+            <div class="news-card__body">
+              <h3><a href="news-commodity-market-outlook.html">Commodities Rally Over 30% in 2026 as Supply Risks Reshape Global Markets</a></h3>
+              <p>Geopolitical tensions and supply chain disruptions drive a broad-based commodity surge, with energy prices projected to rise 24% to their highest level since 2022.</p>
+              <div class="news-card__meta"><time datetime="2026-09-03">03 Sep 2026</time> | S&amp;P Global &bull; Bloomberg</div>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-card__media"><img src="Media/News/news-6.jpg" alt="Shipping and Logistics Turning Point" loading="lazy"></div>
+            <div class="news-card__body">
+              <h3><a href="news-iic-aviation-fleet-acquisition.html">2026 Marks Structural Turning Point for Global Shipping and Logistics</a></h3>
+              <p>The freight industry transitions from post-pandemic recovery to restructuring, with AI investments accelerating while tariff uncertainty and rising last-mile costs reshape supply chains.</p>
+              <div class="news-card__meta"><time datetime="2026-09-03">03 Sep 2026</time> | Supply Chain Dive &bull; UPS</div>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-card__media"><img src="Media/News/news-4.jpg" alt="Banks Enter the Agentic AI Era" loading="lazy"></div>
+            <div class="news-card__body">
+              <h3><a href="news-iic-bank-digital-expansion.html">Banks Enter the Agentic AI Era as Digital Transformation Accelerates</a></h3>
+              <p>Major institutions including Goldman Sachs and Lloyds Banking Group deploy autonomous AI agents across trade accounting and client operations, marking a new phase in financial services.</p>
+              <div class="news-card__meta"><time datetime="2026-09-02">02 Sep 2026</time> | World Economic Forum &bull; FinTech Futures</div>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-card__media"><img src="Media/News/news-5.jpg" alt="Housing Markets Show Cautious Recovery" loading="lazy"></div>
+            <div class="news-card__body">
+              <h3><a href="news-food-security-partnership.html">Global Housing Markets Show Cautious Recovery as Mortgage Rates Ease</a></h3>
+              <p>Home prices forecast to rise 1.2&ndash;1.7% in 2026 as 30-year fixed mortgage rates edge toward 6.5%, with existing home sales projected to increase 4.3% year-over-year.</p>
+              <div class="news-card__meta"><time datetime="2026-09-01">01 Sep 2026</time> | Zillow &bull; National Association of Realtors</div>
+            </div>
+          </article>
+        </div>
+        <div class="container hscroll__foot">
+          <div class="hscroll__bar" aria-hidden="true"><span></span></div>
+          <div class="hscroll__nav">
+            <button class="round-btn round-btn--dark" type="button" data-hs-prev aria-label="Previous news"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+            <button class="round-btn round-btn--dark" type="button" data-hs-next aria-label="Next news"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PHILOSOPHY BANNER ============ -->
+    <section class="banner on-dark has-side" aria-label="Our philosophy">
+      <div class="banner__media" aria-hidden="true"><img src="Media/Our Businesses/An Integrated Ecosystem.jpg" alt="" loading="lazy"></div>
+      <p class="side-label" aria-hidden="true"><span>Our Philosophy</span></p>
+      <div class="container banner__inner">
+        <span class="chip reveal">Connecting Markets &middot; Enabling Trade &middot; Financing Growth</span>
+        <blockquote class="banner__quote"><strong>We don't just facilitate trade</strong> &mdash; we create the markets, build the bridges, and provide the finance that connects those who have with those who need.</blockquote>
+        <a class="btn btn--ghost reveal" href="about.html">Know More About Us</a>
+      </div>
+    </section>
+
+    <section class="cta-band">
     <div class="container reveal">
       <h2 class="cta-band__title">Ready to Trade?</h2>
       <p class="cta-band__text">Connect with IIC Worldwide. Access global commodity markets, verified partners, and the finance to make it happen.</p>
       <a href="contact.html" class="btn btn--primary">Get In Touch</a>
     </div>
   </section>
+  </main>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide" class="footer__brand-logo">
-          <p class="footer__brand-text">A global commodity, trade, and finance platform based in Dubai — connecting producers, buyers, and suppliers while bridging supply and demand through verified trading and financial solutions.</p>
-        </div>
-        <div>
-          <h4 class="footer__heading">Navigation</h4>
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="about.html" class="footer__link">About Us</a>
-          <a href="subsidiaries.html" class="footer__link">Subsidiaries</a>
-          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
-          <a href="contact.html" class="footer__link">Contact Us</a>
-        </div>
-        <div>
-          <h4 class="footer__heading">Sectors</h4>
-          <a href="sector-food-security.html" class="footer__link">Food Security</a>
-          <a href="sector-energy.html" class="footer__link">Energy</a>
-          <a href="sector-fertilizers.html" class="footer__link">Fertilizers</a>
-          <a href="sector-metals.html" class="footer__link">Metals &amp; Precious Commodities</a>
-          <a href="sector-services.html" class="footer__link">Services</a>
-          <a href="sector-technology.html" class="footer__link">Technology</a>
-        </div>
-        <div>
-          <h4 class="footer__heading">Subsidiaries</h4>
-          <a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Bank</a>
-          <a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Metaverse</a>
-          <a href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Oil &amp; Gas</a>
-          <a href="iic-general-trading.html" class="footer__link">IIC General Trading</a>
-          <span class="footer__link">IIC Aviation</span>
-          <span class="footer__link">IIC Holding</span>
-          <a href="iic-gold.html" class="footer__link">IIC Express Gold &amp; Diamond</a>
-        </div>
+  <footer class="site-footer">
+    <div class="footer__top">
+      <div>
+        <a class="footer__logo" href="index.html" aria-label="IIC Worldwide: home"><img src="Media/IIC Worldwide Horizontal.png" alt="International Investment Consortium Worldwide" width="2022" height="449" loading="lazy"></a>
+        <p class="footer__blurb">A global commodity, trade, and finance platform based in Dubai &mdash; connecting producers, buyers, and suppliers while bridging supply and demand through verified trading and financial solutions.</p>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 International Investment Consortium Worldwide. All rights reserved.</p>
-        <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-        </div>
+      <div class="footer__grid2">
+        <div class="footer__col"><h2>Navigation</h2><ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="subsidiaries.html">Subsidiaries</a></li>
+          <li><a href="strategy.html">Strategy &amp; Investment</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul></div>
+        <div class="footer__col"><h2>Sectors</h2><ul>
+          <li><a href="sector-food-security.html">Food Security</a></li>
+          <li><a href="sector-energy.html">Energy</a></li>
+          <li><a href="sector-fertilizers.html">Fertilizers</a></li>
+          <li><a href="sector-metals.html">Metals &amp; Precious Commodities</a></li>
+          <li><a href="sector-services.html">Services</a></li>
+          <li><a href="sector-technology.html">Technology</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__grid2">
+        <div class="footer__col"><h2>Subsidiaries</h2><ul>
+          <li><a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer">IIC Bank</a></li>
+          <li><a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer">IIC Metaverse</a></li>
+          <li><a href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer">IIC Oil &amp; Gas</a></li>
+          <li><a href="iic-general-trading.html">IIC General Trading</a></li>
+          <li class="muted">IIC Aviation</li>
+          <li class="muted">IIC Holding</li>
+          <li><a href="iic-gold.html">IIC Express Gold &amp; Diamond</a></li>
+        </ul></div>
+        <div class="footer__col"><h2>Headquarters</h2>
+          <p>Ground Floor, Al Shafar Park Tower<br>Sheikh Zayed Road<br>Dubai, UAE</p>
+          <h2 style="margin-top:24px">Contact</h2><ul>
+          <li><a href="tel:+97148347004">+971 4 834 7004</a></li>
+          <li><a href="mailto:office@iicworldwide.com">office@iicworldwide.com</a></li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        <a class="crest crest--bank" href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" aria-label="Official Bank: International Investment Consortium Bank (IICB), opens in a new tab"><img src="Media/IICB.png" alt="" width="112" height="56" loading="lazy"><p>Official Bank<br>International Investment Consortium Bank (IICB)</p></a>
+        <p>&copy; <span data-year>2026</span> International Investment Consortium Worldwide. All rights reserved.</p>
+        <nav class="footer__links" aria-label="Legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></nav>
       </div>
     </div>
   </footer>
-
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>

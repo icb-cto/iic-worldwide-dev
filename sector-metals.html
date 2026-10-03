@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Metals &amp; Precious Commodities &mdash; IIC Worldwide</title>
   <meta name="description" content="IIC Worldwide facilitates the sourcing and trading of gold doré bars, diamonds, copper cathodes, and industrial metals through specialized group companies — connecting mining operations with refineries, manufacturers, and international buyers.">
   <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
-  <link rel="stylesheet" href="css/style.css">
   <style>
     .page-hero--bg {
       background: url('Media/Sectors/Metals.jpg') center/cover no-repeat;
@@ -160,46 +159,74 @@
       .approach-item__number { font-size: 48px; }
     }
   </style>
+  <meta name="theme-color" content="#0E2420">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
-        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
-      </a>
-      <div class="nav__links">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="about.html" class="nav__link">About Us</a>
-        <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
-        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
-        <a href="contact.html" class="nav__link">Contact Us</a>
-      </div>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+  <header class="site-header" data-header>
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html" aria-label="IIC Worldwide: home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="International Investment Consortium Worldwide" width="2022" height="449">
+      </a>
+      <div class="nav__right">
+        <nav class="nav__links" aria-label="Primary">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="about.html">About Us</a>
+          <a class="nav__link" href="subsidiaries.html">Subsidiaries</a>
+          <a class="nav__link" href="strategy.html">Strategy &amp; Investment</a>
+          <a class="nav__link" href="contact.html">Contact Us</a>
+        </nav>
+        <a class="nav__pill" href="contact.html">Get in touch</a>
+        <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    <div class="nav__mobile">
-      <a href="index.html" class="nav__link">Home</a>
-      <a href="about.html" class="nav__link">About Us</a>
-      <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
-      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
-      <a href="contact.html" class="nav__link">Contact Us</a>
+    <div class="nav__mobile" id="mobile-menu" inert>
+      <nav aria-label="Menu">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="about.html">About Us</a>
+          <a class="nav__link" href="subsidiaries.html">Subsidiaries</a>
+          <a class="nav__link" href="strategy.html">Strategy &amp; Investment</a>
+          <a class="nav__link" href="contact.html">Contact Us</a>
+      </nav>
+      <div class="nav__mobile-foot">
+        <div><h2>Sectors</h2><ul>
+          <li><a href="sector-food-security.html">Food Security</a></li>
+          <li><a href="sector-energy.html">Energy</a></li>
+          <li><a href="sector-fertilizers.html">Fertilizers</a></li>
+          <li><a href="sector-metals.html">Metals &amp; Precious Commodities</a></li>
+          <li><a href="sector-services.html">Services</a></li>
+          <li><a href="sector-technology.html">Technology</a></li>
+        </ul></div>
+        <div><h2>Headquarters</h2>
+          <p>Ground Floor, Al Shafar Park Tower<br>Sheikh Zayed Road, Dubai, UAE</p>
+        </div>
+        <div><h2>Contact</h2><ul>
+          <li><a href="tel:+97148347004">+971 4 834 7004</a></li>
+          <li><a href="mailto:office@iicworldwide.com">office@iicworldwide.com</a></li>
+        </ul></div>
+      </div>
     </div>
-  </nav>
+  </header>
+
+  <main id="main">
 
   <!-- PAGE HERO -->
-  <section class="page-hero page-hero--bg">
-    <div class="container">
-      <div class="page-hero__content">
-        <span class="eyebrow reveal"><a href="index.html">Sectors</a> &mdash; Metals &amp; Precious Commodities</span>
-        <h1 class="page-hero__title reveal reveal-delay-1">Metals &amp; Precious Commodities</h1>
-        <p class="page-hero__subtitle reveal reveal-delay-2">Sourcing and trading gold dor&eacute; bars, diamonds, copper cathodes, and industrial metals through specialized group companies &mdash; connecting mining operations with refineries, manufacturers, and international buyers.</p>
+  <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero__media" aria-hidden="true"><img src="Media/Sectors/Metals.jpg" alt=""></div>
+      <div class="container">
+        <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li><a href="index.html#sectors">Sectors</a></li><li aria-current="page">Metals &amp; Precious Commodities</li></ol>
+        <h1 id="page-title">Metals &amp; Precious Commodities</h1>
+        <p>Sourcing and trading gold dor&eacute; bars, diamonds, copper cathodes, and industrial metals through specialized group companies &mdash; connecting mining operations with refineries, manufacturers, and international buyers.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- OVERVIEW -->
   <section class="section section--primary">
@@ -354,58 +381,64 @@
       <h2 class="cta-band__title">Trade Metals &amp; Precious Commodities</h2>
       <p class="cta-band__text">Connect with IIC Worldwide to explore sourcing opportunities for gold, diamonds, copper, and industrial metals through our verified trading platform.</p>
       <div class="btn-group" style="justify-content: center;">
-        <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+        <a href="contact.html" class="btn btn--primary">Get In Touch <span class="btn__icon"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         <a href="index.html#sectors" class="btn btn--outline">All Sectors</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide" class="footer__brand-logo">
-          <p class="footer__brand-text">A global commodity, trade, and finance platform based in Dubai &mdash; connecting producers, buyers, and suppliers across food, energy, services, and technology markets.</p>
-        </div>
-        <div>
-          <h4 class="footer__heading">Navigation</h4>
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="about.html" class="footer__link">About Us</a>
-          <a href="subsidiaries.html" class="footer__link">Subsidiaries</a>
-          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
-          <a href="contact.html" class="footer__link">Contact Us</a>
-        </div>
-        <div>
-          <h4 class="footer__heading">Sectors</h4>
-          <a href="sector-food-security.html" class="footer__link">Food Security</a>
-          <a href="sector-energy.html" class="footer__link">Energy</a>
-          <a href="sector-fertilizers.html" class="footer__link">Fertilizers</a>
-          <a href="sector-metals.html" class="footer__link">Metals &amp; Precious Commodities</a>
-          <a href="sector-services.html" class="footer__link">Services</a>
-          <a href="sector-technology.html" class="footer__link">Technology</a>
-        </div>
-        <div>
-          <h4 class="footer__heading">Subsidiaries</h4>
-          <a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Bank</a>
-          <a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Metaverse</a>
-          <a href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer" class="footer__link">IIC Oil &amp; Gas</a>
-          <a href="iic-general-trading.html" class="footer__link">IIC General Trading</a>
-          <span class="footer__link">IIC Aviation</span>
-          <span class="footer__link">IIC Holding</span>
-          <a href="iic-gold.html" class="footer__link">IIC Express Gold &amp; Diamond</a>
-        </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__top">
+      <div>
+        <a class="footer__logo" href="index.html" aria-label="IIC Worldwide: home"><img src="Media/IIC Worldwide Horizontal.png" alt="International Investment Consortium Worldwide" width="2022" height="449" loading="lazy"></a>
+        <p class="footer__blurb">A global commodity, trade, and finance platform based in Dubai &mdash; connecting producers, buyers, and suppliers while bridging supply and demand through verified trading and financial solutions.</p>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 International Investment Consortium Worldwide. All rights reserved.</p>
-        <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-        </div>
+      <div class="footer__grid2">
+        <div class="footer__col"><h2>Navigation</h2><ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="subsidiaries.html">Subsidiaries</a></li>
+          <li><a href="strategy.html">Strategy &amp; Investment</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul></div>
+        <div class="footer__col"><h2>Sectors</h2><ul>
+          <li><a href="sector-food-security.html">Food Security</a></li>
+          <li><a href="sector-energy.html">Energy</a></li>
+          <li><a href="sector-fertilizers.html">Fertilizers</a></li>
+          <li><a href="sector-metals.html">Metals &amp; Precious Commodities</a></li>
+          <li><a href="sector-services.html">Services</a></li>
+          <li><a href="sector-technology.html">Technology</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__grid2">
+        <div class="footer__col"><h2>Subsidiaries</h2><ul>
+          <li><a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer">IIC Bank</a></li>
+          <li><a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer">IIC Metaverse</a></li>
+          <li><a href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer">IIC Oil &amp; Gas</a></li>
+          <li><a href="iic-general-trading.html">IIC General Trading</a></li>
+          <li class="muted">IIC Aviation</li>
+          <li class="muted">IIC Holding</li>
+          <li><a href="iic-gold.html">IIC Express Gold &amp; Diamond</a></li>
+        </ul></div>
+        <div class="footer__col"><h2>Headquarters</h2>
+          <p>Ground Floor, Al Shafar Park Tower<br>Sheikh Zayed Road<br>Dubai, UAE</p>
+          <h2 style="margin-top:24px">Contact</h2><ul>
+          <li><a href="tel:+97148347004">+971 4 834 7004</a></li>
+          <li><a href="mailto:office@iicworldwide.com">office@iicworldwide.com</a></li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        <a class="crest crest--bank" href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" aria-label="Official Bank: International Investment Consortium Bank (IICB), opens in a new tab"><img src="Media/IICB.png" alt="" width="112" height="56" loading="lazy"><p>Official Bank<br>International Investment Consortium Bank (IICB)</p></a>
+        <p>&copy; <span data-year>2026</span> International Investment Consortium Worldwide. All rights reserved.</p>
+        <nav class="footer__links" aria-label="Legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></nav>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>

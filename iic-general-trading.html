@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IIC General Trading LLC-FZ</title>
   <meta name="description" content="IIC General Trading LLC-FZ is a Dubai-based international commodity trading company connecting global markets through trusted sourcing, trading, and supply chain solutions across energy, agriculture, metals, and industrial commodities.">
   <link rel="icon" type="image/png" href="Media/IIC Worldwide Square.png">
-  <link rel="stylesheet" href="css/style.css">
   <style>
     /* ============================================================
        IIC GENERAL TRADING — Page Styles
@@ -626,55 +625,90 @@
       .group-stats { grid-template-columns: 1fr; }
     }
   </style>
+  <meta name="theme-color" content="#0E2420">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" data-header>
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="IIC Worldwide Home">
-        <img src="Media/IIC Worldwide Horizontal.png" alt="IIC Worldwide">
+      <a class="nav__logo" href="index.html" aria-label="IIC Worldwide: home">
+        <img src="Media/IIC Worldwide Horizontal.png" alt="International Investment Consortium Worldwide" width="2022" height="449">
       </a>
-      <div class="nav__links">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="about.html" class="nav__link">About Us</a>
-        <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
-        <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
-        <a href="contact.html" class="nav__link">Contact Us</a>
+      <div class="nav__right">
+        <nav class="nav__links" aria-label="Primary">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="about.html">About Us</a>
+          <a class="nav__link" href="subsidiaries.html" aria-current="page">Subsidiaries</a>
+          <a class="nav__link" href="strategy.html">Strategy &amp; Investment</a>
+          <a class="nav__link" href="contact.html">Contact Us</a>
+        </nav>
+        <a class="nav__pill" href="contact.html">Get in touch</a>
+        <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-    <div class="nav__mobile">
-      <a href="index.html" class="nav__link">Home</a>
-      <a href="about.html" class="nav__link">About Us</a>
-      <a href="subsidiaries.html" class="nav__link">Subsidiaries</a>
-      <a href="strategy.html" class="nav__link">Strategy &amp; Investment</a>
-      <a href="contact.html" class="nav__link">Contact Us</a>
+    <div class="nav__mobile" id="mobile-menu" inert>
+      <nav aria-label="Menu">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="about.html">About Us</a>
+          <a class="nav__link" href="subsidiaries.html" aria-current="page">Subsidiaries</a>
+          <a class="nav__link" href="strategy.html">Strategy &amp; Investment</a>
+          <a class="nav__link" href="contact.html">Contact Us</a>
+      </nav>
+      <div class="nav__mobile-foot">
+        <div><h2>Sectors</h2><ul>
+          <li><a href="sector-food-security.html">Food Security</a></li>
+          <li><a href="sector-energy.html">Energy</a></li>
+          <li><a href="sector-fertilizers.html">Fertilizers</a></li>
+          <li><a href="sector-metals.html">Metals &amp; Precious Commodities</a></li>
+          <li><a href="sector-services.html">Services</a></li>
+          <li><a href="sector-technology.html">Technology</a></li>
+        </ul></div>
+        <div><h2>Headquarters</h2>
+          <p>Ground Floor, Al Shafar Park Tower<br>Sheikh Zayed Road, Dubai, UAE</p>
+        </div>
+        <div><h2>Contact</h2><ul>
+          <li><a href="tel:+97148347004">+971 4 834 7004</a></li>
+          <li><a href="mailto:office@iicworldwide.com">office@iicworldwide.com</a></li>
+        </ul></div>
+      </div>
     </div>
-  </nav>
+  </header>
+
+  <main id="main">
 
   <!-- HERO — Light variant -->
-  <section class="trading-hero">
-    <div class="container">
-      <div class="trading-hero__inner">
-        <div class="trading-hero__content">
-          <span class="trading-hero__eyebrow reveal">IIC General Trading LLC-FZ</span>
-          <h1 class="trading-hero__title reveal reveal-delay-1">Reaching Beyond Borders</h1>
-          <p class="trading-hero__subtitle reveal reveal-delay-1">Where Global Trade Meets Trusted Partnership</p>
-          <p class="trading-hero__desc reveal reveal-delay-2">A Dubai-based international commodity trading company specializing in sourcing, trading, and supply chain management across energy, agriculture, metals, fertilizers, and industrial sectors worldwide.</p>
-          <div class="trading-hero__buttons reveal reveal-delay-2">
-            <a href="#what-we-do" class="btn btn--primary">What We Do</a>
-            <a href="#contact" class="btn btn--outline">Contact Us</a>
+  <section class="page-hero page-hero--brand" aria-labelledby="page-title">
+      <div class="page-hero__media" aria-hidden="true"><img src="Media/IIC General Trading/global-network.jpg" alt=""></div>
+      <div class="container">
+        <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li><a href="subsidiaries.html">Subsidiaries</a></li><li aria-current="page">IIC General Trading</li></ol>
+        <div class="page-hero__row">
+          <div>
+            <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>IIC General Trading LLC-FZ</p>
+            <h1 id="page-title">Reaching Beyond Borders</h1>
+            <p class="page-hero__lead">Where Global Trade Meets Trusted Partnership</p>
+            <p>A Dubai-based international commodity trading company specializing in sourcing, trading, and supply chain management across energy, agriculture, metals, fertilizers, and industrial sectors worldwide.</p>
+            
+            <div class="page-hero__actions"><a class="btn btn--gold" href="#what-we-do">What We Do <span class="btn__icon"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="btn btn--light" href="#contact">Contact Us</a></div>
+          </div>
+          <div class="brand-emblem">
+            <svg class="brand-emblem__ring" viewBox="0 0 400 400" aria-hidden="true">
+              <defs><path id="ring-path" d="M200,200 m-170,0 a170,170 0 1,1 340,0 a170,170 0 1,1 -340,0"/></defs>
+              <circle cx="200" cy="200" r="190" class="brand-emblem__track"/>
+              <text><textPath href="#ring-path" textLength="1060" lengthAdjust="spacing">IIC General Trading LLC-FZ &#183; Where Global Trade Meets Trusted Partnership &#183;</textPath></text>
+            </svg>
+            <div class="brand-emblem__disc"><img src="Media/IIC General Trading/Logo.png" alt="IIC General Trading"></div>
           </div>
         </div>
-        <div class="trading-hero__logo-side reveal reveal-delay-1">
-          <img src="Media/IIC General Trading/Logo.png" alt="IIC General Trading" class="trading-hero__logo-img">
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- LIVE COMMODITY PRICES -->
   <section class="price-ticker">
@@ -1112,55 +1146,59 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-            <img src="Media/IIC General Trading/Logo.png" alt="IIC General Trading" class="footer__brand-logo" style="margin-bottom: 0;">
-            <span style="font-family: var(--font-primary); font-weight: 700; font-size: 18px; color: #FFFFFF; line-height: 1.3;">IIC General Trading LLC</span>
-          </div>
-          <p class="footer__brand-text">A Dubai-based international commodity trading company specializing in sourcing, trading, and supply chain management across energy, agriculture, metals, fertilizers, and industrial sectors.</p>
-        </div>
-        <div>
-          <h4 class="footer__heading">Quick Links</h4>
-          <a href="#about" class="footer__link">About Us</a>
-          <a href="#chairman" class="footer__link">Chairman&rsquo;s Message</a>
-          <a href="#what-we-do" class="footer__link">What We Do</a>
-          <a href="#portfolio" class="footer__link">Commodity Portfolio</a>
-          <a href="#values" class="footer__link">Core Values</a>
-          <a href="#contact" class="footer__link">Contact Us</a>
-        </div>
-        <div>
-          <h4 class="footer__heading">Sectors</h4>
-          <a href="sector-food-security.html" class="footer__link">Food Security</a>
-          <a href="sector-energy.html" class="footer__link">Energy</a>
-          <a href="sector-fertilizers.html" class="footer__link">Fertilizers</a>
-          <a href="sector-metals.html" class="footer__link">Metals &amp; Precious Commodities</a>
-          <a href="sector-services.html" class="footer__link">Services</a>
-          <a href="sector-technology.html" class="footer__link">Technology</a>
-        </div>
-        <div>
-          <h4 class="footer__heading">IIC Worldwide</h4>
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="about.html" class="footer__link">About IIC Worldwide</a>
-          <a href="subsidiaries.html" class="footer__link">Subsidiaries</a>
-          <a href="strategy.html" class="footer__link">Strategy &amp; Investment</a>
-          <a href="contact.html" class="footer__link">Contact IIC Worldwide</a>
-        </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__top">
+      <div>
+        <a class="footer__logo" href="index.html" aria-label="IIC Worldwide: home"><img src="Media/IIC Worldwide Horizontal.png" alt="International Investment Consortium Worldwide" width="2022" height="449" loading="lazy"></a>
+        <p class="footer__blurb">A global commodity, trade, and finance platform based in Dubai &mdash; connecting producers, buyers, and suppliers while bridging supply and demand through verified trading and financial solutions.</p>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 IIC General Trading LLC-FZ. All rights reserved.</p>
-        <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-        </div>
+      <div class="footer__grid2">
+        <div class="footer__col"><h2>Navigation</h2><ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="subsidiaries.html">Subsidiaries</a></li>
+          <li><a href="strategy.html">Strategy &amp; Investment</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul></div>
+        <div class="footer__col"><h2>Sectors</h2><ul>
+          <li><a href="sector-food-security.html">Food Security</a></li>
+          <li><a href="sector-energy.html">Energy</a></li>
+          <li><a href="sector-fertilizers.html">Fertilizers</a></li>
+          <li><a href="sector-metals.html">Metals &amp; Precious Commodities</a></li>
+          <li><a href="sector-services.html">Services</a></li>
+          <li><a href="sector-technology.html">Technology</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__grid2">
+        <div class="footer__col"><h2>Subsidiaries</h2><ul>
+          <li><a href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer">IIC Bank</a></li>
+          <li><a href="https://iiccrypto.com/" target="_blank" rel="noopener noreferrer">IIC Metaverse</a></li>
+          <li><a href="https://iicpetroleum.com/" target="_blank" rel="noopener noreferrer">IIC Oil &amp; Gas</a></li>
+          <li><a href="iic-general-trading.html">IIC General Trading</a></li>
+          <li class="muted">IIC Aviation</li>
+          <li class="muted">IIC Holding</li>
+          <li><a href="iic-gold.html">IIC Express Gold &amp; Diamond</a></li>
+        </ul></div>
+        <div class="footer__col"><h2>Headquarters</h2>
+          <p>Ground Floor, Al Shafar Park Tower<br>Sheikh Zayed Road<br>Dubai, UAE</p>
+          <h2 style="margin-top:24px">Contact</h2><ul>
+          <li><a href="tel:+97148347004">+971 4 834 7004</a></li>
+          <li><a href="mailto:office@iicworldwide.com">office@iicworldwide.com</a></li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        <a class="crest crest--bank" href="https://www.iicbank.com/" target="_blank" rel="noopener noreferrer" aria-label="Official Bank: International Investment Consortium Bank (IICB), opens in a new tab"><img src="Media/IICB.png" alt="" width="112" height="56" loading="lazy"><p>Official Bank<br>International Investment Consortium Bank (IICB)</p></a>
+        <p>&copy; <span data-year>2026</span> International Investment Consortium Worldwide. All rights reserved.</p>
+        <nav class="footer__links" aria-label="Legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></nav>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=3"></script>
   <script src="js/prices.js"></script>
   <script>
   initCommodityPriceCarousel('commodity-prices', [
