@@ -217,13 +217,16 @@
       const prev = slides[i];
       i = (n + slides.length) % slides.length;
       slides.forEach((s, k) => {
+        clearTimeout(s._leaveTimer);
         s.classList.remove("is-leaving");
-        if (s === prev && k !== i) s.classList.add("is-leaving");
+        if (s === prev && k !== i) {
+          s.classList.add("is-leaving");
+          s._leaveTimer = setTimeout(() => s.classList.remove("is-leaving"), 1500);
+        }
         s.classList.toggle("is-active", k === i);
         s.setAttribute("aria-hidden", String(k !== i));
         $$("a, button", s).forEach((el) => (k === i ? el.removeAttribute("tabindex") : el.setAttribute("tabindex", "-1")));
       });
-      setTimeout(() => prev && prev !== slides[i] && prev.classList.remove("is-leaving"), 1500);
       num.textContent = pad(i + 1);
       $$("button", dots).forEach((b, k) => b.setAttribute("aria-current", String(k === i)));
       restartBar();

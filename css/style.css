@@ -794,9 +794,16 @@ a.co-row:hover .co-row__go { background: var(--brand-gold); border-color: var(--
 .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
 .w > span { display: inline-block; transform: translateY(112%); transition: transform 1100ms var(--ease-out); transition-delay: calc(var(--i, 0) * 110ms + var(--d, 0ms)); }
 .is-in .w > span, .is-in.w > span { transform: none; }
-.hero__slide .w > span { transition-delay: calc(var(--i, 0) * 130ms + 450ms); }
+/* Hero text: outgoing slide exits upward, incoming waits for it, hidden slides reset instantly */
+.hero__slide .w > span { transition: transform 1100ms var(--ease-out); transition-delay: calc(var(--i, 0) * 120ms + 600ms); }
 .hero__slide.is-active .w > span { transform: none; }
-.hero__slide.is-leaving .w > span { transform: none; transition: none; }
+.hero__slide.is-leaving .w > span { transform: translateY(-112%); transition: transform 650ms var(--ease-in-out); transition-delay: calc(var(--i, 0) * 50ms); }
+.hero__slide.is-leaving .hero__kicker, .hero__slide.is-leaving .hero__row { opacity: 0; transform: translateY(-12px); transition: opacity 400ms var(--ease-out), transform 400ms var(--ease-out); }
+.hero__slide:not(.is-active):not(.is-leaving) .w > span,
+.hero__slide:not(.is-active):not(.is-leaving) .hero__kicker,
+.hero__slide:not(.is-active):not(.is-leaving) .hero__row { transition: none; }
+.hero__slide.is-active .hero__kicker { transition-delay: 500ms; }
+.hero__slide.is-active .hero__row { transition-delay: 1100ms; }
 .on-dark h2, .banner h2 { color: #fff; }
 
 /* Dark statement band */
@@ -807,7 +814,7 @@ a.co-row:hover .co-row__go { background: var(--brand-gold); border-color: var(--
 .band-dark .chip { color: var(--brand-gold); }
 
 /* Stat row with the figure on the left */
-.stat-row--flip { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
+@media (min-width: 861px) { .stat-row--flip { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); } }
 .footer__legal .crest p { color: #fff; }
 
 /* ---------- Brand emblem (subsidiary heroes): medallion + rotating text ring ---------- */
@@ -831,3 +838,10 @@ a.co-row:hover .co-row__go { background: var(--brand-gold); border-color: var(--
   .page-hero--brand .page-hero__row { grid-template-columns: 1fr; }
   .brand-emblem { width: 220px; order: -1; margin-bottom: 8px; }
 }
+
+/* Home hero: soften the photos (bleed past the edges so the blur has no halo) */
+.hero__media img { position: absolute; inset: -24px; width: calc(100% + 48px); height: calc(100% + 48px); max-width: none; filter: blur(4px) saturate(1.05); }
+
+/* Inner heroes (About, Subsidiaries, Strategy, Contact): softened photo, bled past the edges so the blur has no halo */
+.page-hero--soft .page-hero__media { inset: calc(-10% - 24px) -24px; }
+.page-hero--soft .page-hero__media img { filter: blur(4px) saturate(1.05); }
