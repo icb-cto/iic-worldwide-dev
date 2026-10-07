@@ -57,7 +57,7 @@
   --ease-in-out: cubic-bezier(.65, 0, .35, 1);
   --dur: 280ms;
 
-  --nav-h: 96px;
+  --nav-h: 88px;
   --z-header: 50;
   --z-menu: 60;
 }
@@ -216,8 +216,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .nav__toggle span:nth-child(3) { display: none; }
 .nav__toggle:hover span:nth-child(2) { width: 44px; }
 
-.site-header.nav--scrolled { background: rgba(255,255,255,.97); box-shadow: 0 1px 0 rgba(14,36,32,.08); height: 76px; }
-.nav--scrolled .nav__logo img { filter: none; height: 34px; }
+.site-header.nav--scrolled { background: #fff; box-shadow: 0 1px 0 rgba(14,36,32,.08); }
+.nav--scrolled .nav__logo img { filter: none; }
 .nav--scrolled .nav__link { color: var(--text-muted); }
 .nav--scrolled .nav__link:hover, .nav--scrolled .nav__link[aria-current="page"] { color: var(--ink); }
 .nav--scrolled .nav__toggle span { background: var(--ink); }
@@ -845,3 +845,7 @@ a.co-row:hover .co-row__go { background: var(--brand-gold); border-color: var(--
 /* Inner heroes (About, Subsidiaries, Strategy, Contact): softened photo, bled past the edges so the blur has no halo */
 .page-hero--soft .page-hero__media { inset: calc(-10% - 24px) -24px; }
 .page-hero--soft .page-hero__media img { filter: blur(4px) saturate(1.05); }
+
+/* Photo-filled figures: heavier, larger and punchier so the photo reads clearly */
+.figure-big { font-weight: 900; font-size: clamp(7rem, 19vw, 17rem); letter-spacing: -.05em; background-size: 130% auto; filter: saturate(1.3) contrast(1.15); }
+@media (max-width: 860px) { .figure-big { font-size: clamp(6rem, 34vw, 11rem); } }
