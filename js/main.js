@@ -18,10 +18,13 @@
   const curtain = document.createElement("div");
   curtain.className = "page-curtain";
   curtain.setAttribute("aria-hidden", "true");
-  curtain.innerHTML = '<img src="Media/IIC Worldwide Square.png" alt="">';
+  curtain.innerHTML = '<div class="page-curtain__mark"><img class="page-curtain__tri" src="Media/IIC Worldwide Square.png" alt=""></div>';
   document.body.appendChild(curtain);
+  // Every page (homepage included) uses the fade-in / fade-out curtain
+  const fadeCurtain = () => true;
   try {
     if (!reduceMotion && sessionStorage.getItem("iic-curtain")) {
+      if (fadeCurtain(location.pathname)) curtain.classList.add("page-curtain--fade");
       curtain.classList.add("is-entering");
       curtain.addEventListener("animationend", () => curtain.classList.remove("is-entering"), { once: true });
     }
@@ -38,8 +41,10 @@
       if (url.pathname === location.pathname && url.hash) return;
       e.preventDefault();
       try { sessionStorage.setItem("iic-curtain", "1"); } catch (err) {}
+      const fade = fadeCurtain(url.pathname);
+      curtain.classList.toggle("page-curtain--fade", fade);
       curtain.classList.add("is-leaving");
-      setTimeout(() => (location.href = url.href), 560);
+      setTimeout(() => (location.href = url.href), fade ? 750 : 560);
     });
   }
 
@@ -135,7 +140,17 @@
   }
 
   /* ---------- Scroll-in observer ---------- */
-  const watched = $$(".reveal, .img-reveal, .side-label, .draw-line, [data-count]").concat(splitEls.filter((e) => !e.closest(".hero__slide")));
+  /* ---------- Inner-page hero intro: plays in sequence once the curtain has lifted ---------- */
+  const intro = reduceMotion ? null : $(".page-hero, .article-hero");
+  if (intro) {
+    intro.classList.add("hero-intro");
+    const afterCurtain = curtain.classList.contains("is-entering");
+    const play = () => requestAnimationFrame(() => intro.classList.add("hero-play"));
+    setTimeout(play, afterCurtain ? (curtain.classList.contains("page-curtain--fade") ? 500 : 650) : 120);
+  }
+
+  const watched = $$(".reveal, .img-reveal, .side-label, .draw-line, [data-count]")
+    .concat(splitEls.filter((e) => !e.closest(".hero__slide") && !(intro && intro.contains(e))));
   if (reduceMotion || !("IntersectionObserver" in window)) {
     watched.forEach((el) => el.classList.add("is-in"));
   } else {
@@ -323,6 +338,24 @@
     });
     track.addEventListener("click", (e) => { if (moved > 6) { e.preventDefault(); e.stopPropagation(); } }, true);
     update();
+  });
+
+  /* ---------- Hero copy that spans the headline's actual text width ---------- */
+  $$(".hero-copy--wide").forEach((wrap) => {
+    const h1 = $("h1", wrap);
+    if (!h1) return;
+    const fit = () => {
+      // widest headline line = right edge of its furthest word (word spans when split, else a text range)
+      const words = $$(".w", h1);
+      const rects = words.length ? words.map((w) => w.getBoundingClientRect())
+        : (() => { const r = document.createRange(); r.selectNodeContents(h1); return Array.from(r.getClientRects()); })();
+      const left = h1.getBoundingClientRect().left;
+      const right = Math.max(...rects.map((b) => b.right));
+      if (right > left) wrap.style.setProperty("--copy-w", Math.ceil(right - left) + "px");
+    };
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    window.addEventListener("resize", fit);
   });
 
   /* ---------- Back to top with scroll-progress ring ---------- */

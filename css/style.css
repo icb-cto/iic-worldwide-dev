@@ -849,3 +849,86 @@ a.co-row:hover .co-row__go { background: var(--brand-gold); border-color: var(--
 /* Photo-filled figures: heavier, larger and punchier so the photo reads clearly */
 .figure-big { font-weight: 900; font-size: clamp(7rem, 19vw, 17rem); letter-spacing: -.05em; background-size: 130% auto; filter: saturate(1.3) contrast(1.15); }
 @media (max-width: 860px) { .figure-big { font-size: clamp(6rem, 34vw, 11rem); } }
+
+/* ---------- Inner-page hero intro (sequenced, unhurried) ---------- */
+.page-curtain.is-entering { animation: curtainOut 1000ms var(--ease-in-out) 150ms forwards; }
+.hero-intro .page-hero__media img { animation: none; transform: scale(1.14); opacity: 0; transition: transform 3200ms var(--ease-out), opacity 1400ms var(--ease-out); }
+.hero-intro.hero-play .page-hero__media img { transform: none; opacity: 1; }
+.hero-intro .breadcrumb, .hero-intro .article-back, .hero-intro .hero__kicker,
+.hero-intro h1 ~ p, .hero-intro .page-hero__lead, .hero-intro .page-hero__tagline,
+.hero-intro .page-hero__actions, .hero-intro .article-hero__meta {
+  opacity: 0 !important; transform: translateY(24px) !important;
+  transition: opacity 1100ms var(--ease-out), transform 1100ms var(--ease-out) !important;
+}
+.hero-intro.hero-play .breadcrumb, .hero-intro.hero-play .article-back, .hero-intro.hero-play .hero__kicker,
+.hero-intro.hero-play h1 ~ p, .hero-intro.hero-play .page-hero__lead, .hero-intro.hero-play .page-hero__tagline,
+.hero-intro.hero-play .page-hero__actions, .hero-intro.hero-play .article-hero__meta { opacity: 1 !important; transform: none !important; }
+.hero-intro.hero-play .breadcrumb, .hero-intro.hero-play .article-back { transition-delay: 150ms !important; }
+.hero-intro.hero-play .hero__kicker { transition-delay: 300ms !important; }
+.hero-intro.hero-play h1 ~ p, .hero-intro.hero-play .page-hero__lead { transition-delay: 1000ms !important; }
+.hero-intro.hero-play .page-hero__tagline, .hero-intro.hero-play h1 ~ p ~ p { transition-delay: 1150ms !important; }
+.hero-intro.hero-play .page-hero__actions, .hero-intro.hero-play .article-hero__meta { transition-delay: 1300ms !important; }
+.hero-intro h1 .w > span { transform: translateY(112%); transition: transform 1300ms var(--ease-out); transition-delay: calc(var(--i, 0) * 150ms + 400ms); }
+.hero-intro.hero-play h1 .w > span { transform: none; }
+.hero-intro .brand-emblem, .hero-intro .page-hero__logo { opacity: 0; transform: scale(.88); transition: opacity 1400ms var(--ease-out) 700ms, transform 1600ms var(--ease-out) 700ms; }
+.hero-intro.hero-play .brand-emblem, .hero-intro.hero-play .page-hero__logo { opacity: 1; transform: none; }
+
+
+/* ---------- Fade curtain (About, Subsidiaries, Strategy & Investment, Contact) ---------- */
+.page-curtain--fade { transform: none !important; opacity: 0; }
+.page-curtain--fade.is-leaving { opacity: 1; transition: opacity 650ms var(--ease-in-out); }
+.page-curtain--fade.is-leaving img { opacity: .9; transition: opacity 450ms var(--ease-out) 250ms; }
+.page-curtain--fade.is-entering { opacity: 1; animation: curtainFadeOut 900ms var(--ease-in-out) 300ms forwards; }
+.page-curtain--fade.is-entering img { opacity: .9; animation: fadeOut 400ms ease 100ms forwards; }
+@keyframes curtainFadeOut { to { opacity: 0; } }
+
+/* ---------- Curtain mark: larger triangle logo ---------- */
+.page-curtain__mark { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.page-curtain .page-curtain__mark img { opacity: 1; animation: none; transition: none; }
+.page-curtain .page-curtain__tri { width: clamp(96px, 11vw, 140px); height: auto; filter: brightness(0) invert(1); }
+/* the whole mark fades as one, following the curtain's timing */
+.page-curtain__mark { opacity: 0; transform: translateY(8px); transition: opacity 300ms, transform 300ms; }
+.page-curtain.is-leaving .page-curtain__mark { opacity: 1; transform: none; transition: opacity 450ms var(--ease-out) 250ms, transform 600ms var(--ease-out) 250ms; }
+.page-curtain.is-entering .page-curtain__mark { opacity: 1; transform: none; animation: curtainMarkOut 450ms ease 150ms forwards; }
+@keyframes curtainMarkOut { to { opacity: 0; transform: translateY(-8px); } }
+
+/* ---------- Light (un-darkened) hero: IIC General Trading ---------- */
+.page-hero--light { background: #fff; color: var(--ink); }
+.page-hero--light::after { display: none; }
+.page-hero--light .page-hero__media img { opacity: 1; }
+.page-hero--light h1, .page-hero--light .page-hero__title { color: var(--ink); }
+.page-hero--light p { color: var(--text-muted); }
+.page-hero--light .page-hero__lead { color: var(--accent-text); }
+.page-hero--light .hero__kicker { color: var(--ink); }
+.page-hero--light .hero__kicker::before { background: var(--ink); }
+.page-hero--light .breadcrumb { color: var(--text-muted); }
+.page-hero--light .breadcrumb a:hover { color: var(--ink); }
+.page-hero--light .btn--light { color: var(--ink); border-color: var(--ink); }
+.page-hero--light .btn--light::before { background: var(--brand-green); }
+.page-hero--light .btn--light:hover { color: #fff; border-color: var(--brand-green); }
+/* header over a light hero: dark logo and links until it turns solid */
+body:has(.page-hero--light) .site-header:not(.nav--scrolled):not(.nav--menu-open) .nav__logo img { filter: none; }
+body:has(.page-hero--light) .site-header:not(.nav--scrolled):not(.nav--menu-open) .nav__link { color: var(--text-muted); }
+body:has(.page-hero--light) .site-header:not(.nav--scrolled):not(.nav--menu-open) .nav__link:hover,
+body:has(.page-hero--light) .site-header:not(.nav--scrolled):not(.nav--menu-open) .nav__link[aria-current="page"] { color: var(--ink); }
+body:has(.page-hero--light) .site-header:not(.nav--scrolled):not(.nav--menu-open) .nav__toggle span { background: var(--ink); }
+.page-hero--light p { max-width: 560px; }
+@media (max-width: 900px) {
+  .page-hero--light::after { display: block; background: linear-gradient(90deg, rgba(255,255,255,.9), rgba(255,255,255,.72)); }
+}
+
+
+/* GT hero: image split in two so it composes at every screen width.
+   Left shapes stay anchored to the screen's left edge (faded); the main logo is fitted
+   to the hero height and pinned right, so it's always shown in full. */
+.page-hero__media--split { inset: 0; transform: none !important; background: #fff; }
+.page-hero__media--split img { position: absolute; top: 0; height: 100%; width: auto; max-width: none; object-fit: initial; }
+.page-hero__media--split .split-left { left: 0; -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.45), #000 70%); mask-image: linear-gradient(90deg, rgba(0,0,0,.45), #000 70%); }
+.page-hero__media--split .split-right { right: 0; }
+@media (min-width: 901px) and (max-width: 1180px) {
+  .page-hero--light::after { display: block; background: linear-gradient(90deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.86) 50%, rgba(255,255,255,0) 78%); }
+}
+.page-hero--light .page-hero__tagline { color: var(--text-muted); }
+@media (max-width: 900px) { .page-hero__media--split .split-right { height: 100% !important; top: 0 !important; margin: 0 !important; } }
+/* Gold hero: description and taglines run the full width of the headline */
+.hero-copy--wide > p { max-width: var(--copy-w, 560px) !important; }
