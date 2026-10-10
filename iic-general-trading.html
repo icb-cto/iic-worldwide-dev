@@ -607,7 +607,9 @@
       .trading-hero__logo-img { max-width: 240px; }
       .trading-hero__buttons { flex-direction: column; }
       .chairman { grid-template-columns: 1fr; gap: 32px; }
-      .chairman__left { max-width: 200px; }
+      .chairman__left { max-width: none; display: grid; grid-template-columns: minmax(120px, 38%) minmax(0, 1fr); gap: 20px; align-items: center; text-align: left; }
+      .chairman__name { margin-top: 0; font-size: 18px; }
+      .chairman__role { margin-top: 4px; }
       .trading-about { grid-template-columns: 1fr; gap: 32px; }
       .group-stats { grid-template-columns: repeat(2, 1fr); }
       .trading-vm { grid-template-columns: 1fr; }
@@ -758,8 +760,10 @@
           <div class="chairman__photo">
             <img src="Media/IIC General Trading/chairman.jpg" alt="Dato Dr. Arshad Mahmood" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>Dato Dr. Arshad Mahmood<br>Group Chairman</span>';">
           </div>
-          <div class="chairman__name">Dato Dr. Arshad Mahmood</div>
-          <div class="chairman__role">Group Chairman, IIC Worldwide</div>
+          <div class="chairman__id">
+            <div class="chairman__name">Dato Dr. Arshad Mahmood</div>
+            <div class="chairman__role">Group Chairman, IIC Worldwide</div>
+          </div>
         </div>
         <div class="chairman__text reveal reveal-delay-1">
           <span class="eyebrow">Chairman&rsquo;s Message</span>

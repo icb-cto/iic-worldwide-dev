@@ -358,6 +358,27 @@
     window.addEventListener("resize", fit);
   });
 
+  /* ---------- Big figures fill their column on phones / portrait tablets ---------- */
+  const fitEls = $$("[data-fit]");
+  if (fitEls.length) {
+    const fitAll = () => {
+      fitEls.forEach((el) => {
+        el.style.fontSize = "";
+        if (window.innerWidth > 960) return;
+        const row = el.parentElement.parentElement;
+        const cs = getComputedStyle(row);
+        const avail = row.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+        const r = document.createRange(); r.selectNodeContents(el);
+        const pad = parseFloat(getComputedStyle(el).paddingLeft) + parseFloat(getComputedStyle(el).paddingRight);
+        const w = r.getBoundingClientRect().width + pad;
+        if (w > 0) el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * avail / w * 0.98).toFixed(1) + "px";
+      });
+    };
+    fitAll();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+    window.addEventListener("resize", fitAll);
+  }
+
   /* ---------- Back to top with scroll-progress ring ---------- */
   const toTop = document.createElement("button");
   toTop.type = "button";
